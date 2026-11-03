@@ -47,36 +47,6 @@ def main():
     if not api_key:
         raise RuntimeError("Missing GEMINI_API_KEY secret in repository settings.")
 
-    # 1. Inspect accessible models directly from Google
-    models_url = f"https://generativelanguage.googleapis.com/v1beta/models?key={api_key}"
-    models_resp = requests.get(models_url, timeout=15)
-    
-    if not models_resp.ok:
-        print(f"FAILED TO AUTHENTICATE WITH GOOGLE API (HTTP {models_resp.status_code})")
-        print(f"Google Response: {models_resp.text}")
-        raise RuntimeError(f"Google API Key validation failed: HTTP {models_resp.status_code}")
-
-    available_models = [
-        m.get("name", "") for m in models_resp.json().get("models", [])
-        if "generateContent" in m.get("supportedGenerationMethods", [])
-    ]
-    print(f"Available models for this key: {available_models}")
-
-    # Prioritize active 3.x flash models
-target_model = None
-for preferred in ["models/gemini-3.8-flash", "models/gemini-3.5-flash", "models/gemini-flash-latest"]:
-    if preferred in available_models:
-        target_model = preferred
-        break
-
-    if not target_model and available_models:
-        target_model = available_models[0]
-
-    if not target_model:
-        raise RuntimeError("No text generation models found for this API key.")
-
-    print(f"Using model: {target_model}")
-
     today_str = datetime.date.today().strftime("%b %d, %Y")
 
     prompt = f"""Today is {today_str}. Provide the latest top trending titles on Indian and Global OTT platforms, plus festival gems.
@@ -112,7 +82,7 @@ Return STRICT valid JSON only. The JSON must follow this exact schema:
 
 Provide 5 to 10 accurate titles for each platform based on current trending charts."""
 
-    url = f"https://generativelanguage.googleapis.com/v1beta/{target_model}:generateContent?key={api_key}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key={api_key}"
     payload_body = {
         "contents": [{"parts": [{"text": prompt}]}]
     }
@@ -123,24 +93,3 @@ Provide 5 to 10 accurate titles for each platform based on current trending char
         raise RuntimeError(f"Gemini API generation failed: HTTP {gen_resp.status_code}")
 
     res_json = gen_resp.json()
-    candidate_text = res_json["candidates"][0]["content"]["parts"][0]["text"]
-    clean_text = clean_json_text(candidate_text)
-    data = json.loads(clean_text)
-
-    # Attach live poster artwork
-    for platform, items in data.get("india", {}).items():
-        for item in items:
-            item["poster"] = resolve_poster(item.get("title", ""), item.get("type", "Movie"))
-
-    for platform, items in data.get("global", {}).items():
-        for item in items:
-            item["poster"] = resolve_poster(item.get("title", ""), item.get("type", "Movie"))
-
-    os.makedirs("public", exist_ok=True)
-    with open("public/daily_catalogue.json", "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
-
-    print(f"Successfully generated public/daily_catalogue.json for {today_str}")
-
-if __name__ == "__main__":
-    main()
