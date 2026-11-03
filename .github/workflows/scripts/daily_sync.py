@@ -4,14 +4,13 @@ import json
 import datetime
 import urllib.parse
 import requests
-from google import genai
-from google.genai import types
+import google.generativeai as genai
 
 def resolve_poster(title: str, media_type: str = "Movie") -> str:
     """Resolves high-res theatrical poster via iTunes or Wikipedia."""
     clean_title = title.split(":")[0].split("Season")[0].split("S1")[0].split("S2")[0].strip()
 
-    # 1. Try iTunes Search API (Free, high-res)
+    # 1. Try iTunes Search API
     try:
         entity = "tvSeason" if media_type.lower() in ["show", "series", "limited series"] else "movie"
         url = f"https://itunes.apple.com/search?term={urllib.parse.quote(clean_title)}&entity={entity}&limit=1"
@@ -34,11 +33,10 @@ def resolve_poster(title: str, media_type: str = "Movie") -> str:
     except Exception:
         pass
 
-    # Default fallback cinephile placeholder
     return "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
 
 def clean_json_text(text: str) -> str:
-    """Removes markdown code fences if Gemini wraps JSON."""
+    """Strips markdown code blocks from JSON output."""
     text = text.strip()
     match = re.search(r"```(?:json)?\s*([\s\S]*?)\s*```", text)
     if match:
@@ -48,13 +46,15 @@ def clean_json_text(text: str) -> str:
 def main():
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
-        raise RuntimeError("Missing GEMINI_API_KEY secret in GitHub repository settings.")
+        raise RuntimeError("Missing GEMINI_API_KEY secret in repository settings.")
 
-    client = genai.Client(api_key=api_key)
+    genai.configure(api_key=api_key)
     today_str = datetime.date.today().strftime("%b %d, %Y")
 
-    prompt = f"""Today is {today_str}. Search live OTT charts, trade reports, and film festival news.
-Return STRICT valid JSON only. Structure must exactly match this template:
+    model = genai.GenerativeModel("gemini-1.5-flash")
+
+    prompt = f"""Today is {today_str}. Provide the latest top trending titles on Indian and Global OTT platforms, plus festival gems.
+Return STRICT valid JSON only. The JSON must follow this exact schema:
 {{
   "syncDate": "{today_str}",
   "india": {{
@@ -84,26 +84,17 @@ Return STRICT valid JSON only. Structure must exactly match this template:
   ]
 }}
 
-Provide 5 to 10 accurate titles for each platform based on today's actual trending charts."""
+Provide 5 to 10 accurate titles for each platform."""
 
-    response = client.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=prompt,
-        config=types.GenerateContentConfig(
-            tools=[types.Tool(google_search=types.GoogleSearch())],
-            response_mime_type="application/json"
-        ),
-    )
-
+    response = model.generate_content(prompt)
     clean_text = clean_json_text(response.text)
     payload = json.loads(clean_text)
 
-    # Attach posters for India
+    # Attach posters
     for platform, items in payload.get("india", {}).items():
         for item in items:
             item["poster"] = resolve_poster(item.get("title", ""), item.get("type", "Movie"))
 
-    # Attach posters for Global
     for platform, items in payload.get("global", {}).items():
         for item in items:
             item["poster"] = resolve_poster(item.get("title", ""), item.get("type", "Movie"))
