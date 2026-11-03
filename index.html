@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Master Catalogue</title>
+  <!-- Tailwind CSS & Lucide Icons -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body { background-color: #0b0f19; color: #f3f4f6; font-family: ui-sans-serif, system-ui, -apple-system, sans-serif; }
+    .gold-accent { color: #f59e0b; }
+    .gold-bg { background-color: #f59e0b; }
+  </style>
+</head>
+<body class="min-h-screen pb-16">
+  <!-- Top Navigation -->
+  <header class="sticky top-0 z-50 bg-[#0f172a]/90 backdrop-blur border-b border-gray-800 px-6 py-4 flex flex-wrap items-center justify-between gap-4">
+    <div class="flex items-center space-x-3">
+      <div class="w-8 h-8 rounded-lg gold-bg flex items-center justify-center font-bold text-black text-lg">M</div>
+      <div>
+        <h1 class="text-lg font-bold tracking-wider text-white">THE MASTER CATALOGUE</h1>
+        <p class="text-xs text-gray-400">Universal OTT & Cinephile Radar</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-3 text-xs">
+      <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-400 font-medium">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 mr-1.5 animate-pulse"></span>
+        Daily Sync Active
+      </span>
+      <span id="date-badge" class="px-3 py-1 rounded-full bg-gray-800 text-gray-300 border border-gray-700"></span>
+    </div>
+  </header>
+
+  <!-- Region / Platform Tabs -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 mt-8">
+    <div class="flex items-center justify-between border-b border-gray-800 pb-4 mb-6">
+      <div class="flex space-x-2">
+        <button id="btn-india" onclick="switchTab('india')" class="px-4 py-2 text-sm font-semibold rounded-lg bg-amber-500 text-black">
+          🇮🇳 India Top 10 (By Platform)
+        </button>
+        <button id="btn-global" onclick="switchTab('global')" class="px-4 py-2 text-sm font-semibold rounded-lg bg-gray-800 text-gray-300 hover:text-white">
+          🌍 Global Top 10
+        </button>
+        <button id="btn-beyond" onclick="switchTab('beyond')" class="px-4 py-2 text-sm font-semibold rounded-lg bg-gray-800 text-gray-300 hover:text-white">
+          ✨ Beyond Major OTTs
+        </button>
+      </div>
+    </div>
+
+    <!-- Dynamic Content Container -->
+    <div id="content-area" class="space-y-10">
+      <div class="text-center py-20 text-gray-500">Loading your master catalogue...</div>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('date-badge').innerText = new Date().toLocaleDateString('en-IN', {
+      day: 'numeric', month: 'short', year: 'numeric'
+    });
+
+    // Default Fallback Data if daily_catalogue.json is building
+    const defaultData = {
+      india_netflix: [
+        { rank: 1, title: "The Great Indian Kapil Show", type: "Show", imdb: "7.4", verdict: "Hype / Viral", tag: "Comedy" },
+        { rank: 2, title: "Amar Singh Chamkila", type: "Movie", imdb: "8.2", verdict: "Critical Gold", tag: "Biopic / Music" },
+        { rank: 3, title: "Sector 36", type: "Movie", imdb: "7.6", verdict: "Solid Thriller", tag: "Crime / Noir" },
+        { rank: 4, title: "Kho Gaye Hum Kahan", type: "Movie", imdb: "7.5", verdict: "Consensus Pick", tag: "Drama" },
+        { rank: 5, title: "Railway Men", type: "Limited Series", imdb: "8.5", verdict: "Must Watch", tag: "Historical" }
+      ],
+      india_prime: [
+        { rank: 1, title: "Mirzapur", type: "Show", imdb: "8.5", verdict: "Cult Franchise", tag: "Crime / Pulp" },
+        { rank: 2, title: "Panchayat", type: "Show", imdb: "8.9", verdict: "All-Time Essential", tag: "Rural Realism" },
+        { rank: 3, title: "The Family Man", type: "Show", imdb: "8.7", verdict: "Auteur Spy Drama", tag: "Action / Thriller" },
+        { rank: 4, title: "Jubilee", type: "Series", imdb: "8.4", verdict: "Cinematic Masterpiece", tag: "Period Drama" }
+      ],
+      beyond_ott: [
+        { title: "All We Imagine as Light", director: "Payal Kapadia", event: "Cannes Grand Prix Winner", imdb: "8.1", where: "Select Festivals / MUBI" },
+        { title: "Santosh", director: "Sandhya Suri", event: "Un Certain Regard", imdb: "7.7", where: "European Theatrical" },
+        { title: "Kummatty (Restored 4K)", director: "G. Aravindan", event: "Film Foundation Heritage", imdb: "8.4", where: "Criterion / World Cinema Project" }
+      ]
+    };
+
+    let activeData = defaultData;
+
+    // Attempt to load fresh data produced by your daily Python script
+    fetch('./daily_catalogue.json')
+      .then(res => res.json())
+      .then(json => { activeData = json; renderView('india'); })
+      .catch(() => { renderView('india'); });
+
+    function switchTab(tab) {
+      document.querySelectorAll('button[id^="btn-"]').forEach(btn => {
+        btn.className = "px-4 py-2 text-sm font-semibold rounded-lg bg-gray-800 text-gray-300 hover:text-white";
+      });
+      document.getElementById('btn-' + tab).className = "px-4 py-2 text-sm font-semibold rounded-lg bg-amber-500 text-black";
+      renderView(tab);
+    }
+
+    function renderView(view) {
+      const container = document.getElementById('content-area');
+      if (view === 'india') {
+        container.innerHTML = `
+          <section>
+            <h2 class="text-xl font-bold text-red-500 flex items-center gap-2 mb-4"><span>●</span> Netflix India Top Trending</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              ${(activeData.india_netflix || []).map(renderCard).join('')}
+            </div>
+          </section>
+          <section class="mt-8">
+            <h2 class="text-xl font-bold text-sky-400 flex items-center gap-2 mb-4"><span>●</span> Prime Video India Top Trending</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              ${(activeData.india_prime || []).map(renderCard).join('')}
+            </div>
+          </section>
+        `;
+      } else if (view === 'beyond') {
+        container.innerHTML = `
+          <section>
+            <h2 class="text-xl font-bold text-amber-400 flex items-center gap-2 mb-4">✨ The Festival & Blindspot Radar (Outside Big OTTs)</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              ${(activeData.beyond_ott || []).map(item => `
+                <div class="bg-gray-900 border border-amber-500/20 rounded-xl p-5 hover:border-amber-500/40 transition">
+                  <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-amber-500/10 text-amber-400 uppercase tracking-wider">${item.event}</span>
+                  <h3 class="text-lg font-bold text-white mt-3">${item.title}</h3>
+                  <p class="text-sm text-gray-400">Dir. ${item.director}</p>
+                  <div class="mt-4 pt-3 border-t border-gray-800 flex justify-between items-center text-xs text-gray-400">
+                    <span>Available on: <strong class="text-gray-200">${item.where}</strong></span>
+                    <span class="text-amber-400 font-bold">★ ${item.imdb}</span>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </section>
+        `;
+      } else {
+        container.innerHTML = `<div class="py-16 text-center text-gray-400">Global charts feed syncing...</div>`;
+      }
+    }
+
+    function renderCard(item) {
+      return `
+        <div class="bg-gray-900 border border-gray-800 rounded-xl p-4 flex flex-col justify-between hover:border-gray-700 transition">
+          <div>
+            <div class="flex justify-between items-start">
+              <span class="text-2xl font-black text-gray-600">#${item.rank || '•'}</span>
+              <span class="text-xs px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 font-semibold">★ ${item.imdb}</span>
+            </div>
+            <h3 class="text-base font-bold text-white mt-2">${item.title}</h3>
+            <span class="text-xs text-gray-500">${item.type} • ${item.tag}</span>
+          </div>
+          <div class="mt-4 pt-2 border-t border-gray-800/80">
+            <span class="text-xs font-medium text-emerald-400">${item.verdict}</span>
+          </div>
+        </div>
+      `;
+    }
+
+    renderView('india');
+  </script>
+</body>
+</html>
