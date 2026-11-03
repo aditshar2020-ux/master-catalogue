@@ -47,6 +47,36 @@ def main():
     if not api_key:
         raise RuntimeError("Missing GEMINI_API_KEY secret in repository settings.")
 
+    # 1. Inspect accessible models directly from Google
+    models_url = f"https://generativelanguage.googleapis.com/v1beta/models?key={api_key}"
+    models_resp = requests.get(models_url, timeout=15)
+    
+    if not models_resp.ok:
+        print(f"FAILED TO AUTHENTICATE WITH GOOGLE API (HTTP {models_resp.status_code})")
+        print(f"Google Response: {models_resp.text}")
+        raise RuntimeError(f"Google API Key validation failed: HTTP {models_resp.status_code}")
+
+    available_models = [
+        m.get("name", "") for m in models_resp.json().get("models", [])
+        if "generateContent" in m.get("supportedGenerationMethods", [])
+    ]
+    print(f"Available models for this key: {available_models}")
+
+    # Prioritize flash models
+    target_model = None
+    for preferred in ["models/gemini-2.5-flash", "models/gemini-2.0-flash", "models/gemini-1.5-flash", "models/gemini-flash"]:
+        if preferred in available_models:
+            target_model = preferred
+            break
+
+    if not target_model and available_models:
+        target_model = available_models[0]
+
+    if not target_model:
+        raise RuntimeError("No text generation models found for this API key.")
+
+    print(f"Using model: {target_model}")
+
     today_str = datetime.date.today().strftime("%b %d, %Y")
 
     prompt = f"""Today is {today_str}. Provide the latest top trending titles on Indian and Global OTT platforms, plus festival gems.
@@ -80,35 +110,19 @@ Return STRICT valid JSON only. The JSON must follow this exact schema:
   ]
 }}
 
-Provide 5 to 10 accurate titles for each platform based on today's actual trending charts."""
+Provide 5 to 10 accurate titles for each platform based on current trending charts."""
 
+    url = f"https://generativelanguage.googleapis.com/v1beta/{target_model}:generateContent?key={api_key}"
     payload_body = {
         "contents": [{"parts": [{"text": prompt}]}]
     }
 
-    # List of endpoints to try in order of preference
-    candidate_models = [
-        "gemini-2.5-flash",
-        "gemini-3.8-flash",
-        "gemini-flash-latest"
-    ]
+    gen_resp = requests.post(url, json=payload_body, timeout=60)
+    if not gen_resp.ok:
+        print(f"Generation failed with HTTP {gen_resp.status_code}: {gen_resp.text}")
+        raise RuntimeError(f"Gemini API generation failed: HTTP {gen_resp.status_code}")
 
-    resp = None
-    for model_name in candidate_models:
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={api_key}"
-        try:
-            r = requests.post(url, json=payload_body, timeout=40)
-            if r.status_code == 200:
-                resp = r
-                break
-        except Exception:
-            continue
-
-    if not resp or not resp.ok:
-        err_msg = resp.text if resp else "All model endpoint requests failed."
-        raise RuntimeError(f"Gemini API generation failed: {err_msg}")
-
-    res_json = resp.json()
+    res_json = gen_resp.json()
     candidate_text = res_json["candidates"][0]["content"]["parts"][0]["text"]
     clean_text = clean_json_text(candidate_text)
     data = json.loads(clean_text)
