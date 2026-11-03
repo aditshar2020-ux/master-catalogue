@@ -62,12 +62,12 @@ def main():
     ]
     print(f"Available models for this key: {available_models}")
 
-    # Prioritize flash models
-    target_model = None
-    for preferred in ["models/gemini-2.5-flash", "models/gemini-2.0-flash", "models/gemini-1.5-flash", "models/gemini-flash"]:
-        if preferred in available_models:
-            target_model = preferred
-            break
+    # Prioritize active 3.x flash models
+target_model = None
+for preferred in ["models/gemini-3.8-flash", "models/gemini-3.5-flash", "models/gemini-flash-latest"]:
+    if preferred in available_models:
+        target_model = preferred
+        break
 
     if not target_model and available_models:
         target_model = available_models[0]
