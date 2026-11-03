@@ -2,11 +2,11 @@ name: Daily OTT & Cinephile Sync Engine
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs daily at 5:30 AM IST (00:00 UTC)
-  workflow_dispatch: # Allows manual trigger from the UI
+    - cron: '0 0 * * *' # Runs daily at 5:30 AM IST
+  workflow_dispatch:
 
 permissions:
-  contents: write # Grants GitHub permission to commit updated catalogue
+  contents: write
 
 jobs:
   sync-catalogue:
@@ -22,7 +22,8 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install requests google-genai
+          python -m pip install --upgrade pip
+          pip install requests google-generativeai
 
       - name: Run Sync Script
         env:
@@ -34,5 +35,5 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/daily_catalogue.json
+          git add -A
           git diff --quiet && git diff --staged --quiet || (git commit -m "chore: auto-sync daily OTT catalogue [skip ci]" && git push)
