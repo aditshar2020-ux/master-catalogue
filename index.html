@@ -143,15 +143,15 @@
       const [filterGold, setFilterGold] = useState(false);
       const [catalogue, setCatalogue] = useState(INITIAL_DATA);
 
-      // Check if fresh sync file exists
-      useEffect(() => {
-        fetch('./daily_catalogue.json')
-          .then(res => res.json())
-          .then(data => {
-            if (data && data.india) setCatalogue(data);
-          })
-          .catch(() => console.log("Serving offline master cache."));
-      }, []);
+      // CACHE BUSTER: Forces the browser to pull the freshest file every time
+    const cacheBuster = '?t=' + new Date().getTime();
+    fetch('./public/daily_catalogue.json' + cacheBuster)
+      .catch(() => fetch('./daily_catalogue.json' + cacheBuster))
+      .then(res => res.json())
+      .then(data => { 
+        if (data && data.india) setCatalogue(data); 
+      })
+      .catch(() => console.log("Using default fallback data."));
 
       const platformConfig = {
         netflix: { name: "Netflix India", color: "text-red-500", border: "border-red-500/30", bg: "bg-red-500/10" },
