@@ -1,0 +1,1110 @@
+{
+  "syncDate": "Nov 04, 2026",
+  "syncMode": "LIVE RSS + AI SYNC (gemini-3.6-flash)",
+  "india": {
+    "netflix": [
+      {
+        "rank": 1,
+        "title": "Baththa",
+        "type": "Film",
+        "year": "2026",
+        "imdb": "7.8",
+        "verdict": "Audience Choice",
+        "tag": "Action Thriller",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNjRmZGFjMDctMzRiNS00MmIwLTliYmMtODY5ZGFkOTE5YmFkXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 2,
+        "title": "Akka",
+        "type": "Show",
+        "year": "2026",
+        "imdb": "8.3",
+        "verdict": "Critical Gold",
+        "tag": "Drama Thriller",
+        "poster": "https://m.media-amazon.com/images/M/MV5BODQ2NmJiMjktMWU4ZS00YTA1LWIxZGUtYmE1ZDE4MmFhZjQyXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 3,
+        "title": "Obsession",
+        "type": "Show",
+        "year": "2026",
+        "imdb": "7.5",
+        "verdict": "Binge Hit",
+        "tag": "Psychological Thriller",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYzc1NWUwMDgtNGZlMS00ZmYzLWIzMzktNmMxMmY1MTUzNWExXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 4,
+        "title": "Do Patti",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "6.8",
+        "verdict": "Top Trending",
+        "tag": "Mystery Thriller",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZjRmMzA2MWYtZGEyMS00YjY4LWJiOTEtNjU1NWMyYTRjM2M3XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 5,
+        "title": "Meiyazhagan",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "8.4",
+        "verdict": "Must Watch",
+        "tag": "Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYmJjY2RlNmEtYmE3ZC00ZjZhLWFjNGUtYWI4YjJjZjg0MDNmXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 6,
+        "title": "Sector 36",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "7.6",
+        "verdict": "Dark Hit",
+        "tag": "Crime Thriller",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMGE0YWU1MmEtN2FhMS00NzBlLWE3MTgtMWZkYjdmNDg5ZTFiXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 7,
+        "title": "The Greatest of All Time",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "6.2",
+        "verdict": "Commercial Winner",
+        "tag": "Sci-Fi Action",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZTc5ZDEwZmUtOTJlOC00ZmFkLWJjMTEtYWI4YjE3N2EwYTE2XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 8,
+        "title": "Devara: Part 1",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "6.5",
+        "verdict": "Blockbuster",
+        "tag": "Action Epic",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYmI5NTljYWItMDhjMC00NDQwLWFhMjQtNWNjNDYzYzkwNGQ0XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 9,
+        "title": "IC 814: The Kandahar Hijack",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.9",
+        "verdict": "Critically Acclaimed",
+        "tag": "Historical Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNTk4ZDc4OTUtYmE3Mi00M2IzLWJhZWMtZTRmZTc2YzZkOGRmXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 10,
+        "title": "Khel Khel Mein",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "6.7",
+        "verdict": "Comedy Pick",
+        "tag": "Comedy Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNjIxYzA3ZjItYWM5YS00NjI5LWEzNTQtZWQ3M2Y0NDFkMzc5XkEyXkFqcGc@._V1_UX600_.jpg"
+      }
+    ],
+    "prime": [
+      {
+        "rank": 1,
+        "title": "Mirzapur Season 3",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.5",
+        "verdict": "Chart Topper",
+        "tag": "Crime Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZjhlYWY1NWUtYjU4Zi00MDg4LWE2N2MtYjQzMjBkMjgwOWI5XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 2,
+        "title": "Citadel: Honey Bunny",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.4",
+        "verdict": "Action Hit",
+        "tag": "Spy Thriller",
+        "poster": "https://m.media-amazon.com/images/M/MV5BOTE0ZWI1MmItODA4NS00NjM0LWJiODUtYzg0Y2I1YTUwYTRmXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 3,
+        "title": "Stree 2",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "7.7",
+        "verdict": "Mega Blockbuster",
+        "tag": "Horror Comedy",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTA1NmUxYzItZmVmNy00YmQxLTk4Y2UtZjVkMWUwMWQ5N2IxXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 4,
+        "title": "Call Me Bae",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "6.9",
+        "verdict": "Binge Favorite",
+        "tag": "Comedy Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNzQ4YjEwODktZjYxMC00NmFkLThlOTgtOWIzZGIyOGMwNWJlXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 5,
+        "title": "L2: Empuraan",
+        "type": "Film",
+        "year": "2026",
+        "imdb": "8.2",
+        "verdict": "Hyped Release",
+        "tag": "Action Thriller",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZTMwN2E5ZWYtMWRlYy00MmYzLTk2MDMtZWE1ZWJiY2NhNWY4XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 6,
+        "title": "Raayan",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "7.2",
+        "verdict": "Violent Classic",
+        "tag": "Action Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjY2N2JhNTMtYjMwZi00YWVmLTkzNDItNzEwMGE1YjgxYTg2XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 7,
+        "title": "Panchayat Season 3",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.9",
+        "verdict": "Masterpiece",
+        "tag": "Rural Comedy",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNjMwYWMxNjYtY2I2NC00OWE0LTg4MmQtMmI5ZGI2NzU4ODhiXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 8,
+        "title": "Paatal Lok Season 2",
+        "type": "Show",
+        "year": "2026",
+        "imdb": "8.7",
+        "verdict": "Critical Triumph",
+        "tag": "Crime Mystery",
+        "poster": "https://m.media-amazon.com/images/M/MV5BM2NlZDUwNzAtZTgyYi00YjhlLThhZTEtYTIxMzdjZjVkOTI3XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 9,
+        "title": "Bandish Bandits Season 2",
+        "type": "Show",
+        "year": "2026",
+        "imdb": "8.3",
+        "verdict": "Musical Hit",
+        "tag": "Romance Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNTU4ZTcyNjAtZmI5Ny00NGY4LTllNGQtN2Y2MjI2ODM3MjVjXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 10,
+        "title": "The Boys Season 4",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.7",
+        "verdict": "Global Smash",
+        "tag": "Superhero Satire",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZjU4OWNiYzQtMzc1NS00NjZlLTgyYTctZWY4ZmEzMTkxYjA4XkEyXkFqcGc@._V1_UX600_.jpg"
+      }
+    ],
+    "jiohotstar": [
+      {
+        "rank": 1,
+        "title": "Avaraachan & Sons",
+        "type": "Show",
+        "year": "2026",
+        "imdb": "8.1",
+        "verdict": "Regional Hit",
+        "tag": "Family Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTNkYmE1NjktZWQ3Yi00OTlkLWExM2YtNWVhZDVhNWRlMGQ1XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 2,
+        "title": "Dead End Job",
+        "type": "Show",
+        "year": "2026",
+        "imdb": "7.9",
+        "verdict": "Dark Comedy Pick",
+        "tag": "Comedy Thriller",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMzRiOWExZWItOTlmOS00N2FjLWFiOWQtYTdkNGY4NjBjMGJiXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 3,
+        "title": "Taaza Khabar Season 2",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.8",
+        "verdict": "Fan Favorite",
+        "tag": "Fantasy Thriller",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNjAzMDEzZmUtYjgzMy00NTYxLWJlODItYTMyZGI4YzdmZGY4XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 4,
+        "title": "The Legend of Hanuman Season 5",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "9.1",
+        "verdict": "Animated Gold",
+        "tag": "Mythology",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZThmZDIwYzEtMmQ1MS00MjhjLWJhYTktNzFkMzZhMzM0ZjNlXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 5,
+        "title": "Bad Newz",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "6.1",
+        "verdict": "Weekend Stream",
+        "tag": "Rom-Com",
+        "poster": "https://m.media-amazon.com/images/M/MV5BM2QxNGM0OTItMjE1MS00ZjRiLTg3ZTItMTg1NGMyNmRiMjc4XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 6,
+        "title": "Munjya",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "7.1",
+        "verdict": "Surprise Hit",
+        "tag": "Horror Comedy",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYTNjZDY2ODEtZTk2Yy00MjAyLWJlNWQtODM2NzdmYmE0ODJjXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 7,
+        "title": "The Bear Season 3",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.6",
+        "verdict": "Award Winner",
+        "tag": "Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjk2NWI5OTctODcwYy00NGRmLWFmN2YtOTZiNzFiYjVlODBkXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 8,
+        "title": "Agatha All Along",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.3",
+        "verdict": "Marvel Trend",
+        "tag": "Fantasy Action",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMDcyZTNjOTEtNzc5Yy00Y2UzLThkMWYtNTY4YmM4OWI5OTMzXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 9,
+        "title": "House of the Dragon Season 2",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.4",
+        "verdict": "Epic Fantasy",
+        "tag": "Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BOWU2ZDA0M2EtNWEyYy00MWUwLWI4NjAtYzkxMDFjYzZkNGFiXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 10,
+        "title": "Criminal Justice Season 4",
+        "type": "Show",
+        "year": "2026",
+        "imdb": "8.2",
+        "verdict": "Courtroom Gold",
+        "tag": "Legal Thriller",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZTAzZDYwMjgtOGViMy00MTRlLTg2NDEtZmM5ZWVmYzg1MWUwXkEyXkFqcGc@._V1_UX600_.jpg"
+      }
+    ],
+    "sonyliv": [
+      {
+        "rank": 1,
+        "title": "Meethe Mein Kya Hai",
+        "type": "Show",
+        "year": "2026",
+        "imdb": "8.0",
+        "verdict": "Feel Good Hit",
+        "tag": "Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMDBhYzUyODQtOWNhZS00NzM5LWE2ZmYtZDYxMDE1N2U2NjhhXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 2,
+        "title": "Sigma",
+        "type": "Show",
+        "year": "2026",
+        "imdb": "7.7",
+        "verdict": "Action Favorite",
+        "tag": "Thriller",
+        "poster": "https://m.media-amazon.com/images/M/MV5BY2VmZDc4ZTQtMTAxNi00MGVkLTk5OTUtMmE4ZjdjMmZjZWYyXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 3,
+        "title": "Freedom at Midnight",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.6",
+        "verdict": "Historical Gem",
+        "tag": "Period Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZTM2MzNhZTgtODkyOC00MTgzLThhODMtOWE2MDQ3YmFjNWI2XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 4,
+        "title": "Maharani Season 3",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.9",
+        "verdict": "Political Hit",
+        "tag": "Political Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNGYxNGQ2OTMtNDM4Yi00OGVmLTliOTktNjNhMmUyODhmOGQ0XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 5,
+        "title": "Gullak Season 4",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "9.1",
+        "verdict": "All-Time Best",
+        "tag": "Slice of Life",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZGE3NTA0MDQtZmM3NC00ZmUwLWJmODktMWZkNTczN2JiYzA0XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 6,
+        "title": "Scam 2010",
+        "type": "Show",
+        "year": "2026",
+        "imdb": "8.5",
+        "verdict": "Financial Drama",
+        "tag": "Biography",
+        "poster": "https://m.media-amazon.com/images/M/MV5BN2QyMTEzZTItODg0Yy00YjQyLWFlY2EtYjYzNzhmN2FjY2E0XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 7,
+        "title": "Manjummel Boys",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "8.6",
+        "verdict": "Survival Classic",
+        "tag": "Survival Thriller",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMDVkOGEzZDgtYWU4Yi00MDA3LWE4YmQtYjQxNDgwNDYxNGU4XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 8,
+        "title": "Undekhi Season 3",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.8",
+        "verdict": "Gritty Crime",
+        "tag": "Crime Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjBhNTAwNjQtMjNkNS00MTFkLWI2Y2MtZjExZDVhZDg0NDIzXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 9,
+        "title": "Cubicles Season 3",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.9",
+        "verdict": "Youth Drama",
+        "tag": "Corporate Comedy",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNGZiOTYzYjktZmMwNS00MzM4LTk4ZDUtNDk1Njc3ZjlmNTU0XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 10,
+        "title": "Bench Life",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.6",
+        "verdict": "Relatable Hit",
+        "tag": "Comedy Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZjhiZjFjYmMtOThhNy00ZWJmLTg5MWItYmQ1ODUyZTQ2YTFkXkEyXkFqcGc@._V1_UX600_.jpg"
+      }
+    ],
+    "zee5": [
+      {
+        "rank": 1,
+        "title": "Ghaath",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "8.1",
+        "verdict": "Critical Darlings",
+        "tag": "Crime Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BY2VjNWM3NTgtMTM0Ni00YzM4LWEwNzUtNDVkNjI3N2IyYTEwXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 2,
+        "title": "Manorathangal",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.3",
+        "verdict": "Anthology Gold",
+        "tag": "Literary Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BODk2YTEwMzItMTBiNC00N2Q1LTgxNjctOGFhM2VmM2QyNDFlXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 3,
+        "title": "Berlin",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "7.7",
+        "verdict": "Spy Masterpiece",
+        "tag": "Espionage Thriller",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZWU0OGU0N2UtODc2Ni00NDRlLTlmN2EtOTg1Y2RkZGZmODVmXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 4,
+        "title": "Rautu Ka Raaz",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "7.0",
+        "verdict": "Mystery Grab",
+        "tag": "Investigative Comedy",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNjk5NzRjODktZmUzNy00NzdkLTgxYzUtZDlkMTgwZmExNzQ3XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 5,
+        "title": "Demonte Colony 2",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "6.9",
+        "verdict": "Horror Hit",
+        "tag": "Supernatural Horror",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYmQ3ZGEwZjEtZDRjYS00YzJmLWFjMzUtMjNhMTliY2RiMTk3XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 6,
+        "title": "Silence 2",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "6.5",
+        "verdict": "Whodunit Pick",
+        "tag": "Mystery",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNjUyMGRkODktZjc2OC00ZDkyLWEzYTItYmJiOTE1Njc3YjY5XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 7,
+        "title": "Kakuda",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "5.9",
+        "verdict": "Fun Stream",
+        "tag": "Horror Comedy",
+        "poster": "https://m.media-amazon.com/images/M/MV5BOWUxMGViNDMtMDA0OS00OGI5LWExZDQtNTVkOTNkYjZiY2IyXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 8,
+        "title": "Sunflower Season 2",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.4",
+        "verdict": "Quirky Mystery",
+        "tag": "Dark Comedy",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZDg2Y2JjNGYtZGNlZC00YzUxLWI0NmEtNzJlM2NiYjhjNzRiXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 9,
+        "title": "Taj: Divided by Blood",
+        "type": "Show",
+        "year": "2023",
+        "imdb": "7.0",
+        "verdict": "Period Epic",
+        "tag": "Historical Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BODE0ODI3OTAtYjI1Yi00MTgxLTgwMmQtMzAzNWI4YjRkNThkXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 10,
+        "title": "Gyarah Gyarah",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.0",
+        "verdict": "Sci-Fi Favorite",
+        "tag": "Time Travel Mystery",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTlkYjIxNGUtZjk1ZC00MmU1LWEzMDUtMWNhNDBkNDI5NDRkXkEyXkFqcGc@._V1_UX600_.jpg"
+      }
+    ]
+  },
+  "global": {
+    "netflix": [
+      {
+        "rank": 1,
+        "title": "The Diplomat Season 2",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.0",
+        "verdict": "Must-Watch",
+        "tag": "Political Thriller",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMmY4YWMyOGItMzA1MC00ZjY0LWEyM2QtZWFmNGNhNDZlZjk5XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 2,
+        "title": "Don't Move",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "5.8",
+        "verdict": "Binge Favorite",
+        "tag": "Survival Horror",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNDg4NTdjYmYtN2ZiNi00YWUwLWE4MzItMWU3ZTM3NTNiZTY5XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 3,
+        "title": "Outer Banks Season 4",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.5",
+        "verdict": "Teen Hit",
+        "tag": "Action Adventure",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNzUzMmJmZTQtZjI1Yi00YjdlLWFkMGQtMDkxMjgwNTgxYzZkXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 4,
+        "title": "Monsters: The Lyle and Erik Menendez Story",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.9",
+        "verdict": "True Crime Hit",
+        "tag": "Biographical Crime",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYzBjMDg4YjctYzg3ZS00ZDFmLWI1YjctM2RkZGVjZWEyYWQ0XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 5,
+        "title": "Nobody Wants This",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.1",
+        "verdict": "Rom-Com Gold",
+        "tag": "Romantic Comedy",
+        "poster": "https://m.media-amazon.com/images/M/MV5BM2ExMmE3YTgtY2RmNC00ZWIzLWJlNGYtYmViNWVjM2Q1MjNjXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 6,
+        "title": "The Lincoln Lawyer Season 3",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.7",
+        "verdict": "Legal Drama Pick",
+        "tag": "Crime Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNWE3MWEyYzUtODc5NS00M2FmLWE3ZGYtMjU2ZTBhN2UwNWQ1XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 7,
+        "title": "Woman of the Hour",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "6.6",
+        "verdict": "Directorial Triumph",
+        "tag": "Crime Thriller",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYzliNzRjNDMtYTFmOS00NDQxLWJlOWMtZTViNjcyMzc0NzQwXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 8,
+        "title": "Heartstopper Season 3",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.6",
+        "verdict": "Heartwarming",
+        "tag": "Coming-of-Age Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZjUxNjc3YjYtNzg2Yy00OWEwLTljOGItNmE4MzgwMzQzNGRmXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 9,
+        "title": "Lonely Planet",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "5.7",
+        "verdict": "Casual Stream",
+        "tag": "Romance Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BOTc4YmQ4ODctNjQ5YS00YmNjLTk3MjctZjIwMGJlMDdhNzc1XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 10,
+        "title": "Rebel Ridge",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "6.9",
+        "verdict": "Action Masterpiece",
+        "tag": "Action Thriller",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYTE4ZDE5ZTktZWZkMC00MGY4LWFkZDUtZTc5YWU3NzM2YmM3XkEyXkFqcGc@._V1_UX600_.jpg"
+      }
+    ],
+    "prime": [
+      {
+        "rank": 1,
+        "title": "The Lord of the Rings: The Rings of Power Season 2",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.0",
+        "verdict": "Visual Spectacle",
+        "tag": "Fantasy Epic",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjlhYTk3ZGQtNjdlYi00NDQyLTgxZTEtMzk0OTU5OTRhNGZhXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 2,
+        "title": "Citadel: Honey Bunny",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.4",
+        "verdict": "Spy Franchise Pick",
+        "tag": "Action Thriller",
+        "poster": "https://m.media-amazon.com/images/M/MV5BOTE0ZWI1MmItODA4NS00NjM0LWJiODUtYzg0Y2I1YTUwYTRmXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 3,
+        "title": "Cross",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.8",
+        "verdict": "New Release",
+        "tag": "Crime Thriller",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMWIzZjg0MTYtMjMxYy00NWJiLWJjMDUtOWE5NWIxNDBiY2FhXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 4,
+        "title": "The Boys Season 4",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.7",
+        "verdict": "Chart Topper",
+        "tag": "Superhero Satire",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZjU4OWNiYzQtMzc1NS00NjZlLTgyYTctZWY4ZmEzMTkxYjA4XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 5,
+        "title": "Fallout",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.5",
+        "verdict": "Sci-Fi Triumph",
+        "tag": "Post-Apocalyptic",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYzE1MTZmY2ItMTgxNi00OGU5LTk4NTItMmY2ODFhYzhjZjRkXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 6,
+        "title": "The Idea of You",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "6.4",
+        "verdict": "Rom-Com Hit",
+        "tag": "Romance",
+        "poster": "https://m.media-amazon.com/images/M/MV5BY2RkZmZjYTQtOGExMS00YTljLWJmNzQtMzI0ZDU3YzFjNzJkXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 7,
+        "title": "Road House",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "6.2",
+        "verdict": "Action Stream",
+        "tag": "Action Comedy",
+        "poster": "https://m.media-amazon.com/images/M/MV5BODVkYjlkM2UtNWVlMS00N2U1LTgxOTYtODlmNmE1YTgzMjczXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 8,
+        "title": "Outer Range Season 2",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.1",
+        "verdict": "Mystery Pick",
+        "tag": "Sci-Fi Western",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNjg1ZThkYWItNWRiYS00ZDlmLWIyNDgtZTI4NTg1Zjk0YTM3XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 9,
+        "title": "Invincible Season 2",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.7",
+        "verdict": "Animation Classic",
+        "tag": "Superhero Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZGM5MmM2ZDAtMzBjNS00NjMxLWE4ZTMtNzFjMWMxYzU2ZThjXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 10,
+        "title": "Reacher Season 2",
+        "type": "Show",
+        "year": "2023",
+        "imdb": "8.1",
+        "verdict": "Fan Favorite",
+        "tag": "Action Thriller",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMmE0YTA3MTItMjhiNC00MGQ3LTllZDktNGNiZWY1OWFmNmM1XkEyXkFqcGc@._V1_UX600_.jpg"
+      }
+    ],
+    "max": [
+      {
+        "rank": 1,
+        "title": "The Penguin",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.8",
+        "verdict": "Masterpiece",
+        "tag": "Crime Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYmU3MzYzOWEtOTdkZi00YzA1LTliMzQtNDdiZDBjY2FiNmFlXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 2,
+        "title": "Dune: Prophecy",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.2",
+        "verdict": "Sci-Fi Gold",
+        "tag": "Sci-Fi Fantasy",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNWIyNmU5MGYtZDZmNi00ZjAwLWJlYjgtZTc0ZGIxMDE4ZGYwXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 3,
+        "title": "House of the Dragon Season 2",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.4",
+        "verdict": "Global Sensation",
+        "tag": "Fantasy Epic",
+        "poster": "https://m.media-amazon.com/images/M/MV5BOWU2ZDA0M2EtNWEyYy00MWUwLWI4NjAtYzkxMDFjYzZkNGFiXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 4,
+        "title": "Industry Season 3",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.6",
+        "verdict": "Critical Darling",
+        "tag": "Financial Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYjIxM2VhNmQtN2QyYy00MmY4LWFlZmUtMDY4YmFmZWQ2OTQ5XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 5,
+        "title": "Salem's Lot",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "5.7",
+        "verdict": "Spooky Stream",
+        "tag": "Horror",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTVhN2Y4NDAtYjFmMC00YjI3LTgyMTctYmNmZDhjZmU0MGQ0XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 6,
+        "title": "The Franchise",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.1",
+        "verdict": "Satirical Hit",
+        "tag": "Comedy",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTdhNmQwMjAtYzhjNC00YWVlLWJhNmYtZDcxMTA0OGI2NWNjXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 7,
+        "title": "Hacks Season 3",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.3",
+        "verdict": "Award Winner",
+        "tag": "Comedy Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjE0MmM5YzktNGY0NS00ZmQ0LWI1YjEtZjY2NDA4ZmZiNGQ2XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 8,
+        "title": "True Detective: Night Country",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.4",
+        "verdict": "Dark Thriller",
+        "tag": "Crime Mystery",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYjgwYzA1NWMtNDYyZi00ZGQyLWI5NTktMDYwZjE2OTIwZWEwXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 9,
+        "title": "Curb Your Enthusiasm Season 12",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.8",
+        "verdict": "Classic Comedy",
+        "tag": "Comedy",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZmFiZDY2ZDItZDliOC00Y2JhLTliMWYtODkzMTA0YmIwZDA3XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 10,
+        "title": "The Sympathizer",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.0",
+        "verdict": "Stylized Hit",
+        "tag": "Historical Satire",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZDI2MGYzYWMtZjVlNS00N2JlLTg0OTQtZWU3MDY5MmViYTg5XkEyXkFqcGc@._V1_UX600_.jpg"
+      }
+    ],
+    "disney": [
+      {
+        "rank": 1,
+        "title": "Agatha All Along",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.3",
+        "verdict": "Viral Hit",
+        "tag": "Superhero Fantasy",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMDcyZTNjOTEtNzc5Yy00Y2UzLThkMWYtNTY4YmM4OWI5OTMzXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 2,
+        "title": "Inside Out 2",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "7.6",
+        "verdict": "Family Masterpiece",
+        "tag": "Animation Comedy",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYWY3MDE2Y2UtOTE3Zi00MGUzLTg2MTItZjE1ZWVkMGVlODRmXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 3,
+        "title": "Deadpool & Wolverine",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "7.8",
+        "verdict": "Mega Blockbuster",
+        "tag": "Action Comedy",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZTk5ODY0MmQtMzA3Ni00NGY1LThiYzItZThiNjFiNDM4MTM3XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 4,
+        "title": "The Acolyte",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "4.1",
+        "verdict": "Debated Release",
+        "tag": "Sci-Fi Fantasy",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYzkxYjcxOWUtNWM5Zi00MzY3LTliYjAtNGYyNjE5OWY2MmU4XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 5,
+        "title": "Percy Jackson and the Olympians",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.1",
+        "verdict": "Fantasy Classic",
+        "tag": "Action Adventure",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMGUwOTQ0ZjMtYzA3NS00YWJiLWE3YzEtOGI1YzNkZGFlOWQ5XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 6,
+        "title": "The Bear Season 3",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.6",
+        "verdict": "Acclaimed Hit",
+        "tag": "Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjk2NWI5OTctODcwYy00NGRmLWFmN2YtOTZiNzFiYjVlODBkXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 7,
+        "title": "Shogun",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.7",
+        "verdict": "Emmy Sweeper",
+        "tag": "Historical Epic",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZmJkMDRjYzEtMWI3Ny00OWE3LWJlNTItMGQ1MTQzMzc3NDY5XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 8,
+        "title": "Star Wars: Skeleton Crew",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.5",
+        "verdict": "Upcoming Favorite",
+        "tag": "Sci-Fi Adventure",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTMzMzM4NzkzOV5BMl5BanBnXkFtZTcwNjIyMTIyMw@@.jpg"
+      },
+      {
+        "rank": 9,
+        "title": "X-Men '97",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.9",
+        "verdict": "Nostalgic Triumph",
+        "tag": "Animated Action",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZDE0Zjk5OGYtZTk3OC00ZDZhLWE2NGQtNzc3NmJhNjljYzY5XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 10,
+        "title": "Loki Season 2",
+        "type": "Show",
+        "year": "2023",
+        "imdb": "8.2",
+        "verdict": "Fan Classic",
+        "tag": "Sci-Fi Fantasy",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYzA2YjM2ZWQtYTZhMS00OTI3LTlhYzQtZjBiZWZkMDdlNjA5XkEyXkFqcGc@._V1_UX600_.jpg"
+      }
+    ],
+    "apple": [
+      {
+        "rank": 1,
+        "title": "Disclaimer",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.7",
+        "verdict": "Prestige Drama",
+        "tag": "Psychological Thriller",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMzYyOTI4MGItYWQ5YS00ODQ5LWIyOTAtYjY5ODViMWI3MDZiXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 2,
+        "title": "Shrinking Season 2",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.0",
+        "verdict": "Heartfelt Comedy",
+        "tag": "Comedy Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYmU3Yjg0Y2UtN2E5Yy00NzYyLThlNzQtOTI2YWE2OWJhYTUyXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 3,
+        "title": "Slow Horses Season 4",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.2",
+        "verdict": "Spy Triumph",
+        "tag": "Espionage Thriller",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMmM2NDhmYjktNTIzZC00YjIwLWE1ZmUtNzM1MTNiMTU2NjdjXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 4,
+        "title": "Bad Monkey",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.4",
+        "verdict": "Binge Favorite",
+        "tag": "Crime Comedy",
+        "poster": "https://m.media-amazon.com/images/M/MV5BN2RjMGNiMmEtMDkzZS00ODhjLTk0OGEtMTE0YWI2ODJjMDNhXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 5,
+        "title": "Presumed Innocent",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.7",
+        "verdict": "Courtroom Hit",
+        "tag": "Legal Thriller",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNDk1MWM3NmItZmNjZS00ZmZkLTk1ZDAtZjFiN2FiZjczNmZhXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 6,
+        "title": "Silo Season 2",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.1",
+        "verdict": "Sci-Fi Return",
+        "tag": "Dystopian Sci-Fi",
+        "poster": "https://m.media-amazon.com/images/M/MV5BN2E5ODJmOTUtYTk0NS00NmFiLTk0MTgtZDRlNzE1YmExMjk4XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 7,
+        "title": "Pachinko Season 2",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.4",
+        "verdict": "Masterpiece",
+        "tag": "Historical Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BN2QwMTgyZTAtOTM4MS00OGRhLWIzNjQtZmQ3Yzc5NmNiYzhlXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 8,
+        "title": "Sunny",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "6.7",
+        "verdict": "Quirky Sci-Fi",
+        "tag": "Dark Comedy",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZjkxZWUzNGEtNWFjZi00MDJmLWI2ODctMDRiZTdhY2RiNmZkXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 9,
+        "title": "The Morning Show Season 3",
+        "type": "Show",
+        "year": "2023",
+        "imdb": "8.2",
+        "verdict": "Prestige Hit",
+        "tag": "Drama",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYTY1YjM0Y2QtODFkMy00ZDc4LTg3MWMtMDE4MGY5NzFjYTRhXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 10,
+        "title": "Dark Matter",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.7",
+        "verdict": "Mind Bending",
+        "tag": "Sci-Fi Thriller",
+        "poster": "https://m.media-amazon.com/images/M/MV5BN2U4YWMyZTMtMmEzMy00Yzk0LThiNTctNjE0YTc5ZDZhZTk5XkEyXkFqcGc@._V1_UX600_.jpg"
+      }
+    ]
+  },
+  "beyond": [
+    {
+      "title": "The Complete Kubrick Box Set",
+      "director": "Stanley Kubrick",
+      "year": "2026",
+      "event": "Criterion Collection Release",
+      "imdb": "9.0",
+      "where": "Criterion Channel / Physical 4K UHD",
+      "note": "Criterion presents a definitive box set preserving original mono tracks alongside gorgeous 4K restorations of Kubrick's masterpieces. Essential physical media for cinema historians and audio purists alike.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMGRkNGJmNzctZjRlZS00ODkzLTlmYTMtNjA0MzI2YzgwYzNiXkEyXkFqcGc@._V1_UX600_.jpg"
+    },
+    {
+      "title": "The Silence of the Lambs (4K Restoration)",
+      "director": "Jonathan Demme",
+      "year": "1991",
+      "event": "Criterion 4K Re-release",
+      "imdb": "8.6",
+      "where": "Criterion Channel",
+      "note": "Jonathan Demme's psychological thriller gets a nerve-jangling native 4K restoration that emphasizes its unsettling intimacy and tactile cinematography. Anthony Hopkins and Jodie Foster's duel of minds has never looked sharper.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BNDdhOGJhYzctYzYwZC00YmI2LWI0MjctYjg4ODdlMDExYjBlXkEyXkFqcGc@._V1_UX600_.jpg"
+    },
+    {
+      "title": "Welcome II the Terrordome",
+      "director": "Ngozi Onwurah",
+      "year": "1995",
+      "event": "Criterion Remaster",
+      "imdb": "6.7",
+      "where": "Criterion Channel / MUBI",
+      "note": "A landmark of Black British independent cinema gets a much-needed digital rediscovery. Onwurah's dystopian vision blends mythic tragedy with sharp social critique.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BYjExM2NhZWYtZTg3MC00NDg5LWEyMmItNWY4NTcyZWZmMmVjXkEyXkFqcGc@._V1_UX600_.jpg"
+    },
+    {
+      "title": "Some Like It Hot",
+      "director": "Billy Wilder",
+      "year": "1959",
+      "event": "Ferragamo Hollywood Heritage Screening",
+      "imdb": "8.2",
+      "where": "MUBI / Criterion",
+      "note": "Wilder's timeless cross-dressing comedy celebrated in classic Hollywood retrospectives. A hilarious, briskly paced showcase of Marilyn Monroe, Tony Curtis, and Jack Lemmon at their absolute peak.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BZTllZDYyNjEtY2RmMS00NmJhLWI4ODAtMTQ0NWFiZTJhZjA0XkEyXkFqcGc@._V1_UX600_.jpg"
+    },
+    {
+      "title": "The Fight",
+      "director": "William Greaves",
+      "year": "1974",
+      "event": "NYPL Film Series Focus",
+      "imdb": "7.9",
+      "where": "MUBI",
+      "note": "Greaves' pioneering documentary captures the tension and cultural impact surrounding the Ali-Frazier fight with avant-garde editing. A seminal work in non-fiction Black cinema.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BNzg0ZGNmYTUtNGQyZC00MjhhLWEwNjUtOGQyOWZiMjMxZmE5XkEyXkFqcGc@._V1_UX600_.jpg"
+    },
+    {
+      "title": "Hoop Dreams",
+      "director": "Steve James",
+      "year": "1994",
+      "event": "Sundance Legacy Retrospective",
+      "imdb": "8.3",
+      "where": "Criterion Channel",
+      "note": "Highlighted ahead of Sundance's legacy program, Steve James' epic documentary remains an unmatched study of American sports, race, and class. Its emotional resonance continues to endure decades later.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BOGQ0NDdmZjUtYWY5OC00MDQzLThjNTgtZjc5ZTVmNGNhMmI2XkEyXkFqcGc@._V1_UX600_.jpg"
+    },
+    {
+      "title": "Y Tu Mamá También",
+      "director": "Alfonso Cuarón",
+      "year": "2001",
+      "event": "Sundance 2027 Legacy Program Highlight",
+      "imdb": "7.7",
+      "where": "MUBI / Criterion",
+      "note": "Cuarón’s sensual, politically charged road movie receives renewed festival recognition. It remains a masterclass in naturalistic performances and kinetic camera work.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BNTRmZmNlMjktZDRkMi00OGNjLWJkZGUtMDljNDViMGE3MjNhXkEyXkFqcGc@._V1_UX600_.jpg"
+    },
+    {
+      "title": "Memento",
+      "director": "Christopher Nolan",
+      "year": "2000",
+      "event": "Sundance Legacy Selection",
+      "imdb": "8.4",
+      "where": "MUBI",
+      "note": "Nolan's breakthrough neo-noir continues to inspire modern puzzle-box thrillers. Its reverse-chronological editing structure retains all of its original visceral bite.",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMGQ3Y2Q4NjktN2E4Ny00Y2Q2LTliZDUtZTNiNjRhY2I0NGIyXkEyXkFqcGc@._V1_UX600_.jpg"
+    }
+  ]
+}
