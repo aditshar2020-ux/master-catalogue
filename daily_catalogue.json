@@ -1,515 +1,569 @@
 {
-  "syncDate": "Nov 04, 2026",
-  "syncMode": "LIVE TOP 10 CHARTS (FlixPatrol + Tudum + OTT Sync)",
+  "syncDate": "Nov 05, 2026",
+  "syncTimestamp": "Nov 05, 2026 • 01:14 AM IST",
+  "activeModel": "NONE (Fallback)",
+  "liveCount": 0,
+  "totalCount": 100,
+  "syncMode": "LIVE SCRAPED: 0/100 TITLES • NONE (Fallback)",
   "india": {
     "netflix": [
       {
         "rank": 1,
-        "title": "Devara: Part 1",
+        "title": "Baththa",
         "type": "Film",
-        "year": "2024",
-        "imdb": "6.3",
-        "verdict": "#1 on Netflix India",
-        "tag": "Action Thriller",
-        "poster": "https://m.media-amazon.com/images/M/MV5BYmI5NTljYWItMDhjMC00NDQwLWFhMjQtNWNjNDYzYzkwNGQ0XkEyXkFqcGc@._V1_UX600_.jpg"
+        "year": "2026",
+        "imdb": "8.2",
+        "verdict": "#1 Movie in India Today",
+        "tag": "Action Comedy",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNjRmZGFjMDctMzRiNS00MmIwLTliYmMtODY5ZGFkOTE5YmFkXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 2,
-        "title": "Do Patti",
-        "type": "Film",
-        "year": "2024",
-        "imdb": "6.5",
-        "verdict": "#2 on Netflix India",
-        "tag": "Mystery Drama",
-        "poster": "https://m.media-amazon.com/images/M/MV5BZjRmMzA2MWYtZGEyMS00YjY4LWJiOTEtNjU1NWMyYTRjM2M3XkEyXkFqcGc@._V1_UX600_.jpg"
+        "title": "Akka",
+        "type": "Show",
+        "year": "2026",
+        "imdb": "8.0",
+        "verdict": "#1 Show in India Today",
+        "tag": "Crime Thriller",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BODQ2NmJiMjktMWU4ZS00YTA1LWIxZGUtYmE1ZDE4MmFhZjQyXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 3,
-        "title": "The Great Indian Kapil Show",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "7.1",
-        "verdict": "#3 on Netflix India",
-        "tag": "Comedy Talk Show",
-        "poster": "https://m.media-amazon.com/images/M/MV5BYTkxNTNhYjktMTcxNy00OTA5LThlY2ItZjM3YTFjYmQ1ZmYzXkEyXkFqcGc@._V1_UX600_.jpg"
+        "title": "Don't Trouble the Trouble",
+        "type": "Film",
+        "year": "2026",
+        "imdb": "7.7",
+        "verdict": "#2 Movie in India Today",
+        "tag": "Fantasy Comedy",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZmY3YmNjMGUtMTliZS00NzUzLWFmMmItNjVkOTkwMDMxMDMwXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 4,
-        "title": "Meiyazhagan",
+        "title": "Gajab Raat",
         "type": "Film",
-        "year": "2024",
-        "imdb": "8.5",
-        "verdict": "#4 on Netflix India",
-        "tag": "Drama",
-        "poster": "https://m.media-amazon.com/images/M/MV5BYmJjY2RlNmEtYmE3ZC00ZjZhLWFjNGUtYWI4YjJjZjg0MDNmXkEyXkFqcGc@._V1_UX600_.jpg"
+        "year": "2026",
+        "imdb": "7.9",
+        "verdict": "#3 Movie in India Today",
+        "tag": "Noir Thriller",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BM2JjYmI2YTMtMDZlZi00MmNjLWEyMmItZDlmMWM0MTJjY2E1XkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 5,
-        "title": "Sector 36",
-        "type": "Film",
-        "year": "2024",
-        "imdb": "7.2",
-        "verdict": "#5 on Netflix India",
-        "tag": "Crime Thriller",
-        "poster": "https://m.media-amazon.com/images/M/MV5BMGE0YWU1MmEtN2FhMS00NzBlLWE3MTgtMWZkYjdmNDg5ZTFiXkEyXkFqcGc@._V1_UX600_.jpg"
+        "title": "Dead-End Job",
+        "type": "Show",
+        "year": "2026",
+        "imdb": "7.8",
+        "verdict": "#3 Show in India Today",
+        "tag": "Crime Mystery",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMzRiOWExZWItOTlmOS00N2FjLWFiOWQtYTdkNGY4NjBjMGJiXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 6,
-        "title": "IC 814: The Kandahar Hijack",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "7.4",
-        "verdict": "#6 on Netflix India",
-        "tag": "Historical Drama",
-        "poster": "https://m.media-amazon.com/images/M/MV5BNTk4ZDc4OTUtYmE3Mi00M2IzLWJhZWMtZTRmZTc2YzZkOGRmXkEyXkFqcGc@._V1_UX600_.jpg"
+        "title": "Sigma",
+        "type": "Film",
+        "year": "2026",
+        "imdb": "7.5",
+        "verdict": "#4 Movie in India Today",
+        "tag": "Action Thriller",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BY2VmZDc4ZTQtMTAxNi00MGVkLTk5OTUtMmE4ZjdjMmZjZWYyXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 7,
-        "title": "Phir Aayi Hasseen Dillruba",
-        "type": "Film",
-        "year": "2024",
-        "imdb": "6.1",
-        "verdict": "#7 on Netflix India",
-        "tag": "Romantic Thriller",
-        "poster": "https://m.media-amazon.com/images/M/MV5BYmM5Zjc2ZmMtOWIwMy00OWY4LTkzZmQtODA5NTVlNDFlNGZlXkEyXkFqcGc@._V1_UX600_.jpg"
+        "title": "Dhindora",
+        "type": "Show",
+        "year": "2026",
+        "imdb": "8.4",
+        "verdict": "#4 Show in India Today",
+        "tag": "Comedy Series",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNDgxYzRkNGEtMzMzZi00MjgyLTk3YzQtNjcxYjJkM2I2M2Q5XkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 8,
-        "title": "Maharaja",
+        "title": "Avaraachan & Sons",
         "type": "Film",
-        "year": "2024",
-        "imdb": "8.5",
-        "verdict": "#8 on Netflix India",
-        "tag": "Action Crime",
-        "poster": "https://m.media-amazon.com/images/M/MV5BZWQ2YzJmNjMtNGEzMC00YzkwLTk0Y2QtODdkMjFkM2UwNDU1XkEyXkFqcGc@._V1_UX600_.jpg"
+        "year": "2026",
+        "imdb": "7.6",
+        "verdict": "#5 Movie in India Today",
+        "tag": "Malayalam Drama",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTNkYmE1NjktZWQ3Yi00OTlkLWExM2YtNWVhZDVhNWRlMGQ1XkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 9,
-        "title": "Wild Wild Punjab",
+        "title": "Meethe Mein Kya Hai",
         "type": "Film",
-        "year": "2024",
-        "imdb": "6.0",
-        "verdict": "#9 on Netflix India",
-        "tag": "Comedy",
-        "poster": "https://m.media-amazon.com/images/M/MV5BZjA3Y2E0ZTEtNjBjMi00ZmMwLTkxZmItZmRiODk4YmMzNWMxXkEyXkFqcGc@._V1_UX600_.jpg"
+        "year": "2026",
+        "imdb": "7.5",
+        "verdict": "#6 Movie in India Today",
+        "tag": "Family Rom-Com",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMDBhYzUyODQtOWNhZS00NzM5LWE2ZmYtZDYxMDE1N2U2NjhhXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 10,
-        "title": "Kota Factory Season 3",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "9.0",
-        "verdict": "#10 on Netflix India",
-        "tag": "Drama",
-        "poster": "https://m.media-amazon.com/images/M/MV5BY2U5MjY1NWEtZDI2MS00NTlhLWEyODQtYzE0MzY3NDUyNzE3XkEyXkFqcGc@._V1_UX600_.jpg"
+        "title": "The Paradise",
+        "type": "Film",
+        "year": "2026",
+        "imdb": "8.1",
+        "verdict": "Top 10 India Today",
+        "tag": "Action Drama",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMGI3N2I1ZWUtYzMyZS00MTRlLThlNDUtNWZhY2MxZTlmMDJjXkEyXkFqcGc@._V1_UX600_.jpg"
       }
     ],
     "prime": [
       {
         "rank": 1,
-        "title": "Stree 2",
+        "title": "Mirzapur: The Movie",
         "type": "Film",
-        "year": "2024",
-        "imdb": "7.3",
-        "verdict": "#1 on Prime India",
-        "tag": "Horror Comedy",
-        "poster": "https://m.media-amazon.com/images/M/MV5BMTA1NmUxYzItZmVmNy00YmQxLTk4Y2UtZjVkMWUwMWQ5N2IxXkEyXkFqcGc@._V1_UX600_.jpg"
-      },
-      {
-        "rank": 2,
-        "title": "Citadel: Honey Bunny",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "7.1",
-        "verdict": "#2 on Prime India",
-        "tag": "Action Thriller",
-        "poster": "https://m.media-amazon.com/images/M/MV5BOTE0ZWI1MmItODA4NS00NjM0LWJiODUtYzg0Y2I1YTUwYTRmXkEyXkFqcGc@._V1_UX600_.jpg"
-      },
-      {
-        "rank": 3,
-        "title": "Panchayat Season 3",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "8.9",
-        "verdict": "#3 on Prime India",
-        "tag": "Comedy Drama",
-        "poster": "https://m.media-amazon.com/images/M/MV5BNjMwYWMxNjYtY2I2NC00OWE0LTg4MmQtMmI5ZGI2NzU4ODhiXkEyXkFqcGc@._V1_UX600_.jpg"
-      },
-      {
-        "rank": 4,
-        "title": "Mirzapur Season 3",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "8.4",
-        "verdict": "#4 on Prime India",
-        "tag": "Crime Drama",
+        "year": "2026",
+        "imdb": "8.3",
+        "verdict": "#1 Overall in India Today",
+        "tag": "Gangster Crime",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BZjhlYWY1NWUtYjU4Zi00MDg4LWE2N2MtYjQzMjBkMjgwOWI5XkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
-        "rank": 5,
-        "title": "Call Me Bae",
+        "rank": 2,
+        "title": "Rise and Fall",
         "type": "Show",
-        "year": "2024",
-        "imdb": "6.8",
-        "verdict": "#5 on Prime India",
-        "tag": "Comedy Drama",
-        "poster": "https://m.media-amazon.com/images/M/MV5BNzQ4YjEwODktZjYxMC00NmFkLThlOTgtOWIzZGIyOGMwNWJlXkEyXkFqcGc@._V1_UX600_.jpg"
+        "year": "2026",
+        "imdb": "8.0",
+        "verdict": "#1 Show in India Today",
+        "tag": "Drama Series",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BY2Y3MzI2MDYtMWEzYS00OTY4LWEzNDEtNzNjODIwOTFhNTMzXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 3,
+        "title": "Comrade Kalyan",
+        "type": "Film",
+        "year": "2026",
+        "imdb": "7.8",
+        "verdict": "#2 Movie in India Today",
+        "tag": "Political Action",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjcyOTYxN2MtMDMyNy00MTQwLTkzYjAtMGQ5MzYzNzc1NDRmXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 4,
+        "title": "Chaar Yaar",
+        "type": "Show",
+        "year": "2026",
+        "imdb": "7.6",
+        "verdict": "#2 Show in India Today",
+        "tag": "Friendship Drama",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNTQwZmJlOWMtMDcxNS00N2Y2LTgxMmItMDQxMWE3YzljMDQ3XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 5,
+        "title": "Love in Disguise",
+        "type": "Show",
+        "year": "2026",
+        "imdb": "7.7",
+        "verdict": "#3 Show in India Today",
+        "tag": "Romantic Drama",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNWY3ZjliZTUtYjc5Yy00YTEzLWE2NDQtMWUxNGU1NDgyMjRiXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 6,
-        "title": "Indian Police Force",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "5.2",
-        "verdict": "#6 on Prime India",
-        "tag": "Action Thriller",
-        "poster": "https://m.media-amazon.com/images/M/MV5BMDVmYTExYWUtZWNmNS00ZWFlLWIwMzgtNjBiNzllZmE5NmVlXkEyXkFqcGc@._V1_UX600_.jpg"
+        "title": "Khalifa: The Ruler",
+        "type": "Film",
+        "year": "2026",
+        "imdb": "7.9",
+        "verdict": "#4 Movie in India Today",
+        "tag": "Malayalam Action",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMWM2ZDY1MjQtN2RkZS00MWVmLWEzOWItZDIyZGNkNTQ3OWIwXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 7,
-        "title": "Teri Baaton Mein Aisa Ujha Jiya",
+        "title": "The Dark Heaven",
         "type": "Film",
-        "year": "2024",
-        "imdb": "6.3",
-        "verdict": "#7 on Prime India",
-        "tag": "Romantic Comedy",
-        "poster": "https://m.media-amazon.com/images/M/MV5BOThmN2E5MjctMjZjNC00M2U1LTkxZTMtMzQ3MjM0ODIzNjAxXkEyXkFqcGc@._V1_UX600_.jpg"
+        "year": "2026",
+        "imdb": "7.5",
+        "verdict": "#5 Movie in India Today",
+        "tag": "Mystery Thriller",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BOTUxODAxMGUtMDQwMy00ZDE1LWE2ZTEtODIwYmU1N2EyNjM0XkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 8,
-        "title": "Yodha",
-        "type": "Film",
-        "year": "2024",
-        "imdb": "5.8",
-        "verdict": "#8 on Prime India",
-        "tag": "Action Thriller",
-        "poster": "https://m.media-amazon.com/images/M/MV5BZjAyYjZmMjQtNGZlNi00ZGQ0LTkxNTUtNWQ2YzA3MWJjYjc2XkEyXkFqcGc@._V1_UX600_.jpg"
+        "title": "Dupahiya",
+        "type": "Show",
+        "year": "2026",
+        "imdb": "8.1",
+        "verdict": "#4 Show in India Today",
+        "tag": "Heartland Comedy",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNWUwNTgwZjktZjVlNC00YmRkLWFhNDQtMDgwOGNjZTc5MjdiXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 9,
-        "title": "Poacher",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "7.8",
-        "verdict": "#9 on Prime India",
-        "tag": "Crime Drama",
-        "poster": "https://m.media-amazon.com/images/M/MV5BYjYwNjBjNWYtNGQyZS00YmE4LWFlMTktMDdjOGUyNTg3MDg2XkEyXkFqcGc@._V1_UX600_.jpg"
+        "title": "Awarapan 2",
+        "type": "Film",
+        "year": "2026",
+        "imdb": "7.4",
+        "verdict": "#6 Movie in India Today",
+        "tag": "Romantic Thriller",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZDJiYmZhMGYtMDZlYi00YTY1LWI3NDktNzYxMTY4NzhkNTU5XkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 10,
-        "title": "The Family Man Season 2",
+        "title": "Duniya Ki Thain Thain",
         "type": "Show",
-        "year": "2021",
-        "imdb": "8.7",
-        "verdict": "#10 on Prime India",
-        "tag": "Action Thriller",
-        "poster": "https://m.media-amazon.com/images/M/MV5BN2I4ODE3YzQtMzZhMy00YjhlLWE1MmMtYTA0MjkxNTJmMTZlXkEyXkFqcGc@._V1_UX600_.jpg"
+        "year": "2026",
+        "imdb": "7.6",
+        "verdict": "#6 Show in India Today",
+        "tag": "Crime Comedy",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZjYyNWE1YjUtMmUzMi00OTY0LTg5MGQtZTBjY2Q4NjllNmE4XkEyXkFqcGc@._V1_UX600_.jpg"
       }
     ],
     "jiohotstar": [
       {
         "rank": 1,
-        "title": "Bigg Boss Season 18",
+        "title": "Bigg Boss",
         "type": "Show",
-        "year": "2024",
-        "imdb": "4.5",
-        "verdict": "#1 on JioHotstar",
-        "tag": "Reality TV",
+        "year": "2026",
+        "imdb": "6.9",
+        "verdict": "#1 Hindi in India Today",
+        "tag": "Reality Show",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BNTk3OTllYzYtMzUyYi00ZDY5LTk4MDktYzQ3ODdiYmU1YWZmXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 2,
-        "title": "Taaza Khabar Season 2",
+        "title": "Obsession",
         "type": "Show",
-        "year": "2024",
-        "imdb": "8.1",
-        "verdict": "#2 on JioHotstar",
-        "tag": "Fantasy Thriller",
-        "poster": "https://m.media-amazon.com/images/M/MV5BNjAzMDEzZmUtYjgzMy00NTYxLWJlODItYTMyZGI4YzdmZGY4XkEyXkFqcGc@._V1_UX600_.jpg"
+        "year": "2026",
+        "imdb": "7.8",
+        "verdict": "#1 English in India Today",
+        "tag": "Psychological Thriller",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYzc1NWUwMDgtNGZlMS00ZmYzLWIzMzktNmMxMmY1MTUzNWExXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 3,
-        "title": "Anupamaa",
+        "title": "Pati Patni Aur Panga",
         "type": "Show",
-        "year": "2024",
-        "imdb": "5.5",
-        "verdict": "#3 on JioHotstar",
-        "tag": "Family Drama",
-        "poster": "https://m.media-amazon.com/images/M/MV5BMjlhNWMxNWUtZmRmOC00MGZlLWJhYjctNWI3MjZhZDZiN2RiXkEyXkFqcGc@._V1_UX600_.jpg"
+        "year": "2026",
+        "imdb": "7.3",
+        "verdict": "#2 Hindi in India Today",
+        "tag": "Comedy Reality",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BODI1NWM1MmYtZTAwMi00NGMxLWFmMDgtMWRhMTkxMmRhZmJlXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 4,
-        "title": "Munjya",
-        "type": "Film",
-        "year": "2024",
-        "imdb": "6.5",
-        "verdict": "#4 on JioHotstar",
-        "tag": "Horror Comedy",
-        "poster": "https://m.media-amazon.com/images/M/MV5BYTNjZDY2ODEtZTk2Yy00MjAyLWJlNWQtODM2NzdmYmE0ODJjXkEyXkFqcGc@._V1_UX600_.jpg"
+        "title": "MTV Roadies: Rebirth",
+        "type": "Show",
+        "year": "2026",
+        "imdb": "7.2",
+        "verdict": "#3 Hindi in India Today",
+        "tag": "Adventure Reality",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZDgwYTVmNWMtZTc0NC00N2FhLThjMDAtMGZkYmJjMjA3NzY3XkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 5,
-        "title": "Bad Newz",
+        "title": "Ali Baba aur 40 Bhoot",
         "type": "Film",
-        "year": "2024",
-        "imdb": "5.9",
-        "verdict": "#5 on JioHotstar",
-        "tag": "Comedy Drama",
-        "poster": "https://m.media-amazon.com/images/M/MV5BM2QxNGM0OTItMjE1MS00ZjRiLTg3ZTItMTg1NGMyNmRiMjc4XkEyXkFqcGc@._V1_UX600_.jpg"
+        "year": "2026",
+        "imdb": "7.4",
+        "verdict": "#4 Hindi in India Today",
+        "tag": "Fantasy Comedy",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BN2M2MTZlMmQtZjkxMC00ODgzLTljZDgtMTFjYjc2YzVhNzE2XkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 6,
-        "title": "Yeh Rishta Kya Kehlata Hai",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "4.2",
-        "verdict": "#6 on JioHotstar",
-        "tag": "Family Drama",
-        "poster": "https://m.media-amazon.com/images/M/MV5BZmNjMzliYjgtNDdkNC00ZWU5LWI1ZDAtNGI2ODNjODUzMTc1XkEyXkFqcGc@._V1_UX600_.jpg"
+        "title": "Minions & Monsters",
+        "type": "Film",
+        "year": "2026",
+        "imdb": "7.5",
+        "verdict": "#3 English in India Today",
+        "tag": "Animated Comedy",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYzBjMDg4YjctYzg3ZS00ZDFmLWI1YjctM2RkZGVjZWEyYWQ0XkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 7,
-        "title": "The Legend of Hanuman Season 5",
+        "title": "VisionQuest",
         "type": "Show",
-        "year": "2024",
-        "imdb": "9.1",
-        "verdict": "#7 on JioHotstar",
-        "tag": "Animated Mythology",
-        "poster": "https://m.media-amazon.com/images/M/MV5BZThmZDIwYzEtMmQ1MS00MjhjLWJhYTktNzFkMzZhMzM0ZjNlXkEyXkFqcGc@._V1_UX600_.jpg"
+        "year": "2026",
+        "imdb": "8.1",
+        "verdict": "#4 English in India Today",
+        "tag": "Marvel Sci-Fi",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BY2FlNjIxMDktMGYyZi00NjY3LWI4YjctYTcxNzc2MDUwYjZmXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 8,
-        "title": "Commander Karan Saxena",
+        "title": "The Legend of Hanuman",
         "type": "Show",
-        "year": "2024",
-        "imdb": "6.4",
-        "verdict": "#8 on JioHotstar",
-        "tag": "Action Thriller",
-        "poster": "https://m.media-amazon.com/images/M/MV5BZmZkNWZkMDctMjUwZi00YWMzLThkMDAtMWNkOGZhYmMyOWJkXkEyXkFqcGc@._V1_UX600_.jpg"
+        "year": "2026",
+        "imdb": "9.1",
+        "verdict": "#6 Hindi in India Today",
+        "tag": "Mythological Animation",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZThmZDIwYzEtMmQ1MS00MjhjLWJhYTktNzFkMzZhMzM0ZjNlXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 9,
-        "title": "Criminal Justice Season 3",
+        "title": "Aankh Micholi",
         "type": "Show",
-        "year": "2022",
-        "imdb": "8.1",
-        "verdict": "#9 on JioHotstar",
-        "tag": "Legal Thriller",
-        "poster": "https://m.media-amazon.com/images/M/MV5BZTAzZDYwMjgtOGViMy00MTRlLTg2NDEtZmM5ZWVmYzg1MWUwXkEyXkFqcGc@._V1_UX600_.jpg"
+        "year": "2026",
+        "imdb": "7.5",
+        "verdict": "#7 Hindi in India Today",
+        "tag": "Suspense Thriller",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMzM1MDIwZDktNzE1Zi00OWU3LTlmMzMtNjk3M2FjM2M1YTk1XkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 10,
-        "title": "Shaitaan",
-        "type": "Film",
-        "year": "2024",
-        "imdb": "6.7",
-        "verdict": "#10 on JioHotstar",
-        "tag": "Horror Thriller",
-        "poster": "https://m.media-amazon.com/images/M/MV5BOGI3YTcwNTgtMmY5Ny00M2Y0LWFjOWUtYjhkMzNjMjhmYjVkXkEyXkFqcGc@._V1_UX600_.jpg"
+        "title": "Jhaad Phoonk",
+        "type": "Show",
+        "year": "2026",
+        "imdb": "7.6",
+        "verdict": "#9 Hindi in India Today",
+        "tag": "Supernatural Horror",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNTM0MjQzNjgtODhlZi00N2Y5LWJiM2YtYjZmNTg2N2VhOGQ5XkEyXkFqcGc@._V1_UX600_.jpg"
       }
     ],
     "sonyliv": [
       {
         "rank": 1,
-        "title": "Freedom at Midnight",
+        "title": "Family Full House With Rohit Sharma",
         "type": "Show",
-        "year": "2024",
-        "imdb": "8.2",
-        "verdict": "#1 on SonyLIV",
-        "tag": "Historical Drama",
-        "poster": "https://m.media-amazon.com/images/M/MV5BZTM2MzNhZTgtODkyOC00MTgzLThhODMtOWE2MDQ3YmFjNWI2XkEyXkFqcGc@._V1_UX600_.jpg"
+        "year": "2026",
+        "imdb": "8.3",
+        "verdict": "#1 Trending Today",
+        "tag": "Talk / Entertainment",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTQzN2ViNTQtYTQzMC00NGZjLTk5YTEtNGZkMWMyYTZiNDkxXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 2,
-        "title": "Gullak Season 4",
+        "title": "Indian Idol - Legends Return",
         "type": "Show",
-        "year": "2024",
-        "imdb": "9.1",
-        "verdict": "#2 on SonyLIV",
-        "tag": "Family Comedy",
-        "poster": "https://m.media-amazon.com/images/M/MV5BZGE3NTA0MDQtZmM3NC00ZmUwLWJmODktMWZkNTczN2JiYzA0XkEyXkFqcGc@._V1_UX600_.jpg"
+        "year": "2026",
+        "imdb": "7.6",
+        "verdict": "#2 Trending Today",
+        "tag": "Music Reality",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZjA4ZmI2N2UtZDE2YS00YzA2LWE0ZjUtYTIyMjA2ZTUwNGYxXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 3,
-        "title": "Maharani Season 3",
+        "title": "Kon Honaar Crorepati",
         "type": "Show",
-        "year": "2024",
-        "imdb": "7.9",
-        "verdict": "#3 on SonyLIV",
-        "tag": "Political Drama",
-        "poster": "https://m.media-amazon.com/images/M/MV5BNGYxNGQ2OTMtNDM4Yi00OGVmLTliOTktNjNhMmUyODhmOGQ0XkEyXkFqcGc@._V1_UX600_.jpg"
+        "year": "2026",
+        "imdb": "8.2",
+        "verdict": "#3 Trending Today",
+        "tag": "Quiz Show",
+        "source": "BASELINE",
+        "poster": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&q=80"
       },
       {
         "rank": 4,
-        "title": "Manvat Murders",
+        "title": "Celebrity MasterChef",
         "type": "Show",
-        "year": "2024",
-        "imdb": "7.6",
-        "verdict": "#4 on SonyLIV",
-        "tag": "Crime Thriller",
-        "poster": "https://m.media-amazon.com/images/M/MV5BOGUzNmEyOWYtMjU0YS00YjU5LTk0Y2UtYTM1ODczZDNjNTRhXkEyXkFqcGc@._V1_UX600_.jpg"
+        "year": "2026",
+        "imdb": "7.8",
+        "verdict": "#4 Trending Today",
+        "tag": "Culinary Reality",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNWExODk1OWUtNzU3OC00YWExLWIwZmUtZjg1NGRhZjZkMDg1XkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 5,
-        "title": "Scam 2003: The Telgi Story",
-        "type": "Show",
-        "year": "2023",
+        "title": "Haiwaan",
+        "type": "Film",
+        "year": "2026",
         "imdb": "7.9",
-        "verdict": "#5 on SonyLIV",
-        "tag": "Biographical Drama",
-        "poster": "https://m.media-amazon.com/images/M/MV5BZGE3M2M2YjUtZDhjYS00NTlhLThiY2UtMzY3MDIzYTRjNzY0XkEyXkFqcGc@._V1_UX600_.jpg"
+        "verdict": "#5 Trending Today",
+        "tag": "Suspense Thriller",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNTVjNDc1OTktZmQ0MS00MjBlLTg4NDQtYTM3ZTE1MGUxMjEzXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 6,
-        "title": "Undekhi Season 3",
+        "title": "Immortal",
         "type": "Show",
-        "year": "2024",
-        "imdb": "7.9",
-        "verdict": "#6 on SonyLIV",
-        "tag": "Crime Thriller",
-        "poster": "https://m.media-amazon.com/images/M/MV5BMjBhNTAwNjQtMjNkNS00MTFkLWI2Y2MtZjExZDVhZDg0NDIzXkEyXkFqcGc@._V1_UX600_.jpg"
+        "year": "2026",
+        "imdb": "8.0",
+        "verdict": "#6 Trending Today",
+        "tag": "Sci-Fi Thriller",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYjZhZjI4MGQtOWNlNC00MTFhLWFhNWQtYzY5ZTEyZGNiZWE3XkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 7,
-        "title": "Raisinghani vs Raisinghani",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "6.2",
-        "verdict": "#7 on SonyLIV",
-        "tag": "Legal Drama",
-        "poster": "https://m.media-amazon.com/images/M/MV5BMDRiZDJmM2QtYmIxNi00Nzk5LTlhMWMtM2IxM2M5MGVjMmU5XkEyXkFqcGc@._V1_UX600_.jpg"
+        "title": "DC",
+        "type": "Film",
+        "year": "2026",
+        "imdb": "7.8",
+        "verdict": "#7 Trending Today",
+        "tag": "Action Crime",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTc0MDYyNmYtZDJkNi00YzllLWJlNTctZDU3NTY1MzRhMWEzXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 8,
-        "title": "Tanaav Season 2",
+        "title": "Eyes",
         "type": "Show",
-        "year": "2024",
-        "imdb": "7.3",
-        "verdict": "#8 on SonyLIV",
-        "tag": "Action Drama",
-        "poster": "https://m.media-amazon.com/images/M/MV5BNzE4NWU4MWQtYWM5ZC00OTZjLWI3NDEtYTcwMDI0MWIwMWM3XkEyXkFqcGc@._V1_UX600_.jpg"
+        "year": "2026",
+        "imdb": "8.1",
+        "verdict": "#8 Trending Today",
+        "tag": "Investigative Thriller",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZTQ0MmM5MDAtYmYyZS00MzlmLTlhZTAtZDJlZWY5ZTZkZjZmXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 9,
-        "title": "Cubicles Season 3",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "8.2",
-        "verdict": "#9 on SonyLIV",
-        "tag": "Drama",
-        "poster": "https://m.media-amazon.com/images/M/MV5BNGZiOTYzYjktZmMwNS00MzM4LTk4ZDUtNDk1Njc3ZjlmNTU0XkEyXkFqcGc@._V1_UX600_.jpg"
+        "title": "Meesaya Murukku 2",
+        "type": "Film",
+        "year": "2026",
+        "imdb": "7.6",
+        "verdict": "#9 Trending Today",
+        "tag": "Musical Drama",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BM2M2NjRjNGUtN2IwYy00MThmLTgxZTgtMzNhZDY0MDhhZTM0XkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 10,
-        "title": "JL50",
+        "title": "Kaun Banega Crorepati",
         "type": "Show",
-        "year": "2020",
-        "imdb": "7.5",
-        "verdict": "#10 on SonyLIV",
-        "tag": "Sci-Fi Thriller",
-        "poster": "https://m.media-amazon.com/images/M/MV5BYTZmZmZiNDMtOTIyZi00ZmI2LTk4ZDktOGQ3YjczMTY1NDkzXkEyXkFqcGc@._V1_UX600_.jpg"
+        "year": "2026",
+        "imdb": "8.3",
+        "verdict": "#10 Trending Today",
+        "tag": "Quiz Reality",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMDgzNTMyOTItYTk0YS00NWY3LThmMjUtNWEwMGRiNzQ2YWFiXkEyXkFqcGc@._V1_UX600_.jpg"
       }
     ],
     "zee5": [
       {
         "rank": 1,
-        "title": "Gyarah Gyarah",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "8.0",
-        "verdict": "#1 on ZEE5",
-        "tag": "Sci-Fi Thriller",
-        "poster": "https://m.media-amazon.com/images/M/MV5BMTlkYjIxNGUtZjk1ZC00MmU1LWEzMDUtMWNhNDBkNDI5NDRkXkEyXkFqcGc@._V1_UX600_.jpg"
+        "title": "Aasha",
+        "type": "Film",
+        "year": "2026",
+        "imdb": "7.9",
+        "verdict": "#1 Movie in India Today",
+        "tag": "Malayalam Thriller",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNWEyMWFmNDktZjc5Ni00NGNkLTkyYWQtMTdlOGNiNTljZjcyXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 2,
-        "title": "Murshid",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "7.3",
-        "verdict": "#2 on ZEE5",
-        "tag": "Gangster Crime",
-        "poster": "https://m.media-amazon.com/images/M/MV5BOTlhMDk3ZjgtNDc3OC00OGIzLWJiOWUtNTljMjVjZmZmOWMzXkEyXkFqcGc@._V1_UX600_.jpg"
+        "title": "Sumo Didi",
+        "type": "Film",
+        "year": "2026",
+        "imdb": "7.8",
+        "verdict": "#2 Movie in India Today",
+        "tag": "Sports Biopic",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYzA0NjkxNTAtNGM1NS00MjZlLThmYjktMDM0Y2MxMzNkNjdhXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 3,
-        "title": "Manorathangal",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "7.8",
-        "verdict": "#3 on ZEE5",
-        "tag": "Anthology Drama",
-        "poster": "https://m.media-amazon.com/images/M/MV5BODk2YTEwMzItMTBiNC00N2Q1LTgxNjctOGFhM2VmM2QyNDFlXkEyXkFqcGc@._V1_UX600_.jpg"
+        "title": "Hi",
+        "type": "Film",
+        "year": "2026",
+        "imdb": "7.5",
+        "verdict": "#3 Movie in India Today",
+        "tag": "Romantic Drama",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNjZlMjFkODQtNjExNi00NWM1LTg3MGEtNmQ5YjEzNTMxYWFjXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 4,
-        "title": "Rautu Ka Raaz",
+        "title": "Pooja Meri Jaan",
         "type": "Film",
-        "year": "2024",
-        "imdb": "6.8",
-        "verdict": "#4 on ZEE5",
-        "tag": "Mystery Thriller",
-        "poster": "https://m.media-amazon.com/images/M/MV5BNjk5NzRjODktZmUzNy00NzdkLTgxYzUtZDlkMTgwZmExNzQ3XkEyXkFqcGc@._V1_UX600_.jpg"
+        "year": "2026",
+        "imdb": "7.9",
+        "verdict": "#4 Movie in India Today",
+        "tag": "Crime Thriller",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYWExY2JhYWItM2NlZS00ZjBkLWFkOTEtN2NiMTc5YjU0NzI3XkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 5,
-        "title": "Kakuda",
+        "title": "Agadha",
         "type": "Film",
-        "year": "2024",
-        "imdb": "5.6",
-        "verdict": "#5 on ZEE5",
-        "tag": "Horror Comedy",
-        "poster": "https://m.media-amazon.com/images/M/MV5BOWUxMGViNDMtMDA0OS00OGI5LWExZDQtNTVkOTNkYjZiY2IyXkEyXkFqcGc@._V1_UX600_.jpg"
+        "year": "2026",
+        "imdb": "7.6",
+        "verdict": "#5 Movie in India Today",
+        "tag": "Supernatural Horror",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNjYwOWQ1NjMtYTRmYS00ZDc2LTkwNjAtN2JhYjE3NmVjMTA4XkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 6,
-        "title": "Silence 2: The Night Owl Bar Shootout",
+        "title": "Jan Neta",
         "type": "Film",
-        "year": "2024",
-        "imdb": "6.4",
-        "verdict": "#6 on ZEE5",
-        "tag": "Crime Thriller",
-        "poster": "https://m.media-amazon.com/images/M/MV5BNjUyMGRkODktZjc2OC00ZDkyLWEzYTItYmJiOTE1Njc3YjY5XkEyXkFqcGc@._V1_UX600_.jpg"
+        "year": "2026",
+        "imdb": "7.8",
+        "verdict": "#6 Movie in India Today",
+        "tag": "Political Action",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZWFmMGQ4YjUtNmNjYS00MWRlLWI1YzMtMmMyZGIzMmE1NWYwXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 7,
-        "title": "Sunflower Season 2",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "7.4",
-        "verdict": "#7 on ZEE5",
-        "tag": "Black Comedy",
-        "poster": "https://m.media-amazon.com/images/M/MV5BZDg2Y2JjNGYtZGNlZC00YzUxLWI0NmEtNzJlM2NiYjhjNzRiXkEyXkFqcGc@._V1_UX600_.jpg"
+        "title": "Parimala and Co",
+        "type": "Film",
+        "year": "2026",
+        "imdb": "7.5",
+        "verdict": "#7 Movie in India Today",
+        "tag": "Murder Mystery",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BNGJmODQ0ODYtOWQ3Zi00M2VhLWIwNzYtYzRmMGI0NmE5ZWEwXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 8,
-        "title": "Ghoomer",
+        "title": "Varavu",
         "type": "Film",
-        "year": "2023",
-        "imdb": "7.7",
-        "verdict": "#8 on ZEE5",
-        "tag": "Sports Drama",
-        "poster": "https://m.media-amazon.com/images/M/MV5BZDViNDc1MjEtMGY1My00NTE2LTliMTMtYzVkNWE0MmUwMWE0XkEyXkFqcGc@._V1_UX600_.jpg"
+        "year": "2026",
+        "imdb": "7.6",
+        "verdict": "#8 Movie in India Today",
+        "tag": "Action Drama",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTVmZGQwYjAtMWVhNS00NDc2LWJjZDMtYmRiOGYyNzJhZTI4XkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 9,
-        "title": "Sam Bahadur",
+        "title": "Adkitta",
         "type": "Film",
-        "year": "2023",
-        "imdb": "7.9",
-        "verdict": "#9 on ZEE5",
-        "tag": "Biographical Drama",
-        "poster": "https://m.media-amazon.com/images/M/MV5BMDVkMjZlMGEtMjZlOS00MzQ3LThhOTUtYjY4YTE2OTZiMjBjXkEyXkFqcGc@._V1_UX600_.jpg"
+        "year": "2026",
+        "imdb": "7.4",
+        "verdict": "#9 Movie in India Today",
+        "tag": "Family Drama",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYjZkODMzNjAtOTIzMC00YjEwLTljNjQtMTA4MjFmM2U4N2M0XkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 10,
-        "title": "Taj: Divided by Blood",
-        "type": "Show",
-        "year": "2023",
-        "imdb": "6.9",
-        "verdict": "#10 on ZEE5",
-        "tag": "Historical Drama",
-        "poster": "https://m.media-amazon.com/images/M/MV5BODE0ODI3OTAtYjI1Yi00MTgxLTgwMmQtMzAzNWI4YjRkNThkXkEyXkFqcGc@._V1_UX600_.jpg"
+        "title": "Last Man in Tower",
+        "type": "Film",
+        "year": "2026",
+        "imdb": "8.0",
+        "verdict": "#10 Movie in India Today",
+        "tag": "Social Thriller",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMmZhYzdhYTktOGMzMy00YzEwLWFlMTgtZWFjZWE2MGU3YjljXkEyXkFqcGc@._V1_UX600_.jpg"
       }
     ]
   },
@@ -521,8 +575,9 @@
         "type": "Film",
         "year": "2026",
         "imdb": "7.6",
-        "verdict": "#1 Movie Worldwide",
+        "verdict": "#1 Movie Worldwide Today",
         "tag": "Action Thriller",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BMWI3NDA0NmMtODgyZS00NTk0LTg3YjUtMzI3NjdkYTZiNmMxXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
@@ -531,8 +586,9 @@
         "type": "Show",
         "year": "2026",
         "imdb": "7.8",
-        "verdict": "#1 Show Worldwide",
+        "verdict": "#1 Show Worldwide Today",
         "tag": "Mystery Drama",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BNzdiOGJlZWYtN2MwMS00OTRiLTlhMWUtODBjMDUyN2E2YTM1XkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
@@ -541,8 +597,9 @@
         "type": "Show",
         "year": "2026",
         "imdb": "7.9",
-        "verdict": "#2 Show Worldwide",
+        "verdict": "#2 Show Worldwide Today",
         "tag": "Crime Thriller",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BMzRiOWExZWItOTlmOS00N2FjLWFiOWQtYTdkNGY4NjBjMGJiXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
@@ -550,40 +607,44 @@
         "title": "Lupin",
         "type": "Show",
         "year": "2026",
-        "imdb": "7.8",
-        "verdict": "#3 Show Worldwide",
+        "imdb": "7.9",
+        "verdict": "#3 Show Worldwide Today",
         "tag": "Heist Mystery",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BMzk4MTc0NWUtZjk3Mi00ODkzLTlkYjItOWRhMTc5MmRiNjI0XkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 5,
-        "title": "The One About Matthew Perry",
-        "type": "Show",
-        "year": "2026",
-        "imdb": "8.1",
-        "verdict": "#1 English TV",
-        "tag": "Documentary",
-        "poster": "https://m.media-amazon.com/images/M/MV5BODNiYmZlNmMtNDFmNC00YThkLTk4ZWItZTYzYTMwODg3MjIzXkEyXkFqcGc@._V1_UX600_.jpg"
-      },
-      {
-        "rank": 6,
         "title": "Heist",
         "type": "Film",
         "year": "2026",
         "imdb": "7.4",
-        "verdict": "#2 Movie Worldwide",
+        "verdict": "#2 Movie Worldwide Today",
         "tag": "Action Crime",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BODdiNWI5ZjgtY2RhZi00ODlmLTkyNDEtMzIyMTEyZDE2ZjNjXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
+        "rank": 6,
+        "title": "The One About Matthew Perry",
+        "type": "Show",
+        "year": "2026",
+        "imdb": "8.1",
+        "verdict": "#4 Show Worldwide Today",
+        "tag": "Documentary",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BODNiYmZlNmMtNDFmNC00YThkLTk4ZWItZTYzYTMwODg3MjIzXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
         "rank": 7,
-        "title": "Final Destination Bloodlines",
+        "title": "Animals",
         "type": "Film",
-        "year": "2025",
-        "imdb": "7.5",
-        "verdict": "#3 Movie Worldwide",
-        "tag": "Horror Thriller",
-        "poster": "https://m.media-amazon.com/images/M/MV5BMzc3OWFhZWItMTE2Yy00N2NmLTg1YTktNGVlNDY0ODQ5YjNlXkEyXkFqcGc@._V1_UX600_.jpg"
+        "year": "2026",
+        "imdb": "7.9",
+        "verdict": "#1 Weekly Global Chart",
+        "tag": "Crime Drama",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZmY3MmZiZjctOTgyYy00OGIxLTkwMDUtNDU3MGNkMGI3YWJlXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 8,
@@ -591,8 +652,9 @@
         "type": "Show",
         "year": "2026",
         "imdb": "7.9",
-        "verdict": "#2 English TV",
+        "verdict": "#6 Show Worldwide Today",
         "tag": "Romantic Comedy",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BM2ExMmE3YTgtY2RmNC00ZWIzLWJlNGYtYmViNWVjM2Q1MjNjXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
@@ -601,8 +663,9 @@
         "type": "Show",
         "year": "2026",
         "imdb": "7.8",
-        "verdict": "#7 Show Worldwide",
+        "verdict": "#7 Show Worldwide Today",
         "tag": "Medical Crime",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BOTE2ODI5NzctZDNiMC00YWM4LTkzMDItMmEzYjcxYTM2MTgyXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
@@ -611,8 +674,9 @@
         "type": "Show",
         "year": "2026",
         "imdb": "7.7",
-        "verdict": "#8 Show Worldwide",
-        "tag": "Narco Docuseries",
+        "verdict": "#8 Show Worldwide Today",
+        "tag": "True Crime Doc",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BZWZmMzRhZmMtZDViYi00MmNkLTg4ZTktZGFjMDA1YzgyMjUzXkEyXkFqcGc@._V1_UX600_.jpg"
       }
     ],
@@ -623,8 +687,9 @@
         "type": "Film",
         "year": "2026",
         "imdb": "7.3",
-        "verdict": "#1 Movie Worldwide",
+        "verdict": "#1 Movie Worldwide Today",
         "tag": "Post-Apocalyptic",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BNGI4ODQ1NGQtMTVmZS00NzcwLThmNWUtMTI4MDhkNDAyZDI0XkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
@@ -633,8 +698,9 @@
         "type": "Film",
         "year": "2026",
         "imdb": "7.4",
-        "verdict": "#2 Movie Worldwide",
+        "verdict": "#2 Movie Worldwide Today",
         "tag": "Action Thriller",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BMDgzNGNhMjktZjA0MC00NGQ2LWJlNWMtM2NiMDQ3OWI2MzRmXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
@@ -643,8 +709,9 @@
         "type": "Show",
         "year": "2026",
         "imdb": "8.0",
-        "verdict": "#1 Show Worldwide",
-        "tag": "Military Thriller",
+        "verdict": "#1 Show Worldwide Today",
+        "tag": "Military Action",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BYTFiZDQ1NWItODBkZS00ZjA1LThkNzUtY2M5Yzk2M2Y3ZDNkXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
@@ -653,8 +720,9 @@
         "type": "Show",
         "year": "2026",
         "imdb": "7.7",
-        "verdict": "#2 Show Worldwide",
+        "verdict": "#2 Show Worldwide Today",
         "tag": "Supernatural Horror",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BZGQzZjIzZWUtZTg2My00YWE2LTk5M2MtMDk2NGRmZGNhMTU4XkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
@@ -663,8 +731,9 @@
         "type": "Show",
         "year": "2026",
         "imdb": "7.6",
-        "verdict": "#3 Show Worldwide",
+        "verdict": "#3 Show Worldwide Today",
         "tag": "Romantic Drama",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BNWY3ZjliZTUtYjc5Yy00YTEzLWE2NDQtMWUxNGU1NDgyMjRiXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
@@ -673,8 +742,9 @@
         "type": "Film",
         "year": "2026",
         "imdb": "7.5",
-        "verdict": "#3 Movie Worldwide",
+        "verdict": "#3 Movie Worldwide Today",
         "tag": "Romance Drama",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BNDZjM2Y5NWUtODhjMi00N2MwLWEwMTktZDUwNzg1Y2Y1OWNkXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
@@ -683,8 +753,9 @@
         "type": "Show",
         "year": "2026",
         "imdb": "7.6",
-        "verdict": "#4 Show Worldwide",
+        "verdict": "#4 Show Worldwide Today",
         "tag": "Sports Romance",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BMDA0NzAzNDktYjBiOS00ZjFjLThhZTYtNzlkMDMzOTgxZTk5XkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
@@ -693,8 +764,9 @@
         "type": "Film",
         "year": "2026",
         "imdb": "7.5",
-        "verdict": "#5 Movie Worldwide",
-        "tag": "Heist Comedy",
+        "verdict": "#5 Movie Worldwide Today",
+        "tag": "Art Heist Comedy",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BNjIyYjlmOTAtYTMzZC00OTM1LWE5YWUtZWMzZTQ1OWEyYWIzXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
@@ -703,19 +775,21 @@
         "type": "Show",
         "year": "2026",
         "imdb": "7.9",
-        "verdict": "#5 Show Worldwide",
-        "tag": "Investigative Action",
+        "verdict": "#5 Show Worldwide Today",
+        "tag": "Mystery Thriller",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BMzg1NzAzMWEtMGY2Ny00YzRkLTg4MmEtMDEyZWI2ZjFiMWU5XkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 10,
-        "title": "Reacher",
-        "type": "Show",
+        "title": "Ali G: Who Iz I?",
+        "type": "Film",
         "year": "2026",
-        "imdb": "8.1",
-        "verdict": "#6 Show Worldwide",
-        "tag": "Crime Action",
-        "poster": "https://m.media-amazon.com/images/M/MV5BMmE0YTA3MTItMjhiNC00MGQ3LTllZDktNGNiZWY1OWFmNmM1XkEyXkFqcGc@._V1_UX600_.jpg"
+        "imdb": "7.1",
+        "verdict": "#6 Movie Worldwide Today",
+        "tag": "Satire Comedy",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYjIyYWYyMzEtMDkwOC00NDk0LWEwYzItNTk1NWYxNWEwMjA5XkEyXkFqcGc@._V1_UX600_.jpg"
       }
     ],
     "max": [
@@ -725,8 +799,9 @@
         "type": "Show",
         "year": "2026",
         "imdb": "8.1",
-        "verdict": "#1 Show Worldwide",
+        "verdict": "#1 Show Worldwide Today",
         "tag": "Period Drama",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BMDVhNDIwNWYtZDIyNy00ODFlLWExYzItOWI4MTkwOGM5MzViXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
@@ -735,8 +810,9 @@
         "type": "Show",
         "year": "2026",
         "imdb": "7.9",
-        "verdict": "#2 Show Worldwide",
+        "verdict": "#2 Show Worldwide Today",
         "tag": "Legal Thriller",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BMzEyOTg2YWItN2M1Mi00ZGJmLWJhOGUtMjhhZGVjNjIwNTkxXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
@@ -745,8 +821,9 @@
         "type": "Show",
         "year": "2026",
         "imdb": "7.6",
-        "verdict": "#3 Show Worldwide",
+        "verdict": "#3 Show Worldwide Today",
         "tag": "Family Sitcom",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BNTEyZTFmNjQtYzI5NS00NGIyLWEwNWYtYThjZGFiOGUzNDI5XkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
@@ -755,8 +832,9 @@
         "type": "Show",
         "year": "2026",
         "imdb": "7.8",
-        "verdict": "#4 Show Worldwide",
-        "tag": "Coming-of-Age Drama",
+        "verdict": "#4 Show Worldwide Today",
+        "tag": "Drama Series",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BN2FkZDYyMTktZTgxYi00NjUyLWJjOTktZWZjMjE5YzYxMGMzXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
@@ -765,8 +843,9 @@
         "type": "Film",
         "year": "2026",
         "imdb": "7.4",
-        "verdict": "#1 Movie Worldwide",
+        "verdict": "#1 Movie Worldwide Today",
         "tag": "Horror Thriller",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BYzRhMGE1NTctNTJiNS00NWM3LWJkOTgtOTVhMzE3ZTQ5N2Y4XkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
@@ -775,8 +854,9 @@
         "type": "Film",
         "year": "2026",
         "imdb": "7.6",
-        "verdict": "#2 Movie Worldwide",
+        "verdict": "#2 Movie Worldwide Today",
         "tag": "Romantic Drama",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BNjI4OGM1NDEtYzA1NS00ZDg3LWFmZjUtMjg1MGQ4MTk3NjQzXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
@@ -785,8 +865,9 @@
         "type": "Show",
         "year": "2026",
         "imdb": "7.8",
-        "verdict": "#5 Show Worldwide",
-        "tag": "Slasher Prequel",
+        "verdict": "#5 Show Worldwide Today",
+        "tag": "Horror Prequel",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BYmQ1NzBhOWItZDRiNS00MjRlLTg5Y2EtMjI1Y2YyMDY2Y2VhXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
@@ -795,8 +876,9 @@
         "type": "Show",
         "year": "2026",
         "imdb": "7.5",
-        "verdict": "#6 Show Worldwide",
-        "tag": "Period Melodrama",
+        "verdict": "#6 Show Worldwide Today",
+        "tag": "Period Drama",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BN2I3ZTViZWUtNmQ1Yi00YzcxLTkxYjMtOTI2OGFiNjFiYTdmXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
@@ -805,8 +887,9 @@
         "type": "Show",
         "year": "2026",
         "imdb": "7.9",
-        "verdict": "#7 Show Worldwide",
-        "tag": "Folk Mystery",
+        "verdict": "#7 Show Worldwide Today",
+        "tag": "Folklore Mystery",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BYTc1M2VmM2UtNGY3Yy00YmQ2LTljY2YtMjkxMGY2ZDNiMmYyXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
@@ -815,8 +898,9 @@
         "type": "Show",
         "year": "2026",
         "imdb": "8.0",
-        "verdict": "#8 Show Worldwide",
+        "verdict": "#8 Show Worldwide Today",
         "tag": "Supernatural Horror",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BZWE0ZWM1MjUtNmYzYS00NzU3LTkxYmQtNmI3NTc0ZTY1NmVlXkEyXkFqcGc@._V1_UX600_.jpg"
       }
     ],
@@ -827,99 +911,109 @@
         "type": "Show",
         "year": "2026",
         "imdb": "8.1",
-        "verdict": "#1 Show Worldwide",
+        "verdict": "#1 Show Worldwide Today",
         "tag": "Marvel Sci-Fi",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BY2FlNjIxMDktMGYyZi00NjY3LWI4YjctYTcxNzc2MDUwYjZmXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 2,
-        "title": "Coco",
-        "type": "Film",
-        "year": "2017",
-        "imdb": "8.4",
-        "verdict": "#1 Movie Worldwide",
-        "tag": "Pixar Animation",
-        "poster": "https://m.media-amazon.com/images/M/MV5BMDIyM2E2NTAtMzlhNy00ZGUxLWI1NjgtZDY5MzhiMDc5NGU3XkEyXkFqcGc@._V1_UX600_.jpg"
-      },
-      {
-        "rank": 3,
         "title": "Moana",
         "type": "Film",
         "year": "2026",
         "imdb": "7.6",
-        "verdict": "#2 Movie Worldwide",
-        "tag": "Family Adventure",
+        "verdict": "#1 Live-Action Hit Today",
+        "tag": "Adventure Musical",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BMTQ1OTQ2Y2UtMzllNS00ODFiLWFkNGItNGRjOWRlMjIwNTRlXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
-        "rank": 4,
+        "rank": 3,
         "title": "Toy Story 5",
         "type": "Film",
         "year": "2026",
         "imdb": "8.0",
-        "verdict": "#3 Movie Worldwide",
-        "tag": "Pixar Comedy",
+        "verdict": "#3 Movie Worldwide Today",
+        "tag": "Pixar Animation",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BZTI1YTBiNmEtYWUxZi00YzFkLWIzNjMtMmZjMmY2NzM0ZWMzXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
-        "rank": 5,
+        "rank": 4,
         "title": "The Kardashians",
         "type": "Show",
         "year": "2026",
         "imdb": "6.2",
-        "verdict": "#2 Show Worldwide",
+        "verdict": "#2 Show Worldwide Today",
         "tag": "Reality Series",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BMTFmZGIzNzUtZWJlYi00NWJjLWI3YTAtNTAzOWRlMzAwNzM2XkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
-        "rank": 6,
+        "rank": 5,
         "title": "Between Steps",
         "type": "Show",
         "year": "2026",
         "imdb": "7.7",
-        "verdict": "#3 Show Worldwide",
+        "verdict": "#3 Show Worldwide Today",
         "tag": "Drama Series",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BOTNiMzAwMTEtN2Q5ZS00ODBkLWFhYjYtMjQ4NzYxYzNmOTAzXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
-        "rank": 7,
+        "rank": 6,
         "title": "American Horror Story",
         "type": "Show",
         "year": "2026",
         "imdb": "7.8",
-        "verdict": "#4 Show Worldwide",
+        "verdict": "#4 Show Worldwide Today",
         "tag": "Horror Anthology",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BNTM3NTZjMDctYWQ3YS00NjQ4LWIwMjItNmIwZTlkM2U4NjRkXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
-        "rank": 8,
-        "title": "Grey's Anatomy",
-        "type": "Show",
-        "year": "2026",
-        "imdb": "7.6",
-        "verdict": "#5 Show Worldwide",
-        "tag": "Medical Drama",
-        "poster": "https://m.media-amazon.com/images/M/MV5BYTVjNWVhYTctMGJkMS00NWFjLWE2N2QtNmQ1Y2FhZDFkNzUwXkEyXkFqcGc@._V1_UX600_.jpg"
-      },
-      {
-        "rank": 9,
+        "rank": 7,
         "title": "Coven Academy",
         "type": "Show",
         "year": "2026",
         "imdb": "7.5",
-        "verdict": "#6 Show Worldwide",
-        "tag": "Supernatural Fantasy",
+        "verdict": "#6 Show Worldwide Today",
+        "tag": "Supernatural Drama",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BNzAzYmQ0MTktMzBmNi00OWMyLTkzNzEtYjRkYTM2NGMzYWIxXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
-        "rank": 10,
+        "rank": 8,
         "title": "The Remarried Empress",
         "type": "Show",
         "year": "2026",
         "imdb": "7.9",
-        "verdict": "#7 Show Worldwide",
-        "tag": "Korean Fantasy Drama",
+        "verdict": "#7 Show Worldwide Today",
+        "tag": "Korean Fantasy",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BODNlYWMxNjktZWQ2MS00ZmYyLWJjNTEtZjJiNDhjNmUyMTQzXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 9,
+        "title": "The Devil Wears Prada 2",
+        "type": "Film",
+        "year": "2026",
+        "imdb": "7.7",
+        "verdict": "Top Trending Comedy",
+        "tag": "Fashion Comedy",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZmM3ZDU3ODItZmY5Yi00OTQ2LWE5OTctZTA5NDBhMWJkOGY3XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 10,
+        "title": "9-1-1: Nashville",
+        "type": "Show",
+        "year": "2026",
+        "imdb": "7.5",
+        "verdict": "Top 10 Series Today",
+        "tag": "Action Procedural",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BYTllNGE4MjctZDI5Mi00ODEyLWFhNTUtZDUyYTBlMzMxYTBkXkEyXkFqcGc@._V1_UX600_.jpg"
       }
     ],
     "apple": [
@@ -929,8 +1023,9 @@
         "type": "Show",
         "year": "2026",
         "imdb": "8.3",
-        "verdict": "#1 Show Worldwide",
+        "verdict": "#1 Show Worldwide Today",
         "tag": "Psychological Thriller",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BZDk1NTMyZDgtMzhlNi00NTBjLTk4MDMtNTkwMjcwODBhNDM5XkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
@@ -939,89 +1034,98 @@
         "type": "Film",
         "year": "2026",
         "imdb": "7.5",
-        "verdict": "#1 Movie Worldwide",
+        "verdict": "#1 Movie Worldwide Today",
         "tag": "Action Adventure",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BMzFjYmM0NTQtM2ZkNS00ODUwLWI2Y2UtNTJkYThjM2RmODQ2XkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 3,
-        "title": "Ted Lasso",
-        "type": "Show",
-        "year": "2026",
-        "imdb": "8.8",
-        "verdict": "#2 Show Worldwide",
-        "tag": "Sports Comedy",
-        "poster": "https://m.media-amazon.com/images/M/MV5BM2ZlYTU0YWUtMzY4OC00N2JkLTk1ZGQtN2UxNWJhMTBkMzM4XkEyXkFqcGc@._V1_UX600_.jpg"
-      },
-      {
-        "rank": 4,
-        "title": "Slow Horses",
-        "type": "Show",
-        "year": "2026",
-        "imdb": "8.3",
-        "verdict": "#3 Show Worldwide",
-        "tag": "Espionage Thriller",
-        "poster": "https://m.media-amazon.com/images/M/MV5BMmM2NDhmYjktNTIzZC00YjIwLWE1ZmUtNzM1MTNiMTU2NjdjXkEyXkFqcGc@._V1_UX600_.jpg"
-      },
-      {
-        "rank": 5,
-        "title": "Silo",
-        "type": "Show",
-        "year": "2026",
-        "imdb": "8.1",
-        "verdict": "#4 Show Worldwide",
-        "tag": "Dystopian Sci-Fi",
-        "poster": "https://m.media-amazon.com/images/M/MV5BN2E5ODJmOTUtYTk0NS00NmFiLTk0MTgtZDRlNzE1YmExMjk4XkEyXkFqcGc@._V1_UX600_.jpg"
-      },
-      {
-        "rank": 6,
-        "title": "Dark Matter",
-        "type": "Show",
-        "year": "2026",
-        "imdb": "7.8",
-        "verdict": "#5 Show Worldwide",
-        "tag": "Multiverse Sci-Fi",
-        "poster": "https://m.media-amazon.com/images/M/MV5BN2U4YWMyZTMtMmEzMy00Yzk0LThiNTctNjE0YTc5ZDZhZTk5XkEyXkFqcGc@._V1_UX600_.jpg"
-      },
-      {
-        "rank": 7,
         "title": "Tenzing",
         "type": "Film",
         "year": "2026",
         "imdb": "8.1",
-        "verdict": "#2 Movie Worldwide",
+        "verdict": "#2 Movie Worldwide Today",
         "tag": "Everest Biopic",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BZWY5NzQxOWQtZmFjYS00YmQ1LTk4NDktNDliMGZmYzM3ZmM1XkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
-        "rank": 8,
+        "rank": 4,
         "title": "Mayday",
         "type": "Film",
         "year": "2026",
         "imdb": "7.7",
-        "verdict": "#3 Movie Worldwide",
+        "verdict": "#3 Movie Worldwide Today",
         "tag": "Cold War Action",
+        "source": "BASELINE",
         "poster": "https://m.media-amazon.com/images/M/MV5BM2VmYWEzM2UtODNjZi00YTk1LWEzZjEtNzY4OGU0YTdkNmJmXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
-        "rank": 9,
-        "title": "F1",
-        "type": "Film",
-        "year": "2025",
+        "rank": 5,
+        "title": "Slow Horses",
+        "type": "Show",
+        "year": "2026",
+        "imdb": "8.3",
+        "verdict": "#2 Show Worldwide Today",
+        "tag": "Espionage Thriller",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BMmM2NDhmYjktNTIzZC00YjIwLWE1ZmUtNzM1MTNiMTU2NjdjXkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 6,
+        "title": "Silo",
+        "type": "Show",
+        "year": "2026",
         "imdb": "8.1",
-        "verdict": "#4 Movie Worldwide",
-        "tag": "Racing Drama",
-        "poster": "https://m.media-amazon.com/images/M/MV5BNGI0MDI4NjEtOWU3ZS00ODQyLWFhYTgtNGYxM2ZkM2Q2YjE3XkEyXkFqcGc@._V1_UX600_.jpg"
+        "verdict": "#3 Show Worldwide Today",
+        "tag": "Dystopian Sci-Fi",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BN2E5ODJmOTUtYTk0NS00NmFiLTk0MTgtZDRlNzE1YmExMjk4XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 7,
+        "title": "Dark Matter",
+        "type": "Show",
+        "year": "2026",
+        "imdb": "7.8",
+        "verdict": "#4 Show Worldwide Today",
+        "tag": "Multiverse Sci-Fi",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BN2U4YWMyZTMtMmEzMy00Yzk0LThiNTctNjE0YTc5ZDZhZTk5XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 8,
+        "title": "Ted Lasso",
+        "type": "Show",
+        "year": "2026",
+        "imdb": "8.8",
+        "verdict": "#5 Show Worldwide Today",
+        "tag": "Sports Comedy",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BM2ZlYTU0YWUtMzY4OC00N2JkLTk1ZGQtN2UxNWJhMTBkMzM4XkEyXkFqcGc@._V1_UX600_.jpg"
+      },
+      {
+        "rank": 9,
+        "title": "The Lost Bus",
+        "type": "Film",
+        "year": "2026",
+        "imdb": "7.9",
+        "verdict": "#4 Movie Worldwide Today",
+        "tag": "Survival Thriller",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZTIzNmQzYzUtNTdlNi00NmY5LThmNTYtMGFmZjUxMTgzOGNmXkEyXkFqcGc@._V1_UX600_.jpg"
       },
       {
         "rank": 10,
-        "title": "Severance",
+        "title": "Widow's Bay",
         "type": "Show",
-        "year": "2025",
-        "imdb": "8.7",
-        "verdict": "#6 Show Worldwide",
-        "tag": "Sci-Fi Thriller",
-        "poster": "https://m.media-amazon.com/images/M/MV5BZDI5YzJhODQtMzQyNy00YWNmLWIxMjUtNDBjNjA5YWRjMzExXkEyXkFqcGc@._V1_UX600_.jpg"
+        "year": "2026",
+        "imdb": "7.8",
+        "verdict": "#9 Show Worldwide Today",
+        "tag": "Mystery Drama",
+        "source": "BASELINE",
+        "poster": "https://m.media-amazon.com/images/M/MV5BZDBiMWZlMDQtNzkzMi00YzQzLTkwNTUtNzYwOGY3YmUxNDJjXkEyXkFqcGc@._V1_UX600_.jpg"
       }
     ]
   },
@@ -1034,6 +1138,7 @@
       "imdb": "8.3",
       "where": "MUBI / Festival Circuit",
       "note": "Mungiu's masterwork dissects cultural friction and moral ambiguity in a remote Nordic coastal village with surgical precision.",
+      "source": "BASELINE",
       "poster": "https://m.media-amazon.com/images/M/MV5BOGQwZTQ0YzgtZjk5Mi00NTg1LTg0MmMtZmNjNGUwYjhjNWJhXkEyXkFqcGc@._V1_UX600_.jpg"
     },
     {
@@ -1044,6 +1149,7 @@
       "imdb": "8.2",
       "where": "Criterion / MUBI",
       "note": "Starring Virginie Efira and Tao Okamoto, Hamaguchi weaves a hypnotic cross-cultural chamber drama of chance encounters.",
+      "source": "BASELINE",
       "poster": "https://m.media-amazon.com/images/M/MV5BZTY1ZjUwYzctY2E5My00MGRlLWI3N2MtZWRmYjlmNGY0MjcyXkEyXkFqcGc@._V1_UX600_.jpg"
     },
     {
@@ -1054,6 +1160,7 @@
       "imdb": "8.4",
       "where": "Curzon / Arthouse Theatrical",
       "note": "A monumental, visually cavernous allegory of modern power and domestic betrayal from Russia's greatest living auteur.",
+      "source": "BASELINE",
       "poster": "https://m.media-amazon.com/images/M/MV5BMjRjMjUwM2QtMzk1OC00MGU4LTlmZTEtNTJjYWIzNDFlMDZhXkEyXkFqcGc@._V1_UX600_.jpg"
     },
     {
@@ -1064,6 +1171,7 @@
       "imdb": "8.5",
       "where": "World Cinema Radar",
       "note": "Lee Chang-dong's long-awaited return after Burning is a devastating, deeply humane study of fractured memory and grace.",
+      "source": "BASELINE",
       "poster": "https://m.media-amazon.com/images/M/MV5BMTk4NjU5NjQtZjQxOS00OGIwLThhM2MtYWU1OTc4Y2M4NGVmXkEyXkFqcGc@._V1_UX600_.jpg"
     },
     {
@@ -1074,6 +1182,7 @@
       "imdb": "8.1",
       "where": "MUBI / Select Theatrical",
       "note": "Shot in luminous high-contrast monochrome, tracing exile, identity, and historical ghosts across postwar Europe.",
+      "source": "BASELINE",
       "poster": "https://m.media-amazon.com/images/M/MV5BY2M5ZmVkMWMtOTNjZS00MjM3LTg3ODYtYjJmMDJjMjU0ODU5XkEyXkFqcGc@._V1_UX600_.jpg"
     },
     {
@@ -1084,6 +1193,7 @@
       "imdb": "8.0",
       "where": "International Theatrical",
       "note": "From the director of The Wailing, an atmospheric, relentless rural mystery on the edge of a remote harbour town.",
+      "source": "BASELINE",
       "poster": "https://m.media-amazon.com/images/M/MV5BZjE3ZDI0MmItMDIyMC00NzU2LTk2OTQtZTUxYTlkMjlkNmY3XkEyXkFqcGc@._V1_UX600_.jpg"
     },
     {
@@ -1094,17 +1204,19 @@
       "imdb": "8.5",
       "where": "Criterion Channel / Janus 4K",
       "note": "Kobayashi's hand-painted widescreen supernatural anthology, newly restored in 4K for the Midcareer Masterworks series.",
+      "source": "BASELINE",
       "poster": "https://m.media-amazon.com/images/M/MV5BYTYwYmVkNzktMzA0My00NmYyLTg3ZjktYjFlMDVlNzEwN2I0XkEyXkFqcGc@._V1_UX600_.jpg"
     },
     {
-      "title": "All We Imagine as Light",
-      "director": "Payal Kapadia",
-      "year": "2024",
-      "event": "Cannes Grand Prix Canon",
+      "title": "The Vvaan - Force of the Forest",
+      "director": "Deepak Mishra",
+      "year": "2026",
+      "event": "Indian Folk Noir Premiere",
       "imdb": "7.9",
-      "where": "MUBI / Criterion",
-      "note": "Luminous nocturnal poetry capturing Mumbai working-class sisterhood and coastal solitude.",
-      "poster": "https://m.media-amazon.com/images/M/MV5BNzg5OWVkODQtNDViMS00YmFkLTg4YjctMGFmZjM4OTdlYWRhXkEyXkFqcGc@._V1_UX600_.jpg"
+      "where": "Prime Video / Theatrical",
+      "note": "Set in the dense heartlands of Central India, blending ancient forest folklore with atmospheric mystery.",
+      "source": "BASELINE",
+      "poster": "https://m.media-amazon.com/images/M/MV5BZGQ3YWZlMjUtNDI1Zi00YjRjLTg2YzctMGU1MTkxMWU5M2U5XkEyXkFqcGc@._V1_UX600_.jpg"
     }
   ]
 }
