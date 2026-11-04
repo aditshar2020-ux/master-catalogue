@@ -4,260 +4,260 @@
     "netflix": [
       {
         "rank": 1,
-        "title": "Do Patti",
+        "title": "Dhurandhar",
         "type": "Film",
-        "year": "2024",
-        "imdb": "7.2",
-        "verdict": "Hit",
-        "tag": "Mystery Thriller",
-        "poster": "https://upload.wikimedia.org/wikipedia/en/9/9b/Do_Patti.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+        "year": "2026",
+        "imdb": "7.9",
+        "verdict": "Action Spectacle",
+        "tag": "Spy Thriller",
+        "poster": "https://upload.wikimedia.org/wikipedia/en/c/ce/Dhurandhar_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
       },
       {
         "rank": 2,
-        "title": "Devara: Part 1",
-        "type": "Film",
-        "year": "2024",
-        "imdb": "6.8",
-        "verdict": "Blockbuster",
-        "tag": "Action Drama",
-        "poster": "https://upload.wikimedia.org/wikipedia/en/f/f0/Devara_Part_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
-      },
-      {
-        "rank": 3,
         "title": "The Great Indian Kapil Show S2",
         "type": "Show",
-        "year": "2024",
-        "imdb": "7.5",
-        "verdict": "Trending",
+        "year": "2026",
+        "imdb": "7.4",
+        "verdict": "Pop Cult Viral",
         "tag": "Comedy",
         "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
       },
       {
-        "rank": 4,
-        "title": "Sector 36",
+        "rank": 3,
+        "title": "Pushpa 2: The Rule",
         "type": "Film",
-        "year": "2024",
-        "imdb": "7.6",
-        "verdict": "Super Hit",
-        "tag": "Crime Thriller",
-        "poster": "https://upload.wikimedia.org/wikipedia/en/d/d1/Sector_36.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+        "year": "2025",
+        "imdb": "7.7",
+        "verdict": "Mass Elevation",
+        "tag": "Action",
+        "poster": "https://upload.wikimedia.org/wikipedia/en/1/11/Pushpa_2-_The_Rule.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+      },
+      {
+        "rank": 4,
+        "title": "Khakee: The Bengal Chapter",
+        "type": "Show",
+        "year": "2026",
+        "imdb": "8.3",
+        "verdict": "Critical Gold",
+        "tag": "Noir",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
       },
       {
         "rank": 5,
-        "title": "IC 814: The Kandahar Hijack",
-        "type": "Show",
+        "title": "Amar Singh Chamkila",
+        "type": "Film",
         "year": "2024",
-        "imdb": "7.4",
-        "verdict": "Hit",
-        "tag": "Historical Thriller",
-        "poster": "https://thumb.wikimedia.org/wikipedia/en/thumb/d/de/KandaharHijacking.jpg/330px-KandaharHijacking.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        "imdb": "8.2",
+        "verdict": "Auteur Biopic",
+        "tag": "Musical",
+        "poster": "https://upload.wikimedia.org/wikipedia/en/c/c8/Amar_Singh_Chamkila.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
       }
     ],
     "prime": [
       {
         "rank": 1,
-        "title": "Citadel: Honey Bunny",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "7.1",
-        "verdict": "Hit",
-        "tag": "Spy Action",
-        "poster": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Casale_Monferrato_map_%28018_003%29.jpg/330px-Casale_Monferrato_map_%28018_003%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        "title": "Mirzapur: The Movie",
+        "type": "Film",
+        "year": "2026",
+        "imdb": "8.4",
+        "verdict": "Cult Sensation",
+        "tag": "Gangster",
+        "poster": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Mirzapur_from_the_Ganges.JPG/330px-Mirzapur_from_the_Ganges.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
       },
       {
         "rank": 2,
-        "title": "Panchayat S3",
+        "title": "Panchayat S4",
         "type": "Show",
-        "year": "2024",
+        "year": "2026",
         "imdb": "8.9",
-        "verdict": "All-Time Blockbuster",
-        "tag": "Comedy Drama",
+        "verdict": "All-Time Canon",
+        "tag": "Rural Realism",
         "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
       },
       {
         "rank": 3,
-        "title": "Mirzapur S3",
+        "title": "The Family Man S3",
         "type": "Show",
-        "year": "2024",
-        "imdb": "8.5",
-        "verdict": "Blockbuster",
-        "tag": "Crime Drama",
+        "year": "2026",
+        "imdb": "8.8",
+        "verdict": "Auteur Thriller",
+        "tag": "Espionage",
         "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
       },
       {
         "rank": 4,
-        "title": "Stree 2",
-        "type": "Film",
-        "year": "2024",
-        "imdb": "7.7",
-        "verdict": "Blockbuster",
-        "tag": "Horror Comedy",
-        "poster": "https://upload.wikimedia.org/wikipedia/en/a/a1/Stree_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+        "title": "Paatal Lok S2",
+        "type": "Show",
+        "year": "2026",
+        "imdb": "8.6",
+        "verdict": "Hardcore Noir",
+        "tag": "Investigative",
+        "poster": "https://upload.wikimedia.org/wikipedia/en/3/39/Paatal_Lok_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
       },
       {
         "rank": 5,
-        "title": "Poacher",
+        "title": "Jubilee",
         "type": "Show",
-        "year": "2024",
-        "imdb": "7.8",
-        "verdict": "Critically Acclaimed",
-        "tag": "Crime Drama",
-        "poster": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Le_braconnier_par_Fr%C3%A9d%C3%A9ric_Rouge.jpg/330px-Le_braconnier_par_Fr%C3%A9d%C3%A9ric_Rouge.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+        "year": "2023",
+        "imdb": "8.4",
+        "verdict": "Cinematic Feat",
+        "tag": "Period Drama",
+        "poster": "https://is1-ssl.mzstatic.com/image/thumb/Video126/v4/84/8a/81/848a8192-6db2-eee7-1128-9e3aa6d99967/9d029433-434f-4e3c-8baf-d89d73a23439_PBS_IT_GLK101D_3000x3000.png/600x900bb.jpg"
       }
     ],
     "jiohotstar": [
       {
         "rank": 1,
-        "title": "Taaza Khabar S2",
+        "title": "Thukra Ke Mera Pyaar S2",
         "type": "Show",
-        "year": "2024",
+        "year": "2026",
         "imdb": "8.1",
-        "verdict": "Hit",
-        "tag": "Fantasy Drama",
-        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+        "verdict": "Revenge Craze",
+        "tag": "Intense Drama",
+        "poster": "https://upload.wikimedia.org/wikipedia/en/5/5b/Thukra_Ke_Mera_Pyaar1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
       },
       {
         "rank": 2,
-        "title": "Bad Newz",
-        "type": "Film",
-        "year": "2024",
-        "imdb": "6.2",
-        "verdict": "Average",
-        "tag": "Romantic Comedy",
+        "title": "House of the Dragon S3",
+        "type": "Show",
+        "year": "2026",
+        "imdb": "8.5",
+        "verdict": "Global Gold",
+        "tag": "High Fantasy",
         "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
       },
       {
         "rank": 3,
-        "title": "Lootere",
+        "title": "Special OPS 2",
         "type": "Show",
-        "year": "2024",
-        "imdb": "7.5",
-        "verdict": "Hit",
-        "tag": "Action Thriller",
+        "year": "2026",
+        "imdb": "8.6",
+        "verdict": "Precision Action",
+        "tag": "Counter-Terror",
         "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
       },
       {
         "rank": 4,
-        "title": "Special Ops 1.5",
+        "title": "Laughter Chefs",
         "type": "Show",
-        "year": "2021",
-        "imdb": "8.3",
-        "verdict": "Super Hit",
-        "tag": "Espionage",
+        "year": "2026",
+        "imdb": "7.2",
+        "verdict": "Family Sitcom",
+        "tag": "Comedy",
         "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
       },
       {
         "rank": 5,
-        "title": "Karmma Calling",
+        "title": "The Freelancer S2",
         "type": "Show",
-        "year": "2024",
-        "imdb": "6.5",
-        "verdict": "Average",
-        "tag": "Drama",
+        "year": "2025",
+        "imdb": "8.0",
+        "verdict": "Extraction",
+        "tag": "Tactical",
         "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
       }
     ],
     "sonyliv": [
       {
         "rank": 1,
-        "title": "Freedom at Midnight",
+        "title": "Gullak S5",
         "type": "Show",
-        "year": "2024",
-        "imdb": "8.4",
-        "verdict": "Critically Acclaimed",
-        "tag": "Historical Drama",
+        "year": "2026",
+        "imdb": "9.1",
+        "verdict": "All-Time Canon",
+        "tag": "Middle-Class",
         "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
       },
       {
         "rank": 2,
-        "title": "Gullak S4",
+        "title": "Scam 2010: Subrata Roy",
         "type": "Show",
-        "year": "2024",
-        "imdb": "9.1",
-        "verdict": "Blockbuster",
-        "tag": "Family Drama",
+        "year": "2026",
+        "imdb": "8.8",
+        "verdict": "Financial Epic",
+        "tag": "Hansal Mehta",
         "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
       },
       {
         "rank": 3,
-        "title": "Maharani S3",
+        "title": "Freedom at Midnight S2",
         "type": "Show",
-        "year": "2024",
-        "imdb": "7.9",
-        "verdict": "Hit",
-        "tag": "Political Drama",
+        "year": "2026",
+        "imdb": "8.3",
+        "verdict": "Historical Benchmark",
+        "tag": "Archive",
         "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
       },
       {
         "rank": 4,
-        "title": "Undekhi S3",
+        "title": "Rocket Boys",
         "type": "Show",
-        "year": "2024",
-        "imdb": "7.8",
-        "verdict": "Hit",
-        "tag": "Crime Thriller",
-        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+        "year": "2023",
+        "imdb": "8.8",
+        "verdict": "Pure Genius",
+        "tag": "History",
+        "poster": "https://upload.wikimedia.org/wikipedia/en/2/25/Rocketboyshardcover.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
       },
       {
         "rank": 5,
-        "title": "Scam 2003",
+        "title": "Maharani S4",
         "type": "Show",
-        "year": "2023",
-        "imdb": "8.0",
-        "verdict": "Super Hit",
-        "tag": "Biographical Drama",
+        "year": "2026",
+        "imdb": "7.9",
+        "verdict": "Power Realism",
+        "tag": "Politics",
         "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
       }
     ],
     "zee5": [
       {
         "rank": 1,
-        "title": "Manorathangal",
+        "title": "Gyaarah Gyaarah S2",
         "type": "Show",
-        "year": "2024",
-        "imdb": "8.2",
-        "verdict": "Critically Acclaimed",
-        "tag": "Anthology",
-        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+        "year": "2026",
+        "imdb": "8.1",
+        "verdict": "Walkie-Talkie Sci-Fi",
+        "tag": "Mystery",
+        "poster": "https://is1-ssl.mzstatic.com/image/thumb/Video126/v4/88/5b/c0/885bc062-9016-9732-cffa-ffa04f269cd9/pr_source.png/600x900bb.jpg"
       },
       {
         "rank": 2,
-        "title": "Rautu Ka Raaz",
-        "type": "Film",
-        "year": "2024",
-        "imdb": "7.0",
-        "verdict": "Hit",
-        "tag": "Mystery Drama",
+        "title": "Pitchers S3",
+        "type": "Show",
+        "year": "2026",
+        "imdb": "8.6",
+        "verdict": "Founder Journey",
+        "tag": "Startup",
         "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
       },
       {
         "rank": 3,
-        "title": "Silence 2: The Night Owl Bar Shootout",
-        "type": "Film",
-        "year": "2024",
-        "imdb": "6.9",
-        "verdict": "Average",
-        "tag": "Investigative Thriller",
+        "title": "Sunflower S3",
+        "type": "Show",
+        "year": "2026",
+        "imdb": "7.5",
+        "verdict": "Dark Comedy",
+        "tag": "Murder",
         "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
       },
       {
         "rank": 4,
-        "title": "Sunflower S2",
+        "title": "Manorathangal",
         "type": "Show",
         "year": "2024",
-        "imdb": "7.4",
-        "verdict": "Hit",
-        "tag": "Dark Comedy",
+        "imdb": "8.0",
+        "verdict": "Literary Treasure",
+        "tag": "Drama",
         "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
       },
       {
         "rank": 5,
-        "title": "Sirf Ek Bandaa Kaafi Hai",
-        "type": "Film",
-        "year": "2023",
-        "imdb": "8.3",
-        "verdict": "Super Hit",
-        "tag": "Courtroom Drama",
+        "title": "Tripling S4",
+        "type": "Show",
+        "year": "2026",
+        "imdb": "8.5",
+        "verdict": "Sibling Roadtrip",
+        "tag": "Feel Good",
         "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
       }
     ]
@@ -266,260 +266,60 @@
     "netflix": [
       {
         "rank": 1,
-        "title": "Squid Game S2",
+        "title": "Squid Game S3",
         "type": "Show",
-        "year": "2024",
+        "year": "2026",
         "imdb": "8.0",
-        "verdict": "Global Smash",
-        "tag": "Survival Thriller",
-        "poster": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Squid_Game_2021_vector_logo_english.svg/330px-Squid_Game_2021_vector_logo_english.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
-      },
-      {
-        "rank": 2,
-        "title": "The Diplomat S2",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "8.1",
-        "verdict": "Hit",
-        "tag": "Political Thriller",
-        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
-      },
-      {
-        "rank": 3,
-        "title": "Monsters: The Lyle and Erik Menendez Story",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "7.9",
-        "verdict": "Super Hit",
-        "tag": "True Crime",
-        "poster": "https://is1-ssl.mzstatic.com/image/thumb/Video/v4/67/6f/05/676f051b-e80f-84b6-08ca-ae96508d5c07/mzl.cfleltog.jpg/600x900bb.jpg"
-      },
-      {
-        "rank": 4,
-        "title": "Carry-On",
-        "type": "Film",
-        "year": "2024",
-        "imdb": "7.2",
-        "verdict": "Hit",
-        "tag": "Action Thriller",
-        "poster": "https://upload.wikimedia.org/wikipedia/en/d/d0/Carry_On_film_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
-      },
-      {
-        "rank": 5,
-        "title": "Outer Banks S4",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "7.5",
-        "verdict": "Hit",
-        "tag": "Teen Drama",
+        "verdict": "Mania",
+        "tag": "Survival",
         "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
       }
     ],
     "prime": [
       {
         "rank": 1,
-        "title": "The Lord of the Rings: The Rings of Power S2",
+        "title": "The Boys S5",
         "type": "Show",
-        "year": "2024",
-        "imdb": "7.1",
-        "verdict": "Hit",
-        "tag": "Fantasy",
-        "poster": "https://is1-ssl.mzstatic.com/image/thumb/Video122/v4/d4/58/bc/d458bcb3-3010-93d5-3cbe-768db1e200d4/73f4c7fc-73c9-472d-9427-7e75d1265762_IconsLOTR_Gracenote_3000x3000_copy.png/600x900bb.jpg"
-      },
-      {
-        "rank": 2,
-        "title": "Fallout",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "8.6",
-        "verdict": "Blockbuster",
-        "tag": "Sci-Fi",
-        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
-      },
-      {
-        "rank": 3,
-        "title": "The Boys S4",
-        "type": "Show",
-        "year": "2024",
+        "year": "2026",
         "imdb": "8.7",
-        "verdict": "Blockbuster",
-        "tag": "Satirical Superhero",
-        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
-      },
-      {
-        "rank": 4,
-        "title": "Reacher S2",
-        "type": "Show",
-        "year": "2023",
-        "imdb": "8.1",
-        "verdict": "Super Hit",
-        "tag": "Action Crime",
-        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
-      },
-      {
-        "rank": 5,
-        "title": "Road House",
-        "type": "Film",
-        "year": "2024",
-        "imdb": "6.2",
-        "verdict": "Hit",
-        "tag": "Action",
+        "verdict": "Satire",
+        "tag": "Hero",
         "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
       }
     ],
     "max": [
       {
         "rank": 1,
-        "title": "The Penguin",
+        "title": "The Last of Us S2",
         "type": "Show",
-        "year": "2024",
+        "year": "2025",
         "imdb": "8.8",
-        "verdict": "Critical Masterpiece",
-        "tag": "Crime Drama",
-        "poster": "https://is1-ssl.mzstatic.com/image/thumb/Video211/v4/43/34/a1/4334a1ca-2a26-f339-5fca-7b76ffac9e9c/ThePenguin_S1_S_DD_KA_TT_3000x3000_300dpi_EN.jpg/600x900bb.jpg"
-      },
-      {
-        "rank": 2,
-        "title": "Dune: Prophecy",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "8.1",
-        "verdict": "Hit",
-        "tag": "Sci-Fi Fantasy",
-        "poster": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Dunas_de_Maspalomas.jpg/330px-Dunas_de_Maspalomas.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
-      },
-      {
-        "rank": 3,
-        "title": "House of the Dragon S2",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "8.4",
-        "verdict": "Blockbuster",
-        "tag": "Fantasy Drama",
-        "poster": "https://is1-ssl.mzstatic.com/image/thumb/Video221/v4/82/ed/a0/82eda0ee-043b-0bca-6c4b-31f04520acee/House_Of_The_Dragon_S3_S_KA_TT_3000x3000_300DPI_EN.jpg/600x900bb.jpg"
-      },
-      {
-        "rank": 4,
-        "title": "The Franchise",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "7.3",
-        "verdict": "Hit",
-        "tag": "Comedy",
-        "poster": "https://is1-ssl.mzstatic.com/image/thumb/Video211/v4/c3/d2/4d/c3d24d33-4df7-e3d6-f637-b9c72df1a04f/TheFranchise_S1_S_DD_KA_TT_3000x3000_300dpi_EN.jpg/600x900bb.jpg"
-      },
-      {
-        "rank": 5,
-        "title": "Industry S3",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "8.0",
-        "verdict": "Hit",
-        "tag": "Finance Drama",
+        "verdict": "Devastating",
+        "tag": "Drama",
         "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
       }
     ],
     "disney": [
       {
         "rank": 1,
-        "title": "Agatha All Along",
+        "title": "Andor S2",
         "type": "Show",
-        "year": "2024",
-        "imdb": "7.3",
-        "verdict": "Hit",
-        "tag": "Superhero Fantasy",
-        "poster": "https://thumb.wikimedia.org/wikipedia/en/thumb/7/70/Agatha_All_Along_logo.jpg/330px-Agatha_All_Along_logo.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
-      },
-      {
-        "rank": 2,
-        "title": "The Acolyte",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "4.2",
-        "verdict": "Divisive",
-        "tag": "Sci-Fi Fantasy",
-        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
-      },
-      {
-        "rank": 3,
-        "title": "Inside Out 2",
-        "type": "Film",
-        "year": "2024",
-        "imdb": "7.7",
-        "verdict": "Blockbuster",
-        "tag": "Animation",
-        "poster": "https://upload.wikimedia.org/wikipedia/en/f/f7/Inside_Out_2_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
-      },
-      {
-        "rank": 4,
-        "title": "X-Men '97",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "8.9",
-        "verdict": "Acclaimed",
-        "tag": "Animated Action",
-        "poster": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/X-Men_%2797_logo.png/330px-X-Men_%2797_logo.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
-      },
-      {
-        "rank": 5,
-        "title": "Shōgun",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "8.7",
-        "verdict": "Emmy Winner",
-        "tag": "Historical Drama",
-        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+        "year": "2025",
+        "imdb": "8.4",
+        "verdict": "Rebellion",
+        "tag": "Sci-Fi",
+        "poster": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Andor.svg/330px-Andor.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
       }
     ],
     "apple": [
       {
         "rank": 1,
-        "title": "Slow Horses S4",
+        "title": "Severance S2",
         "type": "Show",
-        "year": "2024",
-        "imdb": "8.5",
-        "verdict": "Super Hit",
-        "tag": "Spy Thriller",
-        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
-      },
-      {
-        "rank": 2,
-        "title": "Presumed Innocent",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "7.7",
-        "verdict": "Hit",
-        "tag": "Legal Thriller",
-        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
-      },
-      {
-        "rank": 3,
-        "title": "Silo S2",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "8.1",
-        "verdict": "Hit",
-        "tag": "Sci-Fi Mystery",
-        "poster": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Grain_bins_in_Cashton%2C_Wisconsin.jpg/330px-Grain_bins_in_Cashton%2C_Wisconsin.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
-      },
-      {
-        "rank": 4,
-        "title": "Shrinking S2",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "8.0",
-        "verdict": "Hit",
-        "tag": "Comedy Drama",
-        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
-      },
-      {
-        "rank": 5,
-        "title": "Wolfs",
-        "type": "Film",
-        "year": "2024",
-        "imdb": "6.5",
-        "verdict": "Moderate",
-        "tag": "Action Comedy",
+        "year": "2025",
+        "imdb": "8.7",
+        "verdict": "Masterwork",
+        "tag": "Sci-Fi",
         "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
       }
     ]
@@ -529,19 +329,10 @@
       "title": "All We Imagine as Light",
       "director": "Payal Kapadia",
       "year": "2024",
-      "event": "Cannes Film Festival Grand Prix Winner",
+      "event": "Cannes Grand Prix",
       "imdb": "7.9",
-      "where": "VOD / Theatrical",
-      "note": "A poetic masterpiece exploring female friendship and urban solitude in Mumbai."
-    },
-    {
-      "title": "Anora",
-      "director": "Sean Baker",
-      "year": "2024",
-      "event": "Cannes Palme d'Or Winner",
-      "imdb": "8.1",
-      "where": "Theatrical / Digital PVOD",
-      "note": "A kinetic and emotional tragicomedy following a sex worker's whirlwind romance."
+      "where": "MUBI",
+      "note": "Mumbai sisterhood."
     }
   ]
 }
