@@ -528,7 +528,12 @@ Return ONLY valid JSON:
         if "india" in live_india and isinstance(live_india["india"], dict):
             live_india = live_india["india"]
 
-        live_global, m2 = call_gemini_live_cascade(api_key, global_prompt, models)
+        print("Cooling down 12s before Global sync to avoid Free Tier burst limits...")
+        time.sleep(12)
+        # Rotate model list so Global hits a fresh model quota first
+        global_models = models[1:] + models[:1] if len(models) > 1 else models
+
+        live_global, m2 = call_gemini_live_cascade(api_key, global_prompt, global_models)
         if "global" in live_global and isinstance(live_global["global"], dict):
             live_global = live_global["global"]
         model_used = m1 if m1 != "NONE (Fallback)" else m2
