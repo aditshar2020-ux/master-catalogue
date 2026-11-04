@@ -1,5 +1,6 @@
 {
   "syncDate": "Nov 04, 2026",
+  "syncMode": "OFFLINE FALLBACK (Rate Limit Hit)",
   "india": {
     "netflix": [
       {
@@ -11,46 +12,6 @@
         "verdict": "Action Spectacle",
         "tag": "Spy Thriller",
         "poster": "https://upload.wikimedia.org/wikipedia/en/c/ce/Dhurandhar_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
-      },
-      {
-        "rank": 2,
-        "title": "The Great Indian Kapil Show S2",
-        "type": "Show",
-        "year": "2026",
-        "imdb": "7.4",
-        "verdict": "Pop Cult Viral",
-        "tag": "Comedy",
-        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
-      },
-      {
-        "rank": 3,
-        "title": "Pushpa 2: The Rule",
-        "type": "Film",
-        "year": "2025",
-        "imdb": "7.7",
-        "verdict": "Mass Elevation",
-        "tag": "Action",
-        "poster": "https://upload.wikimedia.org/wikipedia/en/1/11/Pushpa_2-_The_Rule.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
-      },
-      {
-        "rank": 4,
-        "title": "Khakee: The Bengal Chapter",
-        "type": "Show",
-        "year": "2026",
-        "imdb": "8.3",
-        "verdict": "Critical Gold",
-        "tag": "Noir",
-        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
-      },
-      {
-        "rank": 5,
-        "title": "Amar Singh Chamkila",
-        "type": "Film",
-        "year": "2024",
-        "imdb": "8.2",
-        "verdict": "Auteur Biopic",
-        "tag": "Musical",
-        "poster": "https://upload.wikimedia.org/wikipedia/en/c/c8/Amar_Singh_Chamkila.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
       }
     ],
     "prime": [
@@ -63,46 +24,6 @@
         "verdict": "Cult Sensation",
         "tag": "Gangster",
         "poster": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Mirzapur_from_the_Ganges.JPG/330px-Mirzapur_from_the_Ganges.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
-      },
-      {
-        "rank": 2,
-        "title": "Panchayat S4",
-        "type": "Show",
-        "year": "2026",
-        "imdb": "8.9",
-        "verdict": "All-Time Canon",
-        "tag": "Rural Realism",
-        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
-      },
-      {
-        "rank": 3,
-        "title": "The Family Man S3",
-        "type": "Show",
-        "year": "2026",
-        "imdb": "8.8",
-        "verdict": "Auteur Thriller",
-        "tag": "Espionage",
-        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
-      },
-      {
-        "rank": 4,
-        "title": "Paatal Lok S2",
-        "type": "Show",
-        "year": "2026",
-        "imdb": "8.6",
-        "verdict": "Hardcore Noir",
-        "tag": "Investigative",
-        "poster": "https://upload.wikimedia.org/wikipedia/en/3/39/Paatal_Lok_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
-      },
-      {
-        "rank": 5,
-        "title": "Jubilee",
-        "type": "Show",
-        "year": "2023",
-        "imdb": "8.4",
-        "verdict": "Cinematic Feat",
-        "tag": "Period Drama",
-        "poster": "https://is1-ssl.mzstatic.com/image/thumb/Video126/v4/84/8a/81/848a8192-6db2-eee7-1128-9e3aa6d99967/9d029433-434f-4e3c-8baf-d89d73a23439_PBS_IT_GLK101D_3000x3000.png/600x900bb.jpg"
       }
     ],
     "jiohotstar": [
@@ -115,46 +36,6 @@
         "verdict": "Revenge Craze",
         "tag": "Intense Drama",
         "poster": "https://upload.wikimedia.org/wikipedia/en/5/5b/Thukra_Ke_Mera_Pyaar1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
-      },
-      {
-        "rank": 2,
-        "title": "House of the Dragon S3",
-        "type": "Show",
-        "year": "2026",
-        "imdb": "8.5",
-        "verdict": "Global Gold",
-        "tag": "High Fantasy",
-        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
-      },
-      {
-        "rank": 3,
-        "title": "Special OPS 2",
-        "type": "Show",
-        "year": "2026",
-        "imdb": "8.6",
-        "verdict": "Precision Action",
-        "tag": "Counter-Terror",
-        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
-      },
-      {
-        "rank": 4,
-        "title": "Laughter Chefs",
-        "type": "Show",
-        "year": "2026",
-        "imdb": "7.2",
-        "verdict": "Family Sitcom",
-        "tag": "Comedy",
-        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
-      },
-      {
-        "rank": 5,
-        "title": "The Freelancer S2",
-        "type": "Show",
-        "year": "2025",
-        "imdb": "8.0",
-        "verdict": "Extraction",
-        "tag": "Tactical",
-        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
       }
     ],
     "sonyliv": [
@@ -166,46 +47,6 @@
         "imdb": "9.1",
         "verdict": "All-Time Canon",
         "tag": "Middle-Class",
-        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
-      },
-      {
-        "rank": 2,
-        "title": "Scam 2010: Subrata Roy",
-        "type": "Show",
-        "year": "2026",
-        "imdb": "8.8",
-        "verdict": "Financial Epic",
-        "tag": "Hansal Mehta",
-        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
-      },
-      {
-        "rank": 3,
-        "title": "Freedom at Midnight S2",
-        "type": "Show",
-        "year": "2026",
-        "imdb": "8.3",
-        "verdict": "Historical Benchmark",
-        "tag": "Archive",
-        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
-      },
-      {
-        "rank": 4,
-        "title": "Rocket Boys",
-        "type": "Show",
-        "year": "2023",
-        "imdb": "8.8",
-        "verdict": "Pure Genius",
-        "tag": "History",
-        "poster": "https://upload.wikimedia.org/wikipedia/en/2/25/Rocketboyshardcover.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
-      },
-      {
-        "rank": 5,
-        "title": "Maharani S4",
-        "type": "Show",
-        "year": "2026",
-        "imdb": "7.9",
-        "verdict": "Power Realism",
-        "tag": "Politics",
         "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
       }
     ],
@@ -219,46 +60,6 @@
         "verdict": "Walkie-Talkie Sci-Fi",
         "tag": "Mystery",
         "poster": "https://is1-ssl.mzstatic.com/image/thumb/Video126/v4/88/5b/c0/885bc062-9016-9732-cffa-ffa04f269cd9/pr_source.png/600x900bb.jpg"
-      },
-      {
-        "rank": 2,
-        "title": "Pitchers S3",
-        "type": "Show",
-        "year": "2026",
-        "imdb": "8.6",
-        "verdict": "Founder Journey",
-        "tag": "Startup",
-        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
-      },
-      {
-        "rank": 3,
-        "title": "Sunflower S3",
-        "type": "Show",
-        "year": "2026",
-        "imdb": "7.5",
-        "verdict": "Dark Comedy",
-        "tag": "Murder",
-        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
-      },
-      {
-        "rank": 4,
-        "title": "Manorathangal",
-        "type": "Show",
-        "year": "2024",
-        "imdb": "8.0",
-        "verdict": "Literary Treasure",
-        "tag": "Drama",
-        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
-      },
-      {
-        "rank": 5,
-        "title": "Tripling S4",
-        "type": "Show",
-        "year": "2026",
-        "imdb": "8.5",
-        "verdict": "Sibling Roadtrip",
-        "tag": "Feel Good",
-        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
       }
     ]
   },
