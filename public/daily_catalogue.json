@@ -1,0 +1,565 @@
+{
+  "syncDate": "Nov 04, 2026",
+  "india": {
+    "netflix": [
+      {
+        "rank": 1,
+        "title": "Delhi Crime Season 3",
+        "type": "Show",
+        "year": "2025",
+        "imdb": "8.5",
+        "verdict": "Critical Gold",
+        "tag": "Crime Drama",
+        "poster": "https://thumb.wikimedia.org/wikipedia/en/thumb/3/37/Title_screen_for_the_Netflix_series%2C_Delhi_Crime.png/330px-Title_screen_for_the_Netflix_series%2C_Delhi_Crime.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      },
+      {
+        "rank": 2,
+        "title": "Khakee: The Bengal Chapter",
+        "type": "Show",
+        "year": "2025",
+        "imdb": "8.2",
+        "verdict": "Mass Hype",
+        "tag": "Action Thriller",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      },
+      {
+        "rank": 3,
+        "title": "Do Patti",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "7.4",
+        "verdict": "Trending",
+        "tag": "Mystery Thriller",
+        "poster": "https://upload.wikimedia.org/wikipedia/en/9/9b/Do_Patti.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+      },
+      {
+        "rank": 4,
+        "title": "Jigra",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "7.1",
+        "verdict": "Popular",
+        "tag": "Action Drama",
+        "poster": "https://upload.wikimedia.org/wikipedia/en/1/11/Jigra_film_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+      },
+      {
+        "rank": 5,
+        "title": "Devara: Part 1",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "6.8",
+        "verdict": "Blockbuster",
+        "tag": "Action Epic",
+        "poster": "https://upload.wikimedia.org/wikipedia/en/f/f0/Devara_Part_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+      }
+    ],
+    "prime": [
+      {
+        "rank": 1,
+        "title": "Paatal Lok Season 2",
+        "type": "Show",
+        "year": "2025",
+        "imdb": "8.6",
+        "verdict": "Critical Gold",
+        "tag": "Crime Noir",
+        "poster": "https://upload.wikimedia.org/wikipedia/en/3/39/Paatal_Lok_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+      },
+      {
+        "rank": 2,
+        "title": "Panchayat Season 3",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.9",
+        "verdict": "Must Watch",
+        "tag": "Comedy Drama",
+        "poster": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Muhamma_grama_panchayath.jpg/330px-Muhamma_grama_panchayath.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      },
+      {
+        "rank": 3,
+        "title": "Mirzapur Season 3",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.4",
+        "verdict": "Mass Hit",
+        "tag": "Gangster Drama",
+        "poster": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Mirzapur_from_the_Ganges.JPG/330px-Mirzapur_from_the_Ganges.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      },
+      {
+        "rank": 4,
+        "title": "Stree 2",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "7.7",
+        "verdict": "Mega Blockbuster",
+        "tag": "Horror Comedy",
+        "poster": "https://upload.wikimedia.org/wikipedia/en/a/a1/Stree_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+      },
+      {
+        "rank": 5,
+        "title": "The Family Man Season 3",
+        "type": "Show",
+        "year": "2025",
+        "imdb": "8.7",
+        "verdict": "High Anticipation",
+        "tag": "Spy Action",
+        "poster": "https://upload.wikimedia.org/wikipedia/en/e/e8/Family_man_movie.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+      }
+    ],
+    "jiohotstar": [
+      {
+        "rank": 1,
+        "title": "Special Ops Season 2",
+        "type": "Show",
+        "year": "2025",
+        "imdb": "8.5",
+        "verdict": "Blockbuster",
+        "tag": "Espionage Thriller",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      },
+      {
+        "rank": 2,
+        "title": "Criminal Justice Season 4",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.1",
+        "verdict": "Critical Success",
+        "tag": "Legal Drama",
+        "poster": "https://is1-ssl.mzstatic.com/image/thumb/Video125/v4/d8/9f/b4/d89fb455-d522-7b76-f86d-d32083b8182a/pr_source.jpg/600x900bb.jpg"
+      },
+      {
+        "rank": 3,
+        "title": "Taaza Khabar Season 2",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.0",
+        "verdict": "Fan Favorite",
+        "tag": "Fantasy Drama",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      },
+      {
+        "rank": 4,
+        "title": "Bad Cop",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.3",
+        "verdict": "Trending",
+        "tag": "Action Drama",
+        "poster": "https://is1-ssl.mzstatic.com/image/thumb/Video116/v4/ff/2e/ba/ff2eba86-5eca-b282-dd28-0f81ba703cba/53c6f62f-c12b-4e73-9056-c08f0d007fbf_GCBC-S1_1x1_DPlus_3000x3000_Cover_Art.jpg/600x900bb.jpg"
+      },
+      {
+        "rank": 5,
+        "title": "The Legend of Hanuman Season 4",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "9.1",
+        "verdict": "Acclaimed",
+        "tag": "Animation Mythological",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      }
+    ],
+    "sonyliv": [
+      {
+        "rank": 1,
+        "title": "Freedom at Midnight",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.6",
+        "verdict": "Critical Gold",
+        "tag": "Historical Drama",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      },
+      {
+        "rank": 2,
+        "title": "Gullak Season 4",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "9.1",
+        "verdict": "Must Watch",
+        "tag": "Slice of Life",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      },
+      {
+        "rank": 3,
+        "title": "Maharani Season 3",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.9",
+        "verdict": "Popular",
+        "tag": "Political Thriller",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      },
+      {
+        "rank": 4,
+        "title": "Manorathangal",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.3",
+        "verdict": "Art House Gold",
+        "tag": "Anthology Drama",
+        "poster": "https://upload.wikimedia.org/wikipedia/en/e/e7/Manorathangal.webp?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+      },
+      {
+        "rank": 5,
+        "title": "Tanaav Season 2",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.8",
+        "verdict": "Solid Hit",
+        "tag": "Action Thriller",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      }
+    ],
+    "zee5": [
+      {
+        "rank": 1,
+        "title": "Berlin",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "7.8",
+        "verdict": "Critical Darling",
+        "tag": "Espionage Mystery",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      },
+      {
+        "rank": 2,
+        "title": "Sunflower Season 2",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.5",
+        "verdict": "Popular",
+        "tag": "Dark Comedy Thriller",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      },
+      {
+        "rank": 3,
+        "title": "Rautu Ka Raaz",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "7.1",
+        "verdict": "Trending",
+        "tag": "Investigative Mystery",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      },
+      {
+        "rank": 4,
+        "title": "Silence 2: The Night Owl Bar Shootout",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "6.9",
+        "verdict": "Viewer Favorite",
+        "tag": "Crime Mystery",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      },
+      {
+        "rank": 5,
+        "title": "Gypsy",
+        "type": "Film",
+        "year": "2024",
+        "imdb": "7.4",
+        "verdict": "Acclaimed",
+        "tag": "Social Drama",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      }
+    ]
+  },
+  "global": {
+    "netflix": [
+      {
+        "rank": 1,
+        "title": "Squid Game Season 2",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.7",
+        "verdict": "Global Phenomenon",
+        "tag": "Survival Thriller",
+        "poster": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Squid_Game_2021_vector_logo_english.svg/330px-Squid_Game_2021_vector_logo_english.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      },
+      {
+        "rank": 2,
+        "title": "Stranger Things Season 5",
+        "type": "Show",
+        "year": "2025",
+        "imdb": "8.7",
+        "verdict": "Mega Hype",
+        "tag": "Sci-Fi Horror",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      },
+      {
+        "rank": 3,
+        "title": "Wednesday Season 2",
+        "type": "Show",
+        "year": "2025",
+        "imdb": "8.1",
+        "verdict": "Chart Topper",
+        "tag": "Fantasy Mystery",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      },
+      {
+        "rank": 4,
+        "title": "The Diplomat Season 2",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.0",
+        "verdict": "Critical Gold",
+        "tag": "Political Drama",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      },
+      {
+        "rank": 5,
+        "title": "Bridgerton Season 3",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.4",
+        "verdict": "Trending",
+        "tag": "Period Romance",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      }
+    ],
+    "prime": [
+      {
+        "rank": 1,
+        "title": "The Boys Season 4",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.7",
+        "verdict": "Critical Gold",
+        "tag": "Superhero Satire",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      },
+      {
+        "rank": 2,
+        "title": "Fallout",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.5",
+        "verdict": "Global Smash",
+        "tag": "Sci-Fi Action",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      },
+      {
+        "rank": 3,
+        "title": "Reacher Season 3",
+        "type": "Show",
+        "year": "2025",
+        "imdb": "8.1",
+        "verdict": "Fan Favorite",
+        "tag": "Action Crime",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      },
+      {
+        "rank": 4,
+        "title": "The Lord of the Rings: The Rings of Power Season 2",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.0",
+        "verdict": "Visual Spectacle",
+        "tag": "Fantasy Epic",
+        "poster": "https://is1-ssl.mzstatic.com/image/thumb/Video122/v4/d4/58/bc/d458bcb3-3010-93d5-3cbe-768db1e200d4/73f4c7fc-73c9-472d-9427-7e75d1265762_IconsLOTR_Gracenote_3000x3000_copy.png/600x900bb.jpg"
+      },
+      {
+        "rank": 5,
+        "title": "Cross",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.6",
+        "verdict": "Trending",
+        "tag": "Crime Thriller",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      }
+    ],
+    "max": [
+      {
+        "rank": 1,
+        "title": "The Penguin",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.8",
+        "verdict": "Critical Triumph",
+        "tag": "Crime Drama",
+        "poster": "https://is1-ssl.mzstatic.com/image/thumb/Video211/v4/43/34/a1/4334a1ca-2a26-f339-5fca-7b76ffac9e9c/ThePenguin_S1_S_DD_KA_TT_3000x3000_300dpi_EN.jpg/600x900bb.jpg"
+      },
+      {
+        "rank": 2,
+        "title": "House of the Dragon Season 2",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.4",
+        "verdict": "Global Event",
+        "tag": "Fantasy Epic",
+        "poster": "https://is1-ssl.mzstatic.com/image/thumb/Video221/v4/82/ed/a0/82eda0ee-043b-0bca-6c4b-31f04520acee/House_Of_The_Dragon_S3_S_KA_TT_3000x3000_300DPI_EN.jpg/600x900bb.jpg"
+      },
+      {
+        "rank": 3,
+        "title": "Dune: Prophecy",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.0",
+        "verdict": "Must Watch",
+        "tag": "Sci-Fi Drama",
+        "poster": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Dunas_de_Maspalomas.jpg/330px-Dunas_de_Maspalomas.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      },
+      {
+        "rank": 4,
+        "title": "The White Lotus Season 3",
+        "type": "Show",
+        "year": "2025",
+        "imdb": "8.0",
+        "verdict": "Acclaimed",
+        "tag": "Satirical Drama",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      },
+      {
+        "rank": 5,
+        "title": "The Last of Us Season 2",
+        "type": "Show",
+        "year": "2025",
+        "imdb": "8.8",
+        "verdict": "High Hype",
+        "tag": "Post-Apocalyptic Drama",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      }
+    ],
+    "disney": [
+      {
+        "rank": 1,
+        "title": "The Bear Season 3",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.6",
+        "verdict": "Critical Gold",
+        "tag": "Comedy Drama",
+        "poster": "https://is1-ssl.mzstatic.com/image/thumb/Video/v4/34/c2/e7/34c2e754-a10f-6027-e814-4dd6fd50b617/mzl.ajzofcia.jpg/600x900bb.jpg"
+      },
+      {
+        "rank": 2,
+        "title": "Agatha All Along",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.2",
+        "verdict": "Fan Hit",
+        "tag": "Superhero Fantasy",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      },
+      {
+        "rank": 3,
+        "title": "Andor Season 2",
+        "type": "Show",
+        "year": "2025",
+        "imdb": "8.4",
+        "verdict": "Highly Anticipated",
+        "tag": "Sci-Fi Thriller",
+        "poster": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Andor.svg/330px-Andor.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      },
+      {
+        "rank": 4,
+        "title": "Star Wars: Skeleton Crew",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.5",
+        "verdict": "Trending",
+        "tag": "Sci-Fi Adventure",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      },
+      {
+        "rank": 5,
+        "title": "Percy Jackson Season 2",
+        "type": "Show",
+        "year": "2025",
+        "imdb": "7.1",
+        "verdict": "Popular",
+        "tag": "Fantasy Adventure",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      }
+    ],
+    "apple": [
+      {
+        "rank": 1,
+        "title": "Severance Season 2",
+        "type": "Show",
+        "year": "2025",
+        "imdb": "8.7",
+        "verdict": "Masterpiece",
+        "tag": "Sci-Fi Thriller",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      },
+      {
+        "rank": 2,
+        "title": "Slow Horses Season 4",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.3",
+        "verdict": "Critical Gold",
+        "tag": "Espionage Comedy",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      },
+      {
+        "rank": 3,
+        "title": "Presumed Innocent",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "7.8",
+        "verdict": "Chart Topper",
+        "tag": "Legal Thriller",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      },
+      {
+        "rank": 4,
+        "title": "Silo Season 2",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.1",
+        "verdict": "Acclaimed",
+        "tag": "Sci-Fi Mystery",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      },
+      {
+        "rank": 5,
+        "title": "Shrinking Season 2",
+        "type": "Show",
+        "year": "2024",
+        "imdb": "8.0",
+        "verdict": "Fan Favorite",
+        "tag": "Comedy Drama",
+        "poster": "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
+      }
+    ]
+  },
+  "beyond": [
+    {
+      "title": "All We Imagine as Light",
+      "director": "Payal Kapadia",
+      "year": "2024",
+      "event": "Cannes Grand Prix Winner",
+      "imdb": "8.1",
+      "where": "MUBI",
+      "note": "A poetic exploration of womanhood, romance, and displacement in modern Mumbai. Kapadia's luminous filmmaking crafts an unforgettable sensory journey."
+    },
+    {
+      "title": "Anora",
+      "director": "Sean Baker",
+      "year": "2024",
+      "event": "Cannes Palme d'Or Winner",
+      "imdb": "8.2",
+      "where": "Festivals / Select VOD",
+      "note": "A kinetic, tragicomic spin on the modern Cinderella story following a Brooklyn sex worker. Baker delivers a masterclass in rhythm, empathy, and raw energy."
+    },
+    {
+      "title": "The Room Next Door",
+      "director": "Pedro Almodóvar",
+      "year": "2024",
+      "event": "Venice Golden Lion Winner",
+      "imdb": "7.6",
+      "where": "MUBI / Criterion",
+      "note": "Almodóvar's English-language debut is a deeply moving examination of mortality, friendship, and autonomy. Tilda Swinton and Julianne Moore deliver career-defining performances."
+    },
+    {
+      "title": "The Seed of the Sacred Fig",
+      "director": "Mohammad Rasoulof",
+      "year": "2024",
+      "event": "Cannes Special Jury Prize",
+      "imdb": "8.0",
+      "where": "MUBI",
+      "note": "A searing political allegory blending family drama with real-world urgency inside modern Iran. Rasoulof crafts a tense thriller on paranoia and state repression."
+    }
+  ]
+}
