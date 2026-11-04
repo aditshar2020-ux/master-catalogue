@@ -1,8 +1,10 @@
 import os
 import re
 import json
+import time
 import datetime
 import urllib.parse
+import xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor
 import requests
 
@@ -11,7 +13,6 @@ HEADERS = {
     "Accept-Language": "en-US,en;q=0.9"
 }
 
-# Hard blocklist of 2020-2024 titles that LLMs hallucinate from pre-training memory
 STALE_HALLUCINATION_BLOCKLIST = {
     "amar singh chamkila", "heeramandi", "sector 36", "lucky baskhar", "bramayugam",
     "manorathangal", "murshid", "gyaarah gyaarah", "gyarah gyarah", "shekhar home",
@@ -51,8 +52,20 @@ CHART_SOURCES = {
     ]
 }
 
+RSS_FEEDS = {
+    "india_rss": [
+        ("NETFLIX_PRIME_INDIA_RSS", "https://news.google.com/rss/search?q=Netflix+India+OR+Prime+Video+India+Top+10+trending+movies+series+when:7d&hl=en-IN&gl=IN&ceid=IN:en"),
+        ("HOTSTAR_SONYLIV_ZEE5_RSS", "https://news.google.com/rss/search?q=JioHotstar+OR+SonyLIV+OR+ZEE5+new+release+streaming+trending+when:7d&hl=en-IN&gl=IN&ceid=IN:en"),
+        ("OTTPLAY_INDIA_RSS", "https://news.google.com/rss/search?q=OTT+releases+this+week+India+Netflix+Prime+Hotstar+SonyLIV+ZEE5+when:7d&hl=en-IN&gl=IN&ceid=IN:en")
+    ],
+    "global_rss": [
+        ("GLOBAL_NETFLIX_PRIME_RSS", "https://news.google.com/rss/search?q=Netflix+Top+10+OR+Prime+Video+Top+10+movies+shows+worldwide+when:7d&hl=en-US&gl=US&ceid=US:en"),
+        ("GLOBAL_MAX_DISNEY_APPLE_RSS", "https://news.google.com/rss/search?q=HBO+Max+OR+Disney+Plus+OR+Apple+TV+Top+10+trending+series+movies+when:7d&hl=en-US&gl=US&ceid=US:en"),
+        ("FESTIVAL_CANNES_MUBI_RSS", "https://news.google.com/rss/search?q=Cannes+OR+Venice+OR+MUBI+OR+Criterion+Collection+4K+film+when:14d&hl=en-US&gl=US&ceid=US:en")
+    ]
+}
+
 def fetch_targeted_chart_text(args) -> str:
-    """Extracts the exact TOP 10 chart section from HTML, skipping country menus and old footers."""
     label, url = args
     try:
         r = requests.get(url, headers=HEADERS, timeout=7)
@@ -75,8 +88,7 @@ def fetch_targeted_chart_text(args) -> str:
                 start_idx = pos
                 break
 
-        sliced = text[start_idx:start_idx + 4500]
-
+        sliced = text[start_idx:start_idx + 4000]
         for footer_marker in ["Popular TV Shows", "Popular Web Series", "Bollywood Top Celebrities"]:
             f_pos = sliced.find(footer_marker)
             if f_pos != -1:
@@ -86,11 +98,26 @@ def fetch_targeted_chart_text(args) -> str:
     except Exception:
         return ""
 
-def gather_live_chart_context(region_key: str) -> str:
-    urls = CHART_SOURCES.get(region_key, [])
+def fetch_rss_text(args) -> str:
+    label, url = args
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=7)
+        if r.ok:
+            root = ET.fromstring(r.content)
+            items = [item.find("title").text for item in root.findall(".//item")[:20] if item.find("title") is not None]
+            if items:
+                return f"=== {label} LIVE NEWS ===\n" + "\n".join(f"- {t}" for t in items) + "\n"
+    except Exception:
+        pass
+    return ""
+
+def gather_live_chart_context(chart_key: str, rss_key: str) -> str:
+    chart_urls = CHART_SOURCES.get(chart_key, [])
+    rss_urls = RSS_FEEDS.get(rss_key, [])
     with ThreadPoolExecutor(max_workers=10) as ex:
-        chunks = list(ex.map(fetch_targeted_chart_text, urls))
-    return "\n".join(c for c in chunks if c)
+        c_chunks = list(ex.map(fetch_targeted_chart_text, chart_urls))
+        r_chunks = list(ex.map(fetch_rss_text, rss_urls))
+    return "\n".join(c for c in (c_chunks + r_chunks) if c)
 
 def resolve_single_poster(item: dict) -> dict:
     title = item.get("title", "")
@@ -111,7 +138,6 @@ def resolve_single_poster(item: dict) -> dict:
         or title.strip()
     )
 
-    # 1. IMDb Official Suggestion CDN
     try:
         query_slug = urllib.parse.quote(clean_title.lower())
         first_char = clean_title[0].lower() if clean_title[0].isalnum() else "x"
@@ -126,7 +152,6 @@ def resolve_single_poster(item: dict) -> dict:
     except Exception:
         pass
 
-    # 2. iTunes Search API
     try:
         entity = "tvSeason" if str(media_type).lower() in ["show", "series", "limited series"] else "movie"
         itunes_url = f"https://itunes.apple.com/search?term={urllib.parse.quote(clean_title)}&entity={entity}&limit=1"
@@ -139,7 +164,6 @@ def resolve_single_poster(item: dict) -> dict:
     except Exception:
         pass
 
-    # 3. Wikipedia REST API
     try:
         wiki_url = f"https://en.wikipedia.org/api/rest_v1/page/summary/{urllib.parse.quote(clean_title.replace(' ', '_'))}"
         r = requests.get(wiki_url, headers=HEADERS, timeout=3)
@@ -163,7 +187,6 @@ def extract_json_object(text: str) -> dict:
     return json.loads(text)
 
 def is_valid_live_item(item: dict) -> bool:
-    """Strictly blocks any 2020-2024 LLM training cutoff hallucinations."""
     if not isinstance(item, dict):
         return False
     title = str(item.get("title", "")).strip()
@@ -183,7 +206,6 @@ def is_valid_live_item(item: dict) -> bool:
     return True
 
 def get_verified_realtime_baseline(today_str: str) -> dict:
-    """Emergency fail-safe baseline (Every item is explicitly tagged as BASELINE if used)."""
     return {
         "syncDate": today_str,
         "india": {
@@ -323,8 +345,7 @@ def get_verified_realtime_baseline(today_str: str) -> dict:
     }
 
 def get_active_models(api_key: str) -> list:
-    """Dynamically queries the user's API key for supported flash/pro models."""
-    preferred = ["gemini-2.5-flash", "gemini-2.5-pro", "gemini-2.0-flash", "gemini-3.8-flash", "gemini-3.5-flash"]
+    preferred = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-2.5-pro", "gemini-3.8-flash", "gemini-3.5-flash"]
     try:
         r = requests.get(f"https://generativelanguage.googleapis.com/v1beta/models?key={api_key}", timeout=8)
         if r.ok:
@@ -334,6 +355,8 @@ def get_active_models(api_key: str) -> list:
                 if "generateContent" in m.get("supportedGenerationMethods", [])
                 and ("flash" in m["name"] or "pro" in m["name"])
                 and "1.5" not in m["name"]
+                and "tts" not in m["name"]
+                and "image" not in m["name"]
             ]
             for p in reversed(preferred):
                 if p in avail:
@@ -345,25 +368,58 @@ def get_active_models(api_key: str) -> list:
         pass
     return preferred
 
-def call_gemini_strictly_grounded(api_key: str, prompt: str, models: list) -> tuple:
-    """ONLY executes with live Google Search Grounding enabled. Returns (parsed_dict, model_used)."""
+def call_gemini_live_cascade(api_key: str, prompt: str, models: list) -> tuple:
+    """
+    3-Stage Live Cascade per model:
+      1. google_search tool (snake_case)
+      2. googleSearch tool (camelCase)
+      3. Direct JSON extraction of the live Python-scraped FlixPatrol/Tudum/RSS text
+    """
     for model in models:
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
+
+        # Stage 1 & 2: Try both Google Search tool syntax variants
+        for tool_name, tool_payload in [
+            ("Search-v2", {"tools": [{"google_search": {}}]}),
+            ("Search-v1", {"tools": [{"googleSearch": {}}]})
+        ]:
+            try:
+                payload = {"contents": [{"parts": [{"text": prompt}]}], **tool_payload}
+                r = requests.post(url, json=payload, timeout=45)
+                if r.status_code == 200:
+                    parts = r.json()["candidates"][0]["content"]["parts"]
+                    text = "".join(p.get("text", "") for p in parts if not p.get("thought"))
+                    parsed = extract_json_object(text)
+                    if parsed and any(isinstance(v, list) and len(v) > 0 for v in parsed.values()):
+                        print(f"[SUCCESS] {model} via {tool_name}")
+                        return parsed, f"{model} ({tool_name})"
+                else:
+                    print(f"[{model} {tool_name} HTTP {r.status_code}]: {r.text[:180]}")
+            except Exception as e:
+                print(f"[{model} {tool_name} exception]: {e}")
+
+        # Stage 3: Parse the live-scraped FlixPatrol + Tudum + Google News RSS text directly
         try:
-            payload = {
+            payload_scraped = {
                 "contents": [{"parts": [{"text": prompt}]}],
-                "tools": [{"googleSearch": {}}]
+                "generationConfig": {"responseMimeType": "application/json"}
             }
-            r = requests.post(url, json=payload, timeout=50)
-            if r.status_code == 200:
-                parts = r.json()["candidates"][0]["content"]["parts"]
+            r3 = requests.post(url, json=payload_scraped, timeout=45)
+            if r3.status_code == 200:
+                parts = r3.json()["candidates"][0]["content"]["parts"]
                 text = "".join(p.get("text", "") for p in parts if not p.get("thought"))
                 parsed = extract_json_object(text)
-                if parsed:
-                    print(f"Live Grounded Sync succeeded with {model}")
-                    return parsed, model
+                if parsed and any(isinstance(v, list) and len(v) > 0 for v in parsed.values()):
+                    print(f"[SUCCESS] {model} via Live Scraped Charts + RSS")
+                    return parsed, f"{model} (Live Chart Scraper)"
+            elif r3.status_code == 429:
+                print(f"[{model} HTTP 429 Rate Limit] Cooling down 6s...")
+                time.sleep(6)
+            else:
+                print(f"[{model} Stage-3 HTTP {r3.status_code}]: {r3.text[:180]}")
         except Exception as e:
-            print(f"[{model} grounded notice]: {e}")
+            print(f"[{model} Stage-3 exception]: {e}")
+
     return {}, "NONE (Fallback)"
 
 def merge_platform_list(live_list: list, base_list: list) -> list:
@@ -422,37 +478,44 @@ def main():
 
     baseline = get_verified_realtime_baseline(today_str)
 
-    print("Step 1: Extracting live Top 10 chart tables (FlixPatrol, Tudum, JioHotstar, SonyLIV, ZEE5)...")
-    india_chart_text = gather_live_chart_context("india_charts")
-    global_chart_text = gather_live_chart_context("global_charts")
+    print("Step 1: Scraping live Top 10 chart tables + Google News OTT RSS feeds...")
+    india_chart_text = gather_live_chart_context("india_charts", "india_rss")
+    global_chart_text = gather_live_chart_context("global_charts", "global_rss")
+    print(f"Scraped India context: {len(india_chart_text)} chars | Global context: {len(global_chart_text)} chars")
 
-    india_prompt = f"""Today is {today_str}. Below are the exact live Top 10 chart tables scraped right now from FlixPatrol India, Netflix Tudum India, JioHotstar India, SonyLIV Trending Today, and ZEE5 Top 10 India:
+    india_prompt = f"""Today is {today_str}. Below are the live Top 10 chart tables and live OTT news feeds scraped right now for India (FlixPatrol India, Netflix Tudum India, JioHotstar India, SonyLIV Trending Today, ZEE5 Top 10 India, and Google News India OTT):
 {india_chart_text}
 
 STRICT RULES:
-1. Extract the 10 titles currently trending TODAY ({today_str}) in India for: netflix, prime, jiohotstar, sonyliv, zee5.
-2. NEVER output 2022-2024 titles from your training cutoff (such as Chamkila, Sector 36, Lucky Baskhar, Panchayat S3, Mirzapur S3, Jubilee, Rocket Boys, Bramayugam, Manorathangal, Gyaarah Gyaarah).
-3. Only output 2025-2026 titles that are actively on the live charts today.
+1. Extract 10 currently trending titles TODAY ({today_str}) in India for ALL 5 platforms: netflix, prime, jiohotstar, sonyliv, zee5.
+2. NEVER output 2020-2024 titles (such as Chamkila, Sector 36, Lucky Baskhar, Jubilee, Rocket Boys, Bramayugam, Manorathangal, Gyaarah Gyaarah, Kota Factory, Stree 2).
+3. Every single item must have "year": "2025" or "2026". Populate all 5 platform arrays with 10 items each.
 
 Return ONLY valid JSON:
 {{
-  "netflix": [ {{"rank": 1, "title": "...", "type": "Film/Show", "year": "2026", "imdb": "8.0", "verdict": "#1 in India Today", "tag": "Genre"}} ],
-  "prime": [], "jiohotstar": [], "sonyliv": [], "zee5": []
+  "netflix": [ {{"rank": 1, "title": "...", "type": "Film", "year": "2026", "imdb": "8.0", "verdict": "#1 in India Today", "tag": "Action"}} ],
+  "prime": [ {{"rank": 1, "title": "...", "type": "Show", "year": "2026", "imdb": "8.1", "verdict": "#1 in India Today", "tag": "Drama"}} ],
+  "jiohotstar": [ {{"rank": 1, "title": "...", "type": "Show", "year": "2026", "imdb": "7.8", "verdict": "#1 in India Today", "tag": "Thriller"}} ],
+  "sonyliv": [ {{"rank": 1, "title": "...", "type": "Show", "year": "2026", "imdb": "8.0", "verdict": "#1 in India Today", "tag": "Crime"}} ],
+  "zee5": [ {{"rank": 1, "title": "...", "type": "Film", "year": "2026", "imdb": "7.9", "verdict": "#1 in India Today", "tag": "Mystery"}} ]
 }}"""
 
-    global_prompt = f"""Today is {today_str}. Below are the exact live Worldwide Top 10 chart tables scraped right now from FlixPatrol World and Netflix Tudum Global:
+    global_prompt = f"""Today is {today_str}. Below are the live Worldwide Top 10 chart tables and live global streaming feeds scraped right now (FlixPatrol World, Netflix Tudum Global, HBO Max, Disney+, Apple TV+, and Cannes/Venice/MUBI feeds):
 {global_chart_text}
 
 STRICT RULES:
-1. Extract the 10 titles currently trending worldwide TODAY ({today_str}) for: netflix, prime, max, disney, apple.
+1. Extract 10 currently trending titles worldwide TODAY ({today_str}) for ALL 5 global platforms: netflix, prime, max, disney, apple.
 2. Also include 8 current festival/4K restoration highlights under "beyond".
-3. NEVER output 2022-2024 titles from your training cutoff (such as The Penguin, Shogun, Ripley, Baby Reindeer, X-Men '97, Presumed Innocent, Bad Sisters).
-4. Only output active 2025-2026 chart titles from the scraped tables and live Google Search.
+3. NEVER output 2020-2024 titles (such as The Penguin, Shogun, Ripley, Baby Reindeer, X-Men '97, Presumed Innocent, Bad Sisters).
+4. Every OTT item must have "year": "2025" or "2026". Populate all 5 platform arrays with 10 items each.
 
 Return ONLY valid JSON:
 {{
-  "netflix": [ {{"rank": 1, "title": "...", "type": "Film/Show", "year": "2026", "imdb": "7.8", "verdict": "#1 Worldwide Today", "tag": "Genre"}} ],
-  "prime": [], "max": [], "disney": [], "apple": [],
+  "netflix": [ {{"rank": 1, "title": "...", "type": "Film", "year": "2026", "imdb": "7.8", "verdict": "#1 Worldwide Today", "tag": "Thriller"}} ],
+  "prime": [ {{"rank": 1, "title": "...", "type": "Show", "year": "2026", "imdb": "8.0", "verdict": "#1 Worldwide Today", "tag": "Action"}} ],
+  "max": [ {{"rank": 1, "title": "...", "type": "Show", "year": "2026", "imdb": "8.1", "verdict": "#1 Worldwide Today", "tag": "Drama"}} ],
+  "disney": [ {{"rank": 1, "title": "...", "type": "Show", "year": "2026", "imdb": "8.0", "verdict": "#1 Worldwide Today", "tag": "Sci-Fi"}} ],
+  "apple": [ {{"rank": 1, "title": "...", "type": "Show", "year": "2026", "imdb": "8.2", "verdict": "#1 Worldwide Today", "tag": "Thriller"}} ],
   "beyond": [ {{"title": "...", "director": "...", "year": "2026", "event": "Cannes/Venice/Criterion", "imdb": "8.2", "where": "MUBI / Criterion", "note": "..."}} ]
 }}"""
 
@@ -460,12 +523,12 @@ Return ONLY valid JSON:
     model_used = "NONE"
     if api_key:
         models = get_active_models(api_key)
-        print(f"Step 2: Running strictly grounded search sync using models: {models}")
-        live_india, m1 = call_gemini_strictly_grounded(api_key, india_prompt, models)
+        print(f"Step 2: Executing 3-Stage Live Cascade across models: {models}")
+        live_india, m1 = call_gemini_live_cascade(api_key, india_prompt, models)
         if "india" in live_india and isinstance(live_india["india"], dict):
             live_india = live_india["india"]
 
-        live_global, m2 = call_gemini_strictly_grounded(api_key, global_prompt, models)
+        live_global, m2 = call_gemini_live_cascade(api_key, global_prompt, models)
         if "global" in live_global and isinstance(live_global["global"], dict):
             live_global = live_global["global"]
         model_used = m1 if m1 != "NONE (Fallback)" else m2
@@ -503,7 +566,6 @@ Return ONLY valid JSON:
         if len(live_beyond) >= 4:
             final_catalogue["beyond"] = live_beyond
 
-    # Compute Exact Telemetry Stats
     total_live = sum(
         1 for reg in ["india", "global"]
         for plat in final_catalogue[reg]
