@@ -20,7 +20,7 @@
   <div id="root"></div>
 
   <script type="text/babel">
-    const { useState, useEffect, useMemo } = React;
+    const { useState, useEffect } = React;
 
     const PLATFORM_META = {
       india: [
@@ -44,6 +44,7 @@
       const [activeTab, setActiveTab] = useState("india");
       const [selectedPlatform, setSelectedPlatform] = useState("all");
       const [goldOnly, setGoldOnly] = useState(false);
+      const [liveOnly, setLiveOnly] = useState(false);
       const [searchQuery, setSearchQuery] = useState("");
       const [loading, setLoading] = useState(true);
 
@@ -73,6 +74,7 @@
       const filterItem = (item) => {
         const numImdb = parseFloat(item.imdb) || 0;
         if (goldOnly && numImdb < 7.8) return false;
+        if (liveOnly && item.source !== "LIVE") return false;
         if (searchQuery.trim() !== "") {
           const q = searchQuery.toLowerCase();
           const matchTitle = (item.title || "").toLowerCase().includes(q);
@@ -104,37 +106,49 @@
         );
       }
 
+      const liveCount = catalogue.liveCount ?? 0;
+      const isFullyLive = liveCount > 0;
+
       const platformsToShow = activeTab === "beyond"
         ? []
         : PLATFORM_META[activeTab].filter(p => selectedPlatform === "all" || p.key === selectedPlatform);
 
       return (
         <div className="min-h-screen pb-20">
-          {/* Top Navigation & Status Header */}
+          {/* Top Navigation & Telemetry Header */}
           <header className="sticky top-0 z-40 backdrop-blur-xl bg-[#070709]/90 border-b border-zinc-800/80">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div>
-                  <div className="flex items-center gap-2.5">
-                    <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    <span className="text-[11px] font-semibold uppercase tracking-widest text-emerald-400">
-                      {catalogue.syncMode || "LIVE AUTO-SYNC"} • {catalogue.syncDate}
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider border ${
+                      isFullyLive
+                        ? "bg-emerald-500/15 text-emerald-400 border-emerald-500/30"
+                        : "bg-amber-500/15 text-amber-400 border-amber-500/30"
+                    }`}>
+                      <span className={`w-2 h-2 rounded-full ${isFullyLive ? "bg-emerald-400 animate-pulse" : "bg-amber-400"}`}></span>
+                      {catalogue.syncMode || `LIVE SCRAPED: ${liveCount}/100 TITLES`}
+                    </span>
+
+                    <span className="text-[11px] font-medium text-zinc-400 bg-zinc-900 px-2.5 py-0.5 rounded-full border border-zinc-800">
+                      🕒 {catalogue.syncTimestamp || catalogue.syncDate}
                     </span>
                   </div>
-                  <h1 className="serif-title text-2xl sm:text-3xl font-bold tracking-tight text-white mt-0.5">
+
+                  <h1 className="serif-title text-2xl sm:text-3xl font-bold tracking-tight text-white mt-1">
                     The Master Catalogue
                   </h1>
                 </div>
 
-                {/* Search & Gold Filter Controls */}
-                <div className="flex flex-wrap items-center gap-2.5">
+                {/* Search, Live-Only Filter & Critical Gold Controls */}
+                <div className="flex flex-wrap items-center gap-2">
                   <div className="relative flex-1 sm:flex-initial">
                     <input
                       type="text"
                       value={searchQuery}
                       onChange={e => setSearchQuery(e.target.value)}
                       placeholder="Search title, genre, director..."
-                      className="w-full sm:w-64 bg-zinc-900/90 border border-zinc-800 focus:border-amber-500/70 rounded-xl px-3.5 py-2 text-xs text-white placeholder-zinc-500 outline-none transition"
+                      className="w-full sm:w-60 bg-zinc-900/90 border border-zinc-800 focus:border-amber-500/70 rounded-xl px-3.5 py-2 text-xs text-white placeholder-zinc-500 outline-none transition"
                     />
                     {searchQuery && (
                       <button
@@ -147,8 +161,20 @@
                   </div>
 
                   <button
+                    onClick={() => setLiveOnly(!liveOnly)}
+                    className={`px-3 py-2 rounded-xl text-xs font-semibold border transition flex items-center gap-1.5 ${
+                      liveOnly
+                        ? "bg-emerald-500 text-black border-emerald-400 shadow-lg shadow-emerald-500/20"
+                        : "bg-zinc-900/90 text-emerald-400 border-zinc-800 hover:border-emerald-500/50"
+                    }`}
+                  >
+                    <span>⚡</span>
+                    <span>Live Only ({liveCount})</span>
+                  </button>
+
+                  <button
                     onClick={() => setGoldOnly(!goldOnly)}
-                    className={`px-3.5 py-2 rounded-xl text-xs font-semibold border transition flex items-center gap-1.5 ${
+                    className={`px-3 py-2 rounded-xl text-xs font-semibold border transition flex items-center gap-1.5 ${
                       goldOnly
                         ? "bg-amber-500 text-black border-amber-400 shadow-lg shadow-amber-500/20"
                         : "bg-zinc-900/90 text-amber-400 border-zinc-800 hover:border-amber-500/50"
@@ -225,10 +251,11 @@
               platformsToShow.map(platform => {
                 const rawList = (catalogue[activeTab] && catalogue[activeTab][platform.key]) || [];
                 const items = rawList.filter(filterItem);
+                const platLiveCount = rawList.filter(i => i.source === "LIVE").length;
 
                 return (
                   <section key={platform.key} className="space-y-4">
-                    <div className={`flex items-center justify-between p-3.5 rounded-xl bg-gradient-to-r ${platform.accent} border border-zinc-800/80`}>
+                    <div className={`flex flex-wrap items-center justify-between gap-2 p-3.5 rounded-xl bg-gradient-to-r ${platform.accent} border border-zinc-800/80`}>
                       <div className="flex items-center gap-3">
                         <span className={`px-2.5 py-0.5 rounded text-xs uppercase tracking-wider ${platform.badge}`}>
                           {platform.name}
@@ -237,6 +264,14 @@
                           Showing {items.length} of {rawList.length} Trending Titles
                         </span>
                       </div>
+
+                      <span className={`text-[11px] font-bold px-2.5 py-0.5 rounded-md border ${
+                        platLiveCount > 0
+                          ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/30"
+                          : "bg-amber-500/10 text-amber-400 border-amber-500/30"
+                      }`}>
+                        ⚡ {platLiveCount}/10 Live Scraped Today
+                      </span>
                     </div>
 
                     {items.length === 0 ? (
@@ -247,6 +282,7 @@
                       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
                         {items.map(item => {
                           const isGold = (parseFloat(item.imdb) || 0) >= 7.8;
+                          const isItemLive = item.source === "LIVE";
                           const imdbSearchUrl = `https://www.imdb.com/find/?q=${encodeURIComponent(item.title)}`;
                           const ytTrailerUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(item.title + " " + (item.year || "") + " official trailer")}`;
 
@@ -273,9 +309,18 @@
                                   />
                                   <div className="absolute inset-0 bg-gradient-to-t from-[#070709] via-transparent to-black/40" />
 
-                                  {/* Top Left Rank */}
-                                  <div className="absolute top-2.5 left-2.5 bg-black/80 backdrop-blur-md border border-zinc-700 px-2 py-0.5 rounded-md text-xs font-extrabold text-white">
-                                    #{item.rank}
+                                  {/* Top Left Rank & Live Source Badge */}
+                                  <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5">
+                                    <div className="bg-black/85 backdrop-blur-md border border-zinc-700 px-2 py-0.5 rounded-md text-xs font-extrabold text-white">
+                                      #{item.rank}
+                                    </div>
+                                    <div className={`px-1.5 py-0.5 rounded text-[10px] font-extrabold uppercase tracking-wider backdrop-blur-md border ${
+                                      isItemLive
+                                        ? "bg-emerald-500/90 text-black border-emerald-300"
+                                        : "bg-zinc-900/90 text-amber-400 border-amber-500/40"
+                                    }`}>
+                                      {isItemLive ? "⚡ LIVE" : "🛡️ BASE"}
+                                    </div>
                                   </div>
 
                                   {/* Top Right IMDb Badge */}
@@ -288,12 +333,12 @@
 
                                   {/* Bottom Verdict Pill */}
                                   <div className="absolute bottom-2 left-2.5 right-2.5 flex items-center justify-between gap-1">
-                                    <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded ${
+                                    <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded truncate ${
                                       isGold ? "bg-amber-500/90 text-black" : "bg-zinc-800/90 text-zinc-200"
                                     }`}>
                                       {item.verdict}
                                     </span>
-                                    <span className="text-[10px] bg-black/75 text-zinc-300 px-1.5 py-0.5 rounded border border-zinc-800">
+                                    <span className="text-[10px] bg-black/75 text-zinc-300 px-1.5 py-0.5 rounded border border-zinc-800 shrink-0">
                                       {item.type}
                                     </span>
                                   </div>
@@ -349,6 +394,7 @@
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   {(catalogue.beyond || []).filter(filterItem).map((gem, idx) => {
+                    const isGemLive = gem.source === "LIVE";
                     const imdbUrl = `https://www.imdb.com/find/?q=${encodeURIComponent(gem.title)}`;
                     const trailerUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(gem.title + " " + gem.director + " trailer")}`;
                     return (
@@ -366,9 +412,16 @@
                         <div className="flex flex-col justify-between flex-1">
                           <div>
                             <div className="flex items-center justify-between gap-2">
-                              <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">
-                                {gem.event}
-                              </span>
+                              <div className="flex items-center gap-1.5">
+                                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                                  {gem.event}
+                                </span>
+                                <span className={`px-1.5 py-0.5 rounded text-[10px] font-bold uppercase ${
+                                  isGemLive ? "bg-emerald-500/20 text-emerald-400" : "bg-zinc-800 text-zinc-400"
+                                }`}>
+                                  {isGemLive ? "⚡ LIVE" : "🛡️ BASE"}
+                                </span>
+                              </div>
                               <span className="text-xs font-bold text-amber-400">★ {gem.imdb}</span>
                             </div>
                             <h3 className="text-base font-bold text-white mt-2">
