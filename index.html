@@ -1,360 +1,419 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Master Catalogue — Universal OTT & Cinephile Radar</title>
-  <!-- Tailwind CSS -->
+  <title>THE MASTER CATALOGUE — Autonomous Daily OTT & Cinephile Radar</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- React & ReactDOM (Production) -->
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <!-- Babel Standalone (Compiles JSX directly in browser) -->
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
   <style>
-    body { background-color: #0b0f19; color: #f3f4f6; font-family: ui-sans-serif, system-ui, -apple-system, sans-serif; }
-    ::-webkit-scrollbar { height: 6px; width: 6px; }
-    ::-webkit-scrollbar-track { background: #0b0f19; }
-    ::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #4b5563; }
+    body { background-color: #070709; color: #f4f4f6; font-family: 'Inter', sans-serif; }
+    .serif-title { font-family: 'Playfair Display', serif; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
 </head>
-<body>
+<body class="min-h-screen selection:bg-amber-500 selection:text-black">
   <div id="root"></div>
 
   <script type="text/babel">
-    const { useState, useEffect } = React;
+    const { useState, useEffect, useMemo } = React;
 
-    // --- ACCURATE 2026 DATASETS ---
-    const INITIAL_DATA = {
-      india: {
-        netflix: [
-          { rank: 1, title: "Dhurandhar", type: "Film", year: "2026", imdb: "7.9", verdict: "Action Spectacle", tag: "Spy Thriller", poster: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500&q=80" },
-          { rank: 2, title: "The Great Indian Kapil Show S2", type: "Show", year: "2026", imdb: "7.4", verdict: "Viral / Hype", tag: "Comedy", poster: "https://images.unsplash.com/photo-1514306191717-452ec28c7814?w=500&q=80" },
-          { rank: 3, title: "Pushpa 2: The Rule", type: "Film", year: "2025", imdb: "7.7", verdict: "Box Office Titan", tag: "Action / Masala", poster: "https://images.unsplash.com/photo-1509281373149-e957c6296406?w=500&q=80" },
-          { rank: 4, title: "Khakee: The Bengal Chapter", type: "Show", year: "2026", imdb: "8.3", verdict: "Critical Gold", tag: "Crime / Noir", poster: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=500&q=80" },
-          { rank: 5, title: "Amar Singh Chamkila", type: "Film", year: "2024", imdb: "8.2", verdict: "Auteur Biopic", tag: "Musical Drama", poster: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&q=80" },
-          { rank: 6, title: "Sector 36", type: "Film", year: "2024", imdb: "7.6", verdict: "Grit Realism", tag: "Police Procedural", poster: "https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=500&q=80" },
-          { rank: 7, title: "Kohrra S2", type: "Show", year: "2026", imdb: "8.4", verdict: "Masterwork", tag: "Slow-burn Noir", poster: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500&q=80" },
-          { rank: 8, title: "De De Pyaar De 2", type: "Film", year: "2026", imdb: "6.8", verdict: "Popcorn Fun", tag: "Rom-Com", poster: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80" },
-          { rank: 9, title: "Lucky Baskhar", type: "Film", year: "2024", imdb: "8.1", verdict: "Consensus Gold", tag: "Financial Heist", poster: "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=500&q=80" },
-          { rank: 10, title: "Delhi Crime S3", type: "Show", year: "2026", imdb: "8.5", verdict: "Essential", tag: "Docu-Drama", poster: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500&q=80" }
-        ],
-        prime: [
-          { rank: 1, title: "Mirzapur: The Movie", type: "Film", year: "2026", imdb: "8.4", verdict: "Cult Sensation", tag: "Pulp Gangster", poster: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500&q=80" },
-          { rank: 2, title: "Panchayat S4", type: "Show", year: "2026", imdb: "8.9", verdict: "All-Time Canon", tag: "Rural Realism", poster: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=500&q=80" },
-          { rank: 3, title: "The Family Man S3", type: "Show", year: "2026", imdb: "8.8", verdict: "Auteur Thriller", tag: "Espionage", poster: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=500&q=80" },
-          { rank: 4, title: "Chaar Yaar", type: "Film", year: "2026", imdb: "7.5", verdict: "Slice of Life", tag: "Drama", poster: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&q=80" },
-          { rank: 5, title: "Jubilee", type: "Show", year: "2023", imdb: "8.4", verdict: "Cinematic Feat", tag: "Golden Era Bombay", poster: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80" },
-          { rank: 6, title: "Paatal Lok S2", type: "Show", year: "2026", imdb: "8.6", verdict: "Hardcore Noir", tag: "Investigative", poster: "https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=500&q=80" },
-          { rank: 7, title: "Jailer", type: "Film", year: "2023", imdb: "7.1", verdict: "Mass Elevation", tag: "Action / Hero", poster: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500&q=80" },
-          { rank: 8, title: "Suzhal: The Vortex S2", type: "Show", year: "2026", imdb: "8.2", verdict: "Folk Mystery", tag: "Tamil Thriller", poster: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500&q=80" },
-          { rank: 9, title: "Comrade Kalyan", type: "Film", year: "2026", imdb: "7.8", verdict: "Social Commentary", tag: "Political Drama", poster: "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=500&q=80" },
-          { rank: 10, title: "Farzi S2", type: "Show", year: "2026", imdb: "8.4", verdict: "High Stakes", tag: "Counterfeit Thriller", poster: "https://images.unsplash.com/photo-1509281373149-e957c6296406?w=500&q=80" }
-        ],
-        jiohotstar: [
-          { rank: 1, title: "Thukra Ke Mera Pyaar S2", type: "Show", year: "2026", imdb: "8.1", verdict: "Revenge Craze", tag: "Intense Drama", poster: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500&q=80" },
-          { rank: 2, title: "Laughter Chefs", type: "Show", year: "2026", imdb: "7.2", verdict: "Family Sitcom", tag: "Culinary Comedy", poster: "https://images.unsplash.com/photo-1514306191717-452ec28c7814?w=500&q=80" },
-          { rank: 3, title: "House of the Dragon S2/S3", type: "Show", year: "2026", imdb: "8.5", verdict: "Global Gold", tag: "High Fantasy", poster: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500&q=80" },
-          { rank: 4, title: "Pritam & Pedro", type: "Show", year: "2026", imdb: "7.9", verdict: "Hirani Satire", tag: "Cyber Comedy", poster: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80" },
-          { rank: 5, title: "Thanal", type: "Film", year: "2026", imdb: "8.0", verdict: "Malayalam Mystery", tag: "Psychological", poster: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=500&q=80" },
-          { rank: 6, title: "Special OPS 2", type: "Show", year: "2026", imdb: "8.6", verdict: "Precision Action", tag: "Counter-Terror", poster: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500&q=80" },
-          { rank: 7, title: "Chand Mera Dil", type: "Film", year: "2026", imdb: "7.3", verdict: "Romantic Lyric", tag: "Romance", poster: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&q=80" },
-          { rank: 8, title: "Resort", type: "Show", year: "2026", imdb: "7.5", verdict: "Whodunit", tag: "Locked Room Murder", poster: "https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=500&q=80" },
-          { rank: 9, title: "The Freelancer S2", type: "Show", year: "2025", imdb: "8.0", verdict: "Extraction Thriller", tag: "Tactical Ops", poster: "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=500&q=80" },
-          { rank: 10, title: "Sheelavathi", type: "Film", year: "2026", imdb: "7.7", verdict: "Period Triumph", tag: "Historical Drama", poster: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=500&q=80" }
-        ],
-        sonyliv: [
-          { rank: 1, title: "Freedom at Midnight S2", type: "Show", year: "2026", imdb: "8.3", verdict: "Historical Benchmark", tag: "National Archive", poster: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=500&q=80" },
-          { rank: 2, title: "Gullak S5", type: "Show", year: "2026", imdb: "9.1", verdict: "All-Time Canon", tag: "Middle-Class Soul", poster: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=500&q=80" },
-          { rank: 3, title: "Scam 2010: The Subrata Roy Saga", type: "Show", year: "2026", imdb: "8.8", verdict: "Financial Epic", tag: "Hansal Mehta Bio", poster: "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=500&q=80" },
-          { rank: 4, title: "Rocket Boys", type: "Show", year: "2023", imdb: "8.8", verdict: "Pure Genius", tag: "Scientific History", poster: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500&q=80" },
-          { rank: 5, title: "Maharani S4", type: "Show", year: "2026", imdb: "7.9", verdict: "Power Realism", tag: "Bihar State Politics", poster: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500&q=80" },
-          { rank: 6, title: "Churuli", type: "Film", year: "2021", imdb: "7.1", verdict: "Lijo Wild Ride", tag: "Avant-Garde Sci-Fi", poster: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500&q=80" },
-          { rank: 7, title: "The Hunt: Rajiv Gandhi Case", type: "Show", year: "2024", imdb: "7.9", verdict: "Forensic Procedural", tag: "True Crime", poster: "https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=500&q=80" },
-          { rank: 8, title: "Bramayugam", type: "Film", year: "2024", imdb: "7.8", verdict: "Monochrome Masterpiece", tag: "Folklore Horror", poster: "https://images.unsplash.com/photo-1509281373149-e957c6296406?w=500&q=80" },
-          { rank: 9, title: "Kuttram Purindhavan", type: "Show", year: "2026", imdb: "7.8", verdict: "Tamil Procedural", tag: "Police Noir", poster: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80" },
-          { rank: 10, title: "Salute", type: "Film", year: "2022", imdb: "7.0", verdict: "Authentic Cop Study", tag: "Investigation", poster: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&q=80" }
-        ],
-        zee5: [
-          { rank: 1, title: "Gyaarah Gyaarah S2", type: "Show", year: "2026", imdb: "8.1", verdict: "Walkie-Talkie Sci-Fi", tag: "Timeline Mystery", poster: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500&q=80" },
-          { rank: 2, title: "Manorathangal", type: "Show", year: "2024", imdb: "8.0", verdict: "Literary Treasure", tag: "MT Vasudevan Nair", poster: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=500&q=80" },
-          { rank: 3, title: "Pitchers S3", type: "Show", year: "2026", imdb: "8.6", verdict: "Founder Journey", tag: "Startup Crucible", poster: "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=500&q=80" },
-          { rank: 4, title: "Sunflower S3", type: "Show", year: "2026", imdb: "7.5", verdict: "Dark Comedy", tag: "Society Murder", poster: "https://images.unsplash.com/photo-1514306191717-452ec28c7814?w=500&q=80" },
-          { rank: 5, title: "The Broken News S3", type: "Show", year: "2026", imdb: "7.8", verdict: "Media Warfare", tag: "Fourth Estate", poster: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=500&q=80" },
-          { rank: 6, title: "Tripling S4", type: "Show", year: "2026", imdb: "8.5", verdict: "Sibling Roadtrip", tag: "Feel Good", poster: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80" },
-          { rank: 7, title: "Bandaa", type: "Film", year: "2023", imdb: "7.9", verdict: "Courtroom Tour-de-force", tag: "Legal Battle", poster: "https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=500&q=80" },
-          { rank: 8, title: "Murshid", type: "Show", year: "2024", imdb: "7.3", verdict: "Kay Kay Menon Craft", tag: "Underworld", poster: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500&q=80" },
-          { rank: 9, title: "Saas Bahu Achaar Pvt Ltd", type: "Show", year: "2022", imdb: "7.9", verdict: "Grassroots Grit", tag: "Inspiring Drama", poster: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500&q=80" },
-          { rank: 10, title: "Mithya: The Darker Chapter", type: "Show", year: "2024", imdb: "7.4", verdict: "Psychological Game", tag: "Academic Rivalry", poster: "https://images.unsplash.com/photo-1509281373149-e957c6296406?w=500&q=80" }
-        ]
-      },
-      global: {
-        netflix: [
-          { rank: 1, title: "Squid Game S3", type: "Show", year: "2026", imdb: "8.0", verdict: "Global Mania", tag: "Survival Thriller", poster: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500&q=80" },
-          { rank: 2, title: "3 Body Problem S2", type: "Show", year: "2026", imdb: "7.8", verdict: "Cosmic Ambition", tag: "Hard Sci-Fi", poster: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=500&q=80" },
-          { rank: 3, title: "Wednesday S2", type: "Show", year: "2025", imdb: "8.1", verdict: "Gothic Pop", tag: "Supernatural Mystery", poster: "https://images.unsplash.com/photo-1509281373149-e957c6296406?w=500&q=80" },
-          { rank: 4, title: "Ripley", type: "Mini-Series", year: "2024", imdb: "8.2", verdict: "Visual Masterclass", tag: "High-Contrast Noir", poster: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500&q=80" },
-          { rank: 5, title: "Stranger Things S5", type: "Show", year: "2026", imdb: "8.7", verdict: "Era Culmination", tag: "80s Sci-Fi", poster: "https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=500&q=80" }
-        ],
-        prime: [
-          { rank: 1, title: "The Boys S5 (Final Season)", type: "Show", year: "2026", imdb: "8.7", verdict: "Peak Satire", tag: "Superhero Deconstruction", poster: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500&q=80" },
-          { rank: 2, title: "Fallout S2", type: "Show", year: "2026", imdb: "8.4", verdict: "World-Building Feat", tag: "Post-Apocalyptic", poster: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500&q=80" },
-          { rank: 3, title: "Reacher S3", type: "Show", year: "2025", imdb: "8.1", verdict: "Pure Kinetic Action", tag: "Crime Thriller", poster: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80" },
-          { rank: 4, title: "The Lord of the Rings: Rings of Power", type: "Show", year: "2024", imdb: "7.0", verdict: "Massive Production", tag: "Fantasy Epic", poster: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=500&q=80" },
-          { rank: 5, title: "Invincible S3", type: "Show", year: "2025", imdb: "8.7", verdict: "Masterpiece", tag: "Animated Drama", poster: "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=500&q=80" }
-        ],
-        max: [
-          { rank: 1, title: "House of the Dragon S3", type: "Show", year: "2026", imdb: "8.5", verdict: "Dynastic Tragedy", tag: "Prestige Fantasy", poster: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500&q=80" },
-          { rank: 2, title: "The Last of Us S2", type: "Show", year: "2025", imdb: "8.8", verdict: "Emotional Wrecking Ball", tag: "Survival Drama", poster: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500&q=80" },
-          { rank: 3, title: "The White Lotus S3 (Thailand)", type: "Show", year: "2025", imdb: "8.0", verdict: "Social Satire", tag: "Dark Comedy", poster: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=500&q=80" },
-          { rank: 4, title: "The Penguin", type: "Limited Series", year: "2024", imdb: "8.8", verdict: "Crime Canon", tag: "Mob Noir", poster: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=500&q=80" },
-          { rank: 5, title: "Dune: Prophecy", type: "Show", year: "2024", imdb: "7.8", verdict: "Political Intrigue", tag: "Sci-Fi Space Opera", poster: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500&q=80" }
-        ],
-        disney: [
-          { rank: 1, title: "Andor S2 (Final Season)", type: "Show", year: "2025", imdb: "8.4", verdict: "Auteur Rebellion", tag: "Political Espionage", poster: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=500&q=80" },
-          { rank: 2, title: "The Bear S4", type: "Show", year: "2025", imdb: "8.6", verdict: "Kinetic Masterwork", tag: "High-Pressure Kitchen", poster: "https://images.unsplash.com/photo-1514306191717-452ec28c7814?w=500&q=80" },
-          { rank: 3, title: "Shōgun S2 (In Prod / S1 Canon)", type: "Show", year: "2024", imdb: "8.7", verdict: "Feudal Masterpiece", tag: "Historical Epic", poster: "https://images.unsplash.com/photo-1509281373149-e957c6296406?w=500&q=80" },
-          { rank: 4, title: "Daredevil: Born Again", type: "Show", year: "2025", imdb: "8.2", verdict: "Street-Level Noir", tag: "Crime / Vigilante", poster: "https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=500&q=80" },
-          { rank: 5, title: "X-Men '97", type: "Show", year: "2024", imdb: "8.9", verdict: "Animation Triumph", tag: "Philosophical Sci-Fi", poster: "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=500&q=80" }
-        ],
-        apple: [
-          { rank: 1, title: "Severance S2", type: "Show", year: "2025", imdb: "8.7", verdict: "Conceptual Masterwork", tag: "Psychological Sci-Fi", poster: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500&q=80" },
-          { rank: 2, title: "Slow Horses S5", type: "Show", year: "2025", imdb: "8.3", verdict: "Cold War Satire", tag: "British Spy Thriller", poster: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500&q=80" },
-          { rank: 3, title: "Silo S2", type: "Show", year: "2024", imdb: "8.1", verdict: "Dystopian Wonder", tag: "Mystery Bunker", poster: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=500&q=80" },
-          { rank: 4, title: "Bad Sisters S2", type: "Show", year: "2024", imdb: "8.3", verdict: "Dark Thriller", tag: "Irish Murder Mystery", poster: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&q=80" },
-          { rank: 5, title: "Presumed Innocent", type: "Show", year: "2024", imdb: "7.8", verdict: "Tight Courtroom", tag: "Legal Procedural", poster: "https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=500&q=80" }
-        ]
-      },
-      beyond: [
-        { title: "All We Imagine as Light", director: "Payal Kapadia", year: "2024", event: "Grand Prix Winner — Cannes 2024", imdb: "7.9", where: "MUBI / Select Theatrical", note: "A poetic, nocturnal exploration of Mumbai sisterhood and migrant quietude. First Indian film in Cannes competition in 30 years." },
-        { title: "Santosh", director: "Sandhya Suri", year: "2024", event: "Cannes Un Certain Regard", imdb: "7.7", where: "International Theatrical", note: "Devastating, unsanitized police procedural diving into rural North Indian caste dynamics and institutional decay." },
-        { title: "Kummatty (4K Restoration)", director: "G. Aravindan", year: "1979", event: "The Film Foundation Archive", imdb: "8.4", where: "Criterion Channel / World Cinema Heritage", note: "Pure cinematic folklore poetry from Kerala, fully preserved in 4K by Martin Scorsese's Film Foundation." },
-        { title: "Anora", director: "Sean Baker", year: "2024", event: "Palme d'Or Winner — Cannes 2024", imdb: "8.0", where: "A24 Theatrical / Criterion", note: "Frantic, energetic Russian-American screwball tragicomedy shot on 35mm with kinetic humanism." },
-        { title: "The Seed of the Sacred Fig", director: "Mohammad Rasoulof", year: "2024", event: "Cannes Special Jury Prize", imdb: "8.1", where: "Neon / European Circuits", note: "Secretly filmed under state persecution in Iran; a blistering domestic thriller paralleling autocratic authoritarianism." }
+    const PLATFORM_META = {
+      india: [
+        { key: "netflix", name: "Netflix India", accent: "from-red-600/20 to-transparent", badge: "bg-red-600 text-white" },
+        { key: "prime", name: "Prime Video India", accent: "from-sky-500/20 to-transparent", badge: "bg-sky-500 text-black font-bold" },
+        { key: "jiohotstar", name: "JioHotstar", accent: "from-indigo-500/20 to-transparent", badge: "bg-indigo-600 text-white" },
+        { key: "sonyliv", name: "SonyLIV", accent: "from-emerald-500/20 to-transparent", badge: "bg-emerald-500 text-black font-bold" },
+        { key: "zee5", name: "ZEE5", accent: "from-purple-500/20 to-transparent", badge: "bg-purple-600 text-white" }
+      ],
+      global: [
+        { key: "netflix", name: "Netflix Global", accent: "from-red-600/20 to-transparent", badge: "bg-red-600 text-white" },
+        { key: "prime", name: "Prime Video Global", accent: "from-sky-500/20 to-transparent", badge: "bg-sky-500 text-black font-bold" },
+        { key: "max", name: "HBO Max", accent: "from-blue-600/20 to-transparent", badge: "bg-blue-600 text-white" },
+        { key: "disney", name: "Disney+", accent: "from-cyan-500/20 to-transparent", badge: "bg-cyan-500 text-black font-bold" },
+        { key: "apple", name: "Apple TV+", accent: "from-zinc-400/20 to-transparent", badge: "bg-zinc-200 text-black font-bold" }
       ]
     };
 
     function App() {
-      const [view, setView] = useState('india');
-      const [activePlatform, setActivePlatform] = useState('all');
-      const [filterGold, setFilterGold] = useState(false);
-      const [catalogue, setCatalogue] = useState(INITIAL_DATA);
+      const [catalogue, setCatalogue] = useState(null);
+      const [activeTab, setActiveTab] = useState("india");
+      const [selectedPlatform, setSelectedPlatform] = useState("all");
+      const [goldOnly, setGoldOnly] = useState(false);
+      const [searchQuery, setSearchQuery] = useState("");
+      const [loading, setLoading] = useState(true);
 
-      // CACHE BUSTER: Forces the browser to pull the freshest file every time
-    const cacheBuster = '?t=' + new Date().getTime();
-    fetch('./public/daily_catalogue.json' + cacheBuster)
-      .catch(() => fetch('./daily_catalogue.json' + cacheBuster))
-      .then(res => res.json())
-      .then(data => { 
-        if (data && data.india) setCatalogue(data); 
-      })
-      .catch(() => console.log("Using default fallback data."));
+      useEffect(() => {
+        const ts = "?t=" + new Date().getTime();
+        fetch("./daily_catalogue.json" + ts)
+          .then(r => {
+            if (!r.ok) throw new Error("Root JSON not found");
+            return r.json();
+          })
+          .catch(() => fetch("./public/daily_catalogue.json" + ts).then(r => r.json()))
+          .then(data => {
+            if (data && data.india) setCatalogue(data);
+            setLoading(false);
+          })
+          .catch(err => {
+            console.error("Failed to load catalogue JSON:", err);
+            setLoading(false);
+          });
+      }, []);
 
-      const platformConfig = {
-        netflix: { name: "Netflix India", color: "text-red-500", border: "border-red-500/30", bg: "bg-red-500/10" },
-        prime: { name: "Prime Video India", color: "text-sky-400", border: "border-sky-400/30", bg: "bg-sky-400/10" },
-        jiohotstar: { name: "JioHotstar", color: "text-blue-500", border: "border-blue-500/30", bg: "bg-blue-500/10" },
-        sonyliv: { name: "SonyLIV", color: "text-amber-500", border: "border-amber-500/30", bg: "bg-amber-500/10" },
-        zee5: { name: "ZEE5", color: "text-purple-400", border: "border-purple-400/30", bg: "bg-purple-400/10" },
-        max: { name: "Max (HBO)", color: "text-violet-400", border: "border-violet-400/30", bg: "bg-violet-400/10" },
-        disney: { name: "Disney+", color: "text-blue-400", border: "border-blue-400/30", bg: "bg-blue-400/10" },
-        apple: { name: "Apple TV+", color: "text-gray-300", border: "border-gray-500/30", bg: "bg-gray-500/10" }
+      const handleTabChange = (tab) => {
+        setActiveTab(tab);
+        setSelectedPlatform("all");
       };
 
-      return (
-        <div className="min-h-screen bg-[#0b0f19] text-gray-100">
-          {/* Header */}
-          <header className="sticky top-0 z-50 bg-[#0f172a]/95 backdrop-blur border-b border-gray-800 px-6 py-4 flex flex-wrap items-center justify-between gap-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-9 h-9 rounded-xl bg-amber-500 flex items-center justify-center font-black text-black text-xl shadow-lg shadow-amber-500/20">
-                M
-              </div>
-              <div>
-                <h1 className="text-lg font-black tracking-widest uppercase bg-gradient-to-r from-amber-200 via-amber-400 to-amber-600 bg-clip-text text-transparent">
-                  THE MASTER CATALOGUE
-                </h1>
-                <p className="text-[11px] text-gray-400 tracking-wider">UNIVERSAL OTT & AUTEUR RADAR</p>
-              </div>
+      const filterItem = (item) => {
+        const numImdb = parseFloat(item.imdb) || 0;
+        if (goldOnly && numImdb < 7.8) return false;
+        if (searchQuery.trim() !== "") {
+          const q = searchQuery.toLowerCase();
+          const matchTitle = (item.title || "").toLowerCase().includes(q);
+          const matchTag = (item.tag || "").toLowerCase().includes(q);
+          const matchVerdict = (item.verdict || "").toLowerCase().includes(q);
+          const matchDir = (item.director || "").toLowerCase().includes(q);
+          return matchTitle || matchTag || matchVerdict || matchDir;
+        }
+        return true;
+      };
+
+      if (loading) {
+        return (
+          <div className="min-h-screen flex flex-col items-center justify-center bg-[#070709] text-zinc-400">
+            <div className="w-10 h-10 border-2 border-amber-500 border-t-transparent rounded-full animate-spin mb-4"></div>
+            <p className="text-xs uppercase tracking-widest text-amber-400">Syncing Daily Master Catalogue...</p>
+          </div>
+        );
+      }
+
+      if (!catalogue) {
+        return (
+          <div className="min-h-screen flex items-center justify-center p-6 text-center">
+            <div className="max-w-md bg-zinc-900/80 border border-zinc-800 rounded-2xl p-6">
+              <h2 className="text-lg font-bold text-white mb-2">Awaiting Initial Sync</h2>
+              <p className="text-sm text-zinc-400">Run the GitHub Actions workflow once to generate daily_catalogue.json.</p>
             </div>
+          </div>
+        );
+      }
 
-            <div className="flex items-center gap-3">
-              <button 
-                onClick={() => setFilterGold(!filterGold)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-bold border transition flex items-center gap-1.5 ${filterGold ? 'bg-amber-500 text-black border-amber-400 shadow-md shadow-amber-500/20' : 'bg-gray-900 text-amber-400 border-amber-500/30 hover:border-amber-500'}`}
-              >
-                <span>★</span> {filterGold ? 'Showing Gold Only (7.8+)' : 'Filter Gold (7.8+)'}
-              </button>
+      const platformsToShow = activeTab === "beyond"
+        ? []
+        : PLATFORM_META[activeTab].filter(p => selectedPlatform === "all" || p.key === selectedPlatform);
 
-              <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-950/60 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>Active 2026 Feed</span>
+      return (
+        <div className="min-h-screen pb-20">
+          {/* Top Navigation & Status Header */}
+          <header className="sticky top-0 z-40 backdrop-blur-xl bg-[#070709]/90 border-b border-zinc-800/80">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div>
+                  <div className="flex items-center gap-2.5">
+                    <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span className="text-[11px] font-semibold uppercase tracking-widest text-emerald-400">
+                      {catalogue.syncMode || "LIVE AUTO-SYNC"} • {catalogue.syncDate}
+                    </span>
+                  </div>
+                  <h1 className="serif-title text-2xl sm:text-3xl font-bold tracking-tight text-white mt-0.5">
+                    The Master Catalogue
+                  </h1>
+                </div>
+
+                {/* Search & Gold Filter Controls */}
+                <div className="flex flex-wrap items-center gap-2.5">
+                  <div className="relative flex-1 sm:flex-initial">
+                    <input
+                      type="text"
+                      value={searchQuery}
+                      onChange={e => setSearchQuery(e.target.value)}
+                      placeholder="Search title, genre, director..."
+                      className="w-full sm:w-64 bg-zinc-900/90 border border-zinc-800 focus:border-amber-500/70 rounded-xl px-3.5 py-2 text-xs text-white placeholder-zinc-500 outline-none transition"
+                    />
+                    {searchQuery && (
+                      <button
+                        onClick={() => setSearchQuery("")}
+                        className="absolute right-2.5 top-2 text-xs text-zinc-400 hover:text-white"
+                      >
+                        ✕
+                      </button>
+                    )}
+                  </div>
+
+                  <button
+                    onClick={() => setGoldOnly(!goldOnly)}
+                    className={`px-3.5 py-2 rounded-xl text-xs font-semibold border transition flex items-center gap-1.5 ${
+                      goldOnly
+                        ? "bg-amber-500 text-black border-amber-400 shadow-lg shadow-amber-500/20"
+                        : "bg-zinc-900/90 text-amber-400 border-zinc-800 hover:border-amber-500/50"
+                    }`}
+                  >
+                    <span>★</span>
+                    <span>Critical Gold (7.8+)</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Primary Region / Radar Tabs */}
+              <div className="flex items-center justify-between mt-4 pt-3 border-t border-zinc-900 flex-wrap gap-3">
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => handleTabChange("india")}
+                    className={`px-4 py-1.5 rounded-lg text-xs font-bold tracking-wide transition ${
+                      activeTab === "india" ? "bg-white text-black" : "bg-zinc-900 text-zinc-400 hover:text-white"
+                    }`}
+                  >
+                    🇮🇳 INDIA OTT TOP 10
+                  </button>
+                  <button
+                    onClick={() => handleTabChange("global")}
+                    className={`px-4 py-1.5 rounded-lg text-xs font-bold tracking-wide transition ${
+                      activeTab === "global" ? "bg-white text-black" : "bg-zinc-900 text-zinc-400 hover:text-white"
+                    }`}
+                  >
+                    🌍 GLOBAL OTT TOP 10
+                  </button>
+                  <button
+                    onClick={() => handleTabChange("beyond")}
+                    className={`px-4 py-1.5 rounded-lg text-xs font-bold tracking-wide transition ${
+                      activeTab === "beyond"
+                        ? "bg-amber-500 text-black"
+                        : "bg-zinc-900 text-amber-400/90 hover:bg-zinc-800"
+                    }`}
+                  >
+                    🎞️ FESTIVAL & 4K BLINDSPOTS
+                  </button>
+                </div>
+
+                {/* Sub-Platform Filter Pills */}
+                {activeTab !== "beyond" && (
+                  <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar">
+                    <button
+                      onClick={() => setSelectedPlatform("all")}
+                      className={`px-2.5 py-1 rounded-md text-[11px] font-medium transition ${
+                        selectedPlatform === "all" ? "bg-zinc-700 text-white" : "text-zinc-400 hover:text-white"
+                      }`}
+                    >
+                      All 5 Platforms
+                    </button>
+                    {PLATFORM_META[activeTab].map(p => (
+                      <button
+                        key={p.key}
+                        onClick={() => setSelectedPlatform(p.key)}
+                        className={`px-2.5 py-1 rounded-md text-[11px] font-medium transition whitespace-nowrap ${
+                          selectedPlatform === p.key ? p.badge : "text-zinc-400 hover:text-white bg-zinc-900/60"
+                        }`}
+                      >
+                        {p.name}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           </header>
 
-          {/* Main Navigation Tabs */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-6">
-            <div className="flex flex-wrap items-center justify-between gap-4 border-b border-gray-800 pb-4">
-              <div className="flex space-x-2">
-                <button
-                  onClick={() => { setView('india'); setActivePlatform('all'); }}
-                  className={`px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition ${view === 'india' ? 'bg-amber-500 text-black shadow-lg shadow-amber-500/20' : 'bg-gray-900 text-gray-400 hover:text-white'}`}
-                >
-                  🇮🇳 India OTTs (5 Platforms)
-                </button>
-                <button
-                  onClick={() => { setView('global'); setActivePlatform('all'); }}
-                  className={`px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition ${view === 'global' ? 'bg-amber-500 text-black shadow-lg shadow-amber-500/20' : 'bg-gray-900 text-gray-400 hover:text-white'}`}
-                >
-                  🌍 Global OTTs (5 Platforms)
-                </button>
-                <button
-                  onClick={() => setView('beyond')}
-                  className={`px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition ${view === 'beyond' ? 'bg-amber-500 text-black shadow-lg shadow-amber-500/20' : 'bg-gray-900 text-gray-400 hover:text-white'}`}
-                >
-                  ✨ Beyond Major OTTs (Auteur)
-                </button>
-              </div>
+          {/* Main Content Area */}
+          <main className="max-w-7xl mx-auto px-4 sm:px-6 mt-8 space-y-10">
+            {activeTab !== "beyond" ? (
+              platformsToShow.map(platform => {
+                const rawList = (catalogue[activeTab] && catalogue[activeTab][platform.key]) || [];
+                const items = rawList.filter(filterItem);
 
-              {/* Sub-Filters for Individual Platforms */}
-              {view !== 'beyond' && (
-                <div className="flex items-center space-x-1 overflow-x-auto py-1">
-                  <span className="text-[11px] text-gray-500 uppercase mr-2 font-bold">Platform:</span>
-                  {['all', ...(view === 'india' ? ['netflix', 'prime', 'jiohotstar', 'sonyliv', 'zee5'] : ['netflix', 'prime', 'max', 'disney', 'apple'])].map(p => (
-                    <button
-                      key={p}
-                      onClick={() => setActivePlatform(p)}
-                      className={`px-3 py-1 rounded-md text-[11px] font-bold uppercase transition ${activePlatform === p ? 'bg-gray-200 text-black' : 'bg-gray-900 text-gray-400 hover:text-white'}`}
-                    >
-                      {p === 'all' ? 'All Rows' : p}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Content Body */}
-          <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-            {view === 'india' && (
-              <div className="space-y-12">
-                {Object.entries(catalogue.india)
-                  .filter(([key]) => activePlatform === 'all' || activePlatform === key)
-                  .map(([platformKey, items]) => {
-                    const cfg = platformConfig[platformKey] || { name: platformKey, color: "text-amber-400" };
-                    const filteredItems = filterGold ? items.filter(i => parseFloat(i.imdb) >= 7.8) : items;
-                    return (
-                      <section key={platformKey}>
-                        <div className="flex items-center justify-between mb-4">
-                          <h2 className={`text-xl font-black flex items-center gap-2 ${cfg.color}`}>
-                            <span className="w-2.5 h-2.5 rounded-full bg-current"></span>
-                            {cfg.name} — Top 10 Today
-                          </h2>
-                          <span className="text-xs text-gray-500 font-semibold">{filteredItems.length} Titles Listed</span>
-                        </div>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                          {filteredItems.map(renderCard)}
-                        </div>
-                      </section>
-                    );
-                  })}
-              </div>
-            )}
-
-            {view === 'global' && (
-              <div className="space-y-12">
-                {Object.entries(catalogue.global)
-                  .filter(([key]) => activePlatform === 'all' || activePlatform === key)
-                  .map(([platformKey, items]) => {
-                    const cfg = platformConfig[platformKey] || { name: platformKey, color: "text-blue-400" };
-                    const filteredItems = filterGold ? items.filter(i => parseFloat(i.imdb) >= 7.8) : items;
-                    return (
-                      <section key={platformKey}>
-                        <div className="flex items-center justify-between mb-4">
-                          <h2 className={`text-xl font-black flex items-center gap-2 ${cfg.color}`}>
-                            <span className="w-2.5 h-2.5 rounded-full bg-current"></span>
-                            {cfg.name} — Global Top Trending
-                          </h2>
-                          <span className="text-xs text-gray-500 font-semibold">{filteredItems.length} Titles</span>
-                        </div>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                          {filteredItems.map(renderCard)}
-                        </div>
-                      </section>
-                    );
-                  })}
-              </div>
-            )}
-
-            {view === 'beyond' && (
-              <section>
-                <div className="mb-6">
-                  <h2 className="text-2xl font-black text-amber-400">✨ Beyond Major OTTs (The Blindspot & Festival Radar)</h2>
-                  <p className="text-sm text-gray-400 mt-1">Cannes, Venice, Film Foundation 4K restorations, and auteur cinema outside the mainstream algorithms.</p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {catalogue.beyond.map((item, idx) => (
-                    <div key={idx} className="bg-gray-900/90 border border-amber-500/30 rounded-2xl p-6 hover:border-amber-400 transition shadow-xl">
-                      <div className="flex justify-between items-start">
-                        <span className="px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/20">
-                          {item.event}
+                return (
+                  <section key={platform.key} className="space-y-4">
+                    <div className={`flex items-center justify-between p-3.5 rounded-xl bg-gradient-to-r ${platform.accent} border border-zinc-800/80`}>
+                      <div className="flex items-center gap-3">
+                        <span className={`px-2.5 py-0.5 rounded text-xs uppercase tracking-wider ${platform.badge}`}>
+                          {platform.name}
                         </span>
-                        <span className="px-2.5 py-1 rounded-lg bg-black/60 border border-amber-400/30 text-amber-400 font-black text-xs">
-                          ★ {item.imdb}
+                        <span className="text-xs text-zinc-400">
+                          Showing {items.length} of {rawList.length} Trending Titles
                         </span>
-                      </div>
-                      <h3 className="text-xl font-bold text-white mt-4">{item.title}</h3>
-                      <p className="text-xs text-gray-400 mt-0.5">Dir. {item.director} • ({item.year})</p>
-                      <p className="text-sm text-gray-300 mt-4 leading-relaxed font-normal">{item.note}</p>
-                      <div className="mt-6 pt-4 border-t border-gray-800 flex items-center justify-between text-xs">
-                        <span className="text-gray-500 font-medium">Where to find:</span>
-                        <span className="text-amber-300 font-bold">{item.where}</span>
                       </div>
                     </div>
-                  ))}
+
+                    {items.length === 0 ? (
+                      <div className="text-xs text-zinc-500 py-6 pl-2">
+                        No titles match the current filter on {platform.name}.
+                      </div>
+                    ) : (
+                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                        {items.map(item => {
+                          const isGold = (parseFloat(item.imdb) || 0) >= 7.8;
+                          const imdbSearchUrl = `https://www.imdb.com/find/?q=${encodeURIComponent(item.title)}`;
+                          const ytTrailerUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(item.title + " " + (item.year || "") + " official trailer")}`;
+
+                          return (
+                            <div
+                              key={item.rank + item.title}
+                              className={`group relative rounded-xl overflow-hidden bg-zinc-900/70 border transition-all duration-300 flex flex-col justify-between ${
+                                isGold
+                                  ? "border-amber-500/40 hover:border-amber-400 shadow-lg shadow-amber-500/5"
+                                  : "border-zinc-800/80 hover:border-zinc-600"
+                              }`}
+                            >
+                              <div>
+                                <div className="relative aspect-[2/3] w-full bg-zinc-950 overflow-hidden">
+                                  <img
+                                    src={item.poster}
+                                    alt={item.title}
+                                    loading="lazy"
+                                    onError={(e) => {
+                                      e.target.onerror = null;
+                                      e.target.src = "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&q=80";
+                                    }}
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                  />
+                                  <div className="absolute inset-0 bg-gradient-to-t from-[#070709] via-transparent to-black/40" />
+
+                                  {/* Top Left Rank */}
+                                  <div className="absolute top-2.5 left-2.5 bg-black/80 backdrop-blur-md border border-zinc-700 px-2 py-0.5 rounded-md text-xs font-extrabold text-white">
+                                    #{item.rank}
+                                  </div>
+
+                                  {/* Top Right IMDb Badge */}
+                                  <div className={`absolute top-2.5 right-2.5 px-2 py-0.5 rounded-md text-xs font-bold flex items-center gap-1 backdrop-blur-md ${
+                                    isGold ? "bg-amber-400 text-black" : "bg-black/80 text-zinc-200 border border-zinc-700"
+                                  }`}>
+                                    <span>★</span>
+                                    <span>{item.imdb}</span>
+                                  </div>
+
+                                  {/* Bottom Verdict Pill */}
+                                  <div className="absolute bottom-2 left-2.5 right-2.5 flex items-center justify-between gap-1">
+                                    <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded ${
+                                      isGold ? "bg-amber-500/90 text-black" : "bg-zinc-800/90 text-zinc-200"
+                                    }`}>
+                                      {item.verdict}
+                                    </span>
+                                    <span className="text-[10px] bg-black/75 text-zinc-300 px-1.5 py-0.5 rounded border border-zinc-800">
+                                      {item.type}
+                                    </span>
+                                  </div>
+                                </div>
+
+                                <div className="p-3">
+                                  <h3 className="font-bold text-sm text-white line-clamp-1 group-hover:text-amber-400 transition">
+                                    {item.title}
+                                  </h3>
+                                  <p className="text-[11px] text-zinc-400 mt-0.5">
+                                    {item.year} • {item.tag}
+                                  </p>
+                                </div>
+                              </div>
+
+                              <div className="px-3 pb-3 pt-1 flex items-center gap-2 border-t border-zinc-800/60">
+                                <a
+                                  href={imdbSearchUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="flex-1 text-center py-1 rounded bg-zinc-800 hover:bg-zinc-700 text-[11px] font-medium text-zinc-200 transition"
+                                >
+                                  IMDb
+                                </a>
+                                <a
+                                  href={ytTrailerUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="flex-1 text-center py-1 rounded bg-amber-500/15 hover:bg-amber-500/25 text-[11px] font-medium text-amber-300 border border-amber-500/30 transition"
+                                >
+                                  Trailer ↗
+                                </a>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </section>
+                );
+              })
+            ) : (
+              /* BEYOND / FESTIVAL & 4K RESTORATION RADAR */
+              <section className="space-y-5">
+                <div className="p-4 rounded-2xl bg-gradient-to-r from-amber-500/15 via-zinc-900 to-zinc-900 border border-amber-500/30">
+                  <h2 className="serif-title text-xl font-bold text-amber-400">
+                    Festival Circuit, Auteur Blindspots & 4K Archival Restorations
+                  </h2>
+                  <p className="text-xs text-zinc-300 mt-1">
+                    Curated highlights from Cannes, Venice, TIFF, MUBI, and The Criterion Collection.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  {(catalogue.beyond || []).filter(filterItem).map((gem, idx) => {
+                    const imdbUrl = `https://www.imdb.com/find/?q=${encodeURIComponent(gem.title)}`;
+                    const trailerUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(gem.title + " " + gem.director + " trailer")}`;
+                    return (
+                      <div
+                        key={idx}
+                        className="flex gap-4 bg-zinc-900/70 border border-zinc-800 hover:border-amber-500/50 rounded-2xl p-4 transition"
+                      >
+                        {gem.poster && (
+                          <img
+                            src={gem.poster}
+                            alt={gem.title}
+                            className="w-24 sm:w-28 aspect-[2/3] object-cover rounded-xl bg-zinc-950 flex-shrink-0 border border-zinc-800"
+                          />
+                        )}
+                        <div className="flex flex-col justify-between flex-1">
+                          <div>
+                            <div className="flex items-center justify-between gap-2">
+                              <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                                {gem.event}
+                              </span>
+                              <span className="text-xs font-bold text-amber-400">★ {gem.imdb}</span>
+                            </div>
+                            <h3 className="text-base font-bold text-white mt-2">
+                              {gem.title} <span className="text-xs font-normal text-zinc-400">({gem.year})</span>
+                            </h3>
+                            <p className="text-xs text-zinc-400 font-medium">
+                              Directed by <span className="text-zinc-200">{gem.director}</span> • <span className="text-emerald-400">{gem.where}</span>
+                            </p>
+                            <p className="text-xs text-zinc-300 mt-2 leading-relaxed">
+                              {gem.note}
+                            </p>
+                          </div>
+
+                          <div className="flex items-center gap-2 mt-3 pt-2 border-t border-zinc-800/70">
+                            <a
+                              href={imdbUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="px-3 py-1 rounded bg-zinc-800 hover:bg-zinc-700 text-[11px] font-medium text-zinc-200 transition"
+                            >
+                              IMDb Page
+                            </a>
+                            <a
+                              href={trailerUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="px-3 py-1 rounded bg-amber-500/15 hover:bg-amber-500/25 text-[11px] font-medium text-amber-300 border border-amber-500/30 transition"
+                            >
+                              Watch Trailer ↗
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </section>
             )}
           </main>
         </div>
       );
-
-      function renderCard(item) {
-        return (
-          <div key={item.title} className="group relative bg-[#0f172a] rounded-xl overflow-hidden border border-gray-800/80 hover:border-gray-600 transition flex flex-col justify-between shadow-lg">
-            <div className="relative aspect-[2/3] w-full overflow-hidden bg-gray-950">
-              <img 
-                src={item.poster} 
-                alt={item.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90 group-hover:opacity-100"
-                loading="lazy"
-              />
-              <div className="absolute top-2 left-2 w-7 h-7 rounded-lg bg-black/75 backdrop-blur flex items-center justify-center font-black text-xs text-white border border-white/10">
-                #{item.rank}
-              </div>
-              <div className="absolute top-2 right-2 px-2 py-0.5 rounded-md bg-black/75 backdrop-blur flex items-center gap-1 font-bold text-xs text-amber-400 border border-amber-400/20">
-                ★ {item.imdb}
-              </div>
-              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/60 to-transparent p-3 pt-8">
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-amber-400/90">{item.tag}</span>
-                <h3 className="text-sm font-bold text-white line-clamp-1 leading-snug">{item.title}</h3>
-              </div>
-            </div>
-            <div className="p-3 border-t border-gray-800/60 bg-[#0f172a]">
-              <div className="flex items-center justify-between">
-                <span className="text-[11px] text-gray-400">{item.type} • {item.year}</span>
-                <span className="text-[11px] font-medium text-emerald-400 truncate max-w-[110px]">{item.verdict}</span>
-              </div>
-            </div>
-          </div>
-        );
-      }
     }
 
-    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
   </script>
 </body>
 </html>
