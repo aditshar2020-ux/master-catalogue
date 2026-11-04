@@ -7,89 +7,44 @@ import urllib.parse
 import requests
 
 def resolve_poster(title: str, media_type: str = "Movie") -> str:
-    """Fetches high-res poster artwork via iTunes or Wikipedia."""
     clean_title = title.split(":")[0].split("Season")[0].split("S1")[0].split("S2")[0].strip()
-
-    # 1. Try iTunes Search API
     try:
         entity = "tvSeason" if str(media_type).lower() in ["show", "series", "limited series"] else "movie"
         url = f"https://itunes.apple.com/search?term={urllib.parse.quote(clean_title)}&entity={entity}&limit=1"
         r = requests.get(url, timeout=7)
-        if r.ok:
-            results = r.json().get("results", [])
-            if results and results[0].get("artworkUrl100"):
-                return results[0]["artworkUrl100"].replace("100x100bb", "600x900bb")
-    except Exception:
-        pass
+        if r.ok and r.json().get("results"):
+            res = r.json()["results"][0]
+            if res.get("artworkUrl100"):
+                return res["artworkUrl100"].replace("100x100bb", "600x900bb")
+    except Exception: pass
 
-    # 2. Try Wikipedia REST API
     try:
         wiki_url = f"https://en.wikipedia.org/api/rest_v1/page/summary/{urllib.parse.quote(clean_title.replace(' ', '_'))}"
         r = requests.get(wiki_url, headers={"User-Agent": "MasterCatalogueBot/4.0"}, timeout=7)
-        if r.ok:
-            thumb = r.json().get("thumbnail", {}).get("source")
-            if thumb:
-                return thumb
-    except Exception:
-        pass
-
+        if r.ok and r.json().get("thumbnail", {}).get("source"):
+            return r.json()["thumbnail"]["source"]
+    except Exception: pass
+    
     return "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&q=80"
 
 def clean_json_text(text: str) -> str:
-    """Strips markdown code fences from AI response."""
     text = text.strip()
     match = re.search(r"```(?:json)?\s*([\s\S]*?)\s*```", text)
-    if match:
-        return match.group(1).strip()
-    return text
-
-def request_gemini_with_fallback(api_key: str, payload_body: dict):
-    """Tries primary model, retries on 503, and falls back to alternate models."""
-    candidate_models = [
-        "gemini-3.8-flash",
-        "gemini-3.5-flash",
-        "gemini-flash-latest"
-    ]
-
-    last_error = ""
-
-    for model_name in candidate_models:
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={api_key}"
-        print(f"Attempting generation with: {model_name}")
-
-        for attempt in range(1, 4):
-            try:
-                resp = requests.post(url, json=payload_body, timeout=60)
-                if resp.status_code == 200:
-                    return resp.json()
-                elif resp.status_code in [503, 429]:
-                    print(f"Server busy (HTTP {resp.status_code}) on {model_name}, attempt {attempt}/3. Waiting 6 seconds...")
-                    time.sleep(6)
-                    last_error = f"{model_name}: {resp.status_code} {resp.text}"
-                else:
-                    last_error = f"{model_name}: {resp.status_code} {resp.text}"
-                    print(f"{model_name} failed with {resp.status_code}: {resp.text}")
-                    break
-            except Exception as e:
-                last_error = str(e)
-                print(f"Network error on {model_name}: {e}")
-                time.sleep(3)
-
-    raise RuntimeError(f"All Gemini candidate models failed: {last_error}")
+    return match.group(1).strip() if match else text
 
 def main():
     api_key = os.environ.get("GEMINI_API_KEY", "").strip()
-    if not api_key:
-        raise RuntimeError("Missing GEMINI_API_KEY secret in repository settings.")
+    if not api_key: raise RuntimeError("Missing GEMINI_API_KEY secret")
 
     today_str = datetime.date.today().strftime("%b %d, %Y")
 
-    prompt = f"""Today is {today_str}. Provide the latest top trending titles on Indian and Global OTT platforms, plus festival gems.
-Return STRICT valid JSON only. The JSON must follow this exact schema:
+    prompt = f"""You are a live streaming analytics engine. Today is {today_str}.
+Use Google Search to find the ACTUAL real-time Top 10 trending charts for today on the specified platforms.
+Return STRICT valid JSON only. Schema:
 {{
   "syncDate": "{today_str}",
   "india": {{
-    "netflix": [ {{ "rank": 1, "title": "Title", "type": "Film/Show", "year": "2026", "imdb": "8.0", "verdict": "Critical Gold/Hype", "tag": "Genre" }} ],
+    "netflix": [ {{ "rank": 1, "title": "Title", "type": "Film/Show", "year": "2026", "imdb": "8.0", "verdict": "Verdict", "tag": "Genre" }} ],
     "prime": [ {{ "rank": 1, "title": "Title", "type": "Film/Show", "year": "2026", "imdb": "8.0", "verdict": "Verdict", "tag": "Genre" }} ],
     "jiohotstar": [ {{ "rank": 1, "title": "Title", "type": "Film/Show", "year": "2026", "imdb": "8.0", "verdict": "Verdict", "tag": "Genre" }} ],
     "sonyliv": [ {{ "rank": 1, "title": "Title", "type": "Film/Show", "year": "2026", "imdb": "8.0", "verdict": "Verdict", "tag": "Genre" }} ],
@@ -103,44 +58,46 @@ Return STRICT valid JSON only. The JSON must follow this exact schema:
     "apple": [ {{ "rank": 1, "title": "Title", "type": "Show", "year": "2026", "imdb": "8.0", "verdict": "Verdict", "tag": "Genre" }} ]
   }},
   "beyond": [
-    {{
-      "title": "Title",
-      "director": "Director Name",
-      "year": "2025/2026",
-      "event": "Cannes/Venice/TIFF/Restoration",
-      "imdb": "8.2",
-      "where": "MUBI / Criterion / Festivals",
-      "note": "Two-sentence critical review."
-    }}
+    {{ "title": "Title", "director": "Director Name", "year": "2026", "event": "Festival/Restoration", "imdb": "8.2", "where": "Platform", "note": "Review." }}
   ]
-}}
+}}"""
 
-Provide 5 to 10 accurate titles for each platform based on current trending charts."""
-
-    payload_body = {
-        "contents": [{"parts": [{"text": prompt}]}]
+    # CRITICAL FIX: THIS BLOCK TURNS ON LIVE GOOGLE SEARCH
+    payload = {
+        "contents": [{"parts": [{"text": prompt}]}],
+        "tools": [{"googleSearch": {}}]
     }
 
-    res_json = request_gemini_with_fallback(api_key, payload_body)
+    # CRITICAL FIX: RETRY LOOP IF SERVER IS BUSY
+    models = ["gemini-3.8-flash", "gemini-3.5-flash", "gemini-flash-latest"]
+    data = None
 
-    candidate_text = res_json["candidates"][0]["content"]["parts"][0]["text"]
-    clean_text = clean_json_text(candidate_text)
-    data = json.loads(clean_text)
+    for model in models:
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
+        for attempt in range(2):
+            try:
+                r = requests.post(url, json=payload, timeout=40)
+                if r.status_code == 200:
+                    cand = r.json()["candidates"][0]["content"]["parts"][0]["text"]
+                    data = json.loads(clean_json_text(cand))
+                    break
+                elif r.status_code in [503, 429]:
+                    print(f"{model} busy. Waiting 6 seconds...")
+                    time.sleep(6)
+            except Exception:
+                time.sleep(3)
+        if data: break
 
-    # Attach live poster artwork
+    if not data: raise RuntimeError("All Gemini endpoints failed or timed out.")
+
     for platform, items in data.get("india", {}).items():
-        for item in items:
-            item["poster"] = resolve_poster(item.get("title", ""), item.get("type", "Movie"))
-
+        for item in items: item["poster"] = resolve_poster(item.get("title", ""), item.get("type", "Movie"))
     for platform, items in data.get("global", {}).items():
-        for item in items:
-            item["poster"] = resolve_poster(item.get("title", ""), item.get("type", "Movie"))
+        for item in items: item["poster"] = resolve_poster(item.get("title", ""), item.get("type", "Movie"))
 
     os.makedirs("public", exist_ok=True)
     with open("public/daily_catalogue.json", "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
-
-    print(f"Successfully generated public/daily_catalogue.json for {today_str}")
 
 if __name__ == "__main__":
     main()
