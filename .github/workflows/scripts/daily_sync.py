@@ -13,122 +13,151 @@ HEADERS = {
     "Accept-Language": "en-US,en;q=0.9"
 }
 
-def fetch_url(url: str) -> str:
+def fetch_url(url: str, min_len: int = 800) -> str:
+    """
+    Fetches live chart HTML directly; if Cloudflare blocks the GitHub Action IP,
+    automatically routes through r.jina.ai headless reader proxy.
+    """
     try:
-        r = requests.get(url, headers=HEADERS, timeout=10)
-        if r.ok:
+        r = requests.get(url, headers=HEADERS, timeout=9)
+        if r.ok and len(r.text) >= min_len and "Just a moment..." not in r.text:
             return r.text
-    except Exception as e:
-        print(f"Fetch notice ({url}): {e}")
+    except Exception:
+        pass
+
+    # Fallback: Headless proxy for Cloudflare-protected chart pages
+    try:
+        jina_url = f"https://r.jina.ai/{url}"
+        r2 = requests.get(jina_url, headers=HEADERS, timeout=12)
+        if r2.ok and len(r2.text) >= 200:
+            return r2.text
+    except Exception:
+        pass
     return ""
 
-def extract_flixpatrol_section(raw_html: str, section_headers: list, max_items: int = 10) -> list:
-    """
-    Finds a specific chart section heading on a FlixPatrol page (e.g. 'TOP Movies on Netflix',
-    'TOP 10 Overall') and extracts the exact ranked '/title/' links inside that table only.
-    """
-    if not raw_html:
-        return []
-
-    start_pos = -1
-    for header in section_headers:
-        pattern = re.compile(re.escape(header), re.IGNORECASE)
-        m = pattern.search(raw_html)
-        if m:
-            start_pos = m.start()
-            break
-
-    if start_pos == -1:
-        return []
-
-    # Slice from this table header up to the next table section or 12,000 chars
-    sub_html = raw_html[start_pos:start_pos + 12000]
-    next_table = re.search(
-        r"(?:TOP\s+10\s+Kids|TOP\s+Movies\s+and\s+TV\s+Shows|Top\s+ranked\s+Movies|TOP\s+Movies\s+on\s+|TOP\s+TV\s+Shows\s+on\s+|TOP\s+10\s+Overall|TOP\s+10\s+Movies|TOP\s+10\s+TV\s+Shows)",
-        sub_html[120:],
-        flags=re.IGNORECASE
-    )
-    if next_table:
-        sub_html = sub_html[:120 + next_table.start()]
-
+def extract_flixpatrol_links(chunk: str, max_items: int = 10) -> list:
+    """Extracts FlixPatrol '/title/' links from either raw HTML or Jina Markdown."""
     titles = []
     seen = set()
-    for match in re.finditer(r'<a[^>]+href=["\']/title/[^"\']+["\'][^>]*>([\s\S]*?)</a>', sub_html, flags=re.I):
-        raw_t = re.sub(r"<[^>]+>", "", match.group(1))
+
+    # 1. Raw HTML <a href="/title/...">Title</a>
+    for m in re.finditer(r'<a[^>]+href=["\'](?:https?://(?:www\.)?flixpatrol\.com)?/title/[^"\']+["\'][^>]*>([\s\S]*?)</a>', chunk, flags=re.I):
+        raw_t = re.sub(r"<[^>]+>", "", m.group(1))
         t = html_lib.unescape(raw_t).strip()
-        if t and len(t) > 1 and t.lower() not in seen:
+        if t and len(t) > 1 and t.lower() not in seen and not t.isdigit():
             seen.add(t.lower())
             titles.append(t)
             if len(titles) >= max_items:
-                break
+                return titles
+
+    # 2. Jina Markdown [Title](https://flixpatrol.com/title/...)
+    for m in re.finditer(r'\[([^\[\]]{2,65})\]\((?:https?://(?:www\.)?flixpatrol\.com)?/title/[^\)]+\)', chunk, flags=re.I):
+        t = html_lib.unescape(m.group(1)).strip()
+        if t and len(t) > 1 and t.lower() not in seen and not t.isdigit():
+            seen.add(t.lower())
+            titles.append(t)
+            if len(titles) >= max_items:
+                return titles
 
     return titles
 
+def extract_flixpatrol_section(raw_html: str, section_headers: list, max_items: int = 10) -> list:
+    """
+    Finds the table header that is actually followed by '/title/' chart rows
+    without prematurely truncating at adjacent column headers.
+    """
+    if not raw_html:
+        return []
+
+    # Trim Kids charts at bottom if present
+    for stop_marker in ["TOP 10 Kids", "Top ranked Movies", "Top ranked TV Shows"]:
+        pos = raw_html.find(stop_marker)
+        if pos > 2500:
+            raw_html = raw_html[:pos]
+
+    for header in section_headers:
+        pattern = re.compile(re.escape(header), re.IGNORECASE)
+        for m in pattern.finditer(raw_html):
+            sub_chunk = raw_html[m.start():m.start() + 16000]
+            found = extract_flixpatrol_links(sub_chunk, max_items=max_items)
+            if len(found) >= 3:
+                return found
+
+    return []
+
 def extract_tudum_titles(raw_html: str, max_items: int = 10) -> list:
-    """Extracts ranked titles from Netflix Official Tudum Top 10 pages."""
+    """Extracts ranked titles from Netflix Official Tudum Top 10 pages (India & Global)."""
     if not raw_html:
         return []
     titles = []
     seen = set()
+
     for match in re.finditer(r'<button[^>]*>([^<]{2,60})</button>|<h3[^>]*>([^<]{2,60})</h3>', raw_html, flags=re.I):
         t = html_lib.unescape((match.group(1) or match.group(2) or "").strip())
         if (
             t and t.lower() not in seen
-            and not any(skip in t.lower() for skip in ["top 10", "netflix", "tudum", "watch", "sign in", "menu", "share"])
+            and not any(skip in t.lower() for skip in ["top 10", "netflix", "tudum", "watch", "sign in", "menu", "share", "explore", "most popular"])
         ):
             seen.add(t.lower())
             titles.append(t)
             if len(titles) >= max_items:
-                break
+                return titles
+
+    # Markdown fallback if fetched via Jina
+    for match in re.finditer(r'\[([^\[\]]{2,60})\]\(https?://www\.netflix\.com/(?:in/)?title/\d+\)', raw_html):
+        t = html_lib.unescape(match.group(1)).strip()
+        if t and t.lower() not in seen:
+            seen.add(t.lower())
+            titles.append(t)
+            if len(titles) >= max_items:
+                return titles
+
     return titles
 
 def extract_justwatch_top10(raw_html: str) -> list:
-    """
-    Extracts the 'Top 10 Movies & TV shows on [Provider]' carousel from JustWatch HTML.
-    """
+    """Extracts Top 10 titles from JustWatch provider pages (HTML or Jina Markdown)."""
     if not raw_html:
         return []
-    text = re.sub(r"<(script|style|svg|head)[^>]*>[\s\S]*?</\1>", " ", raw_html, flags=re.I)
-    text = re.sub(r"<[^>]+>", " ", text)
-    text = html_lib.unescape(re.sub(r"\s+", " ", text)).strip()
 
-    pos = text.find("Top 10 Movies & TV shows on")
-    if pos == -1:
-        return []
-
-    chunk = text[pos:pos + 2500]
-    end_pos = chunk.find("All movies & TV shows")
-    if end_pos != -1:
-        chunk = chunk[:end_pos]
-
-    ranked = {}
-    for m in re.finditer(r"(?:TV\s+)?\b(10|[1-9])\.\s+([A-Za-z0-9][^·]{1,55}?)\s+(?:\d+h\s*)?\d+min\.", chunk):
-        rk = int(m.group(1))
-        title = m.group(2).strip().rstrip(".")
-        if rk not in ranked and len(title) > 1:
-            ranked[rk] = title
-
-    return [ranked[k] for k in sorted(ranked.keys())]
-
-def extract_sonyliv_home_titles(raw_html: str) -> list:
-    """Extracts 'Trending In India Today' titles directly from SonyLIV's page."""
-    if not raw_html:
-        return []
     titles = []
     seen = set()
-    text = html_lib.unescape(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", raw_html)))
-    for m in re.finditer(r"\b(10|[1-9])\.\s+([A-Z][A-Za-z0-9\s\-\:]{2,45}?)(?=\s+(?:10|[1-9])\.\s+|\s+Download|\s+Best|\s*$)", text):
+
+    # Slice from 'Top 10' section if present
+    pos = raw_html.find("Top 10")
+    chunk = raw_html[pos:pos + 25000] if pos != -1 else raw_html[:25000]
+
+    # 1. Plain-text / Jina numbered list: '1. Title 2h 10min' or 'TV 1. Title'
+    text = html_lib.unescape(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", chunk)))
+    ranked = {}
+    for m in re.finditer(r"(?:TV\s+)?\b(10|[1-9])\.\s+([A-Za-z0-9][^·\n]{1,55}?)\s+(?:\d+h\s*)?\d+min", text):
+        rk = int(m.group(1))
         t = m.group(2).strip().rstrip(".")
-        if t and t.lower() not in seen and not any(x in t.lower() for x in ["ind tour", "ucl ", "isl "]):
+        if rk not in ranked and len(t) > 1:
+            ranked[rk] = t
+    if len(ranked) >= 5:
+        return [ranked[k] for k in sorted(ranked.keys())][:10]
+
+    # 2. Markdown links [Title](https://www.justwatch.com/in/movie/...)
+    for m in re.finditer(r'\[([^\[\]]{2,60})\]\((?:https?://www\.justwatch\.com)?/in/(?:movie|tv-show)/[^\)]+\)', chunk):
+        t = html_lib.unescape(m.group(1)).strip()
+        if t and t.lower() not in seen and not any(x in t.lower() for x in ["justwatch", "top 10", "stream"]):
             seen.add(t.lower())
             titles.append(t)
+            if len(titles) >= 10:
+                return titles
+
+    # 3. HTML <a href="/in/movie/..."> or <img alt="..."> inside Top 10 carousel
+    for m in re.finditer(r'href=["\']/in/(?:movie|tv-show)/([^"\'/\?]+)["\']', chunk):
+        slug = m.group(1).replace("-", " ").title().strip()
+        if slug and slug.lower() not in seen:
+            seen.add(slug.lower())
+            titles.append(slug)
+            if len(titles) >= 10:
+                return titles
+
     return titles
 
 def interleave_movies_and_shows(movies: list, shows: list, scope_label: str = "Today") -> list:
-    """
-    Combines Top 5 Movies (#1-#5) and Top 5 TV Shows (#1-#5) into an exact 10-item chart
-    with clear official rank badges ('#1 Movie Today', '#1 Show Today', etc.).
-    """
     items = []
     seen = set()
     max_len = max(len(movies), len(shows))
@@ -192,23 +221,20 @@ def build_overall_items(titles: list, verdict_prefix: str = "Overall Today", tag
     return items
 
 def scrape_all_live_charts() -> dict:
-    """
-    Scrapes the exact same-day Top 10 charts across all 10 platforms in parallel.
-    """
     urls_to_fetch = {
         "fp_world": "https://flixpatrol.com/top10/",
         "fp_netflix_in": "https://flixpatrol.com/top10/netflix/india/",
         "fp_prime_in": "https://flixpatrol.com/top10/amazon-prime/india/",
         "fp_hotstar_in": "https://flixpatrol.com/top10/hotstar/india/",
         "fp_zee5_in": "https://flixpatrol.com/top10/zee5/india/",
-        "fp_stream_in": "https://flixpatrol.com/top10/streaming/india/",
+        "tudum_in_movies": "https://www.netflix.com/tudum/top10/india",
+        "tudum_in_tv": "https://www.netflix.com/tudum/top10/india/tv",
+        "tudum_gl_movies": "https://www.netflix.com/tudum/top10",
+        "tudum_gl_tv": "https://www.netflix.com/tudum/top10/tv",
         "jw_sonyliv_in": "https://www.justwatch.com/in/provider/sony-liv",
         "jw_jiohotstar_in": "https://www.justwatch.com/in/provider/jiohotstar",
-        "jw_netflix_in": "https://www.justwatch.com/in/provider/netflix",
-        "jw_zee5_in": "https://www.justwatch.com/in/provider/zee5",
-        "sonyliv_home": "https://www.sonyliv.com/custompage/home-34355",
-        "tudum_in_movies": "https://www.netflix.com/tudum/top10/india",
-        "tudum_in_tv": "https://www.netflix.com/tudum/top10/india/tv"
+        "jw_prime_in": "https://www.justwatch.com/in/provider/amazon-prime-video",
+        "jw_zee5_in": "https://www.justwatch.com/in/provider/zee5"
     }
 
     fetched = {}
@@ -221,97 +247,169 @@ def scrape_all_live_charts() -> dict:
     live = {"india": {}, "global": {}}
 
     # ================= INDIA OTT TOP 10s =================
-    # 1. Netflix India (Top 5 Movies + Top 5 TV Shows Today)
-    nf_in_movies = extract_flixpatrol_section(fetched["fp_netflix_in"], ["TOP 10 Movies"])
-    nf_in_shows = extract_flixpatrol_section(fetched["fp_netflix_in"], ["TOP 10 TV Shows"])
-    if not nf_in_movies:
-        nf_in_movies = extract_tudum_titles(fetched["tudum_in_movies"])
-    if not nf_in_shows:
-        nf_in_shows = extract_tudum_titles(fetched["tudum_in_tv"])
-    live["india"]["netflix"] = interleave_movies_and_shows(nf_in_movies, nf_in_shows, "in India")
+    # 1. Netflix India (Tudum Official + FlixPatrol India)
+    nf_in_m = extract_tudum_titles(fetched["tudum_in_movies"]) or extract_flixpatrol_section(fetched["fp_netflix_in"], ["TOP 10 Movies"])
+    nf_in_s = extract_tudum_titles(fetched["tudum_in_tv"]) or extract_flixpatrol_section(fetched["fp_netflix_in"], ["TOP 10 TV Shows"])
+    if not nf_in_m and not nf_in_s:
+        all_nf_in = extract_flixpatrol_links(fetched["fp_netflix_in"], max_items=20)
+        nf_in_m, nf_in_s = all_nf_in[:5], all_nf_in[10:15]
+    live["india"]["netflix"] = interleave_movies_and_shows(nf_in_m, nf_in_s, "in India")
 
-    # 2. Amazon Prime Video India (TOP 10 Overall in India Today)
-    pr_in_overall = extract_flixpatrol_section(fetched["fp_prime_in"], ["TOP 10 Overall"])
-    pr_in_movies = extract_flixpatrol_section(fetched["fp_prime_in"], ["TOP 10 Movies"])
-    pr_in_shows = extract_flixpatrol_section(fetched["fp_prime_in"], ["TOP 10 TV Shows"])
-    if pr_in_overall:
-        live["india"]["prime"] = build_overall_items(pr_in_overall + pr_in_movies + pr_in_shows, "in India Today", "Prime Top 10")
+    # 2. Prime Video India (FlixPatrol India + JustWatch Prime India)
+    pr_in_all = extract_flixpatrol_links(fetched["fp_prime_in"], max_items=15)
+    jw_pr_in = extract_justwatch_top10(fetched["jw_prime_in"])
+    live["india"]["prime"] = build_overall_items(pr_in_all + jw_pr_in, "in India Today", "Prime Top 10")
+
+    # 3. JioHotstar India (FlixPatrol Hotstar India + JustWatch JioHotstar)
+    hs_all = extract_flixpatrol_links(fetched["fp_hotstar_in"], max_items=20)
+    jw_hs_in = extract_justwatch_top10(fetched["jw_jiohotstar_in"])
+    if len(hs_all) >= 12:
+        live["india"]["jiohotstar"] = interleave_movies_and_shows(hs_all[:5], hs_all[10:15], "on JioHotstar")
     else:
-        live["india"]["prime"] = interleave_movies_and_shows(pr_in_movies, pr_in_shows, "in India")
+        live["india"]["jiohotstar"] = build_overall_items(hs_all + jw_hs_in, "on JioHotstar Today", "JioHotstar Top 10")
 
-    # 3. JioHotstar India (Top Hindi + Top English + JustWatch JioHotstar Top 10)
-    hs_hindi = extract_flixpatrol_section(fetched["fp_hotstar_in"], ["TOP 10 Overall (in Hindi)", "TOP 10 Overall"])
-    hs_eng = extract_flixpatrol_section(fetched["fp_hotstar_in"], ["TOP 10 Overall (in English)"])
-    jw_hs = extract_justwatch_top10(fetched["jw_jiohotstar_in"])
-    if hs_hindi and hs_eng:
-        hs_items = []
-        seen_hs = set()
-        for idx in range(10):
-            if idx < len(hs_hindi) and hs_hindi[idx].lower() not in seen_hs:
-                seen_hs.add(hs_hindi[idx].lower())
-                hs_items.append({
-                    "rank": len(hs_items) + 1, "title": hs_hindi[idx], "type": "Show",
-                    "year": "2026", "imdb": "7.8", "verdict": f"#{idx+1} Hindi Today",
-                    "tag": "JioHotstar Top 10", "source": "LIVE"
-                })
-            if len(hs_items) >= 10:
-                break
-            if idx < len(hs_eng) and hs_eng[idx].lower() not in seen_hs:
-                seen_hs.add(hs_eng[idx].lower())
-                hs_items.append({
-                    "rank": len(hs_items) + 1, "title": hs_eng[idx], "type": "Show",
-                    "year": "2026", "imdb": "8.0", "verdict": f"#{idx+1} English Today",
-                    "tag": "JioHotstar Top 10", "source": "LIVE"
-                })
-            if len(hs_items) >= 10:
-                break
-        live["india"]["jiohotstar"] = hs_items
-    else:
-        live["india"]["jiohotstar"] = build_overall_items(hs_hindi + jw_hs + hs_eng, "on JioHotstar Today", "JioHotstar Top 10")
+    # 4. SonyLIV India (JustWatch SonyLIV Top 10)
+    jw_sl_in = extract_justwatch_top10(fetched["jw_sonyliv_in"])
+    live["india"]["sonyliv"] = build_overall_items(jw_sl_in, "on SonyLIV Today", "SonyLIV Top 10")
 
-    # 4. SonyLIV India (SonyLIV Home Trending + JustWatch SonyLIV Top 10)
-    sl_home = extract_sonyliv_home_titles(fetched["sonyliv_home"])
-    sl_jw = extract_justwatch_top10(fetched["jw_sonyliv_in"])
-    live["india"]["sonyliv"] = build_overall_items(sl_jw + sl_home, "on SonyLIV Today", "SonyLIV Top 10")
+    # 5. ZEE5 India (FlixPatrol ZEE5 India + JustWatch ZEE5)
+    z5_all = extract_flixpatrol_links(fetched["fp_zee5_in"], max_items=15)
+    jw_z5_in = extract_justwatch_top10(fetched["jw_zee5_in"])
+    live["india"]["zee5"] = build_overall_items(z5_all + jw_z5_in, "on ZEE5 Today", "ZEE5 Top 10")
 
-    # 5. ZEE5 India (FlixPatrol ZEE5 India TOP 10 Overall + JustWatch ZEE5)
-    z5_overall = extract_flixpatrol_section(fetched["fp_zee5_in"], ["TOP 10 Overall", "TOP 10 Movies"])
-    z5_jw = extract_justwatch_top10(fetched["jw_zee5_in"])
-    live["india"]["zee5"] = build_overall_items(z5_overall + z5_jw, "on ZEE5 Today", "ZEE5 Top 10")
-
-    # ================= GLOBAL OTT TOP 10s (From FlixPatrol Master Worldwide Page) =================
-    # 1. Netflix Global
-    nf_gl_m = extract_flixpatrol_section(fp_world, ["TOP Movies on Netflix"])
-    nf_gl_s = extract_flixpatrol_section(fp_world, ["TOP TV Shows on Netflix"])
+    # ================= GLOBAL OTT TOP 10s =================
+    # 1. Netflix Global (Tudum Official Global + FlixPatrol World)
+    nf_gl_m = extract_tudum_titles(fetched["tudum_gl_movies"]) or extract_flixpatrol_section(fp_world, ["TOP Movies on Netflix"])
+    nf_gl_s = extract_tudum_titles(fetched["tudum_gl_tv"]) or extract_flixpatrol_section(fp_world, ["TOP TV Shows on Netflix"])
     live["global"]["netflix"] = interleave_movies_and_shows(nf_gl_m, nf_gl_s, "Worldwide")
 
     # 2. Amazon Prime Global
-    pr_gl_m = extract_flixpatrol_section(fp_world, ["TOP Movies on Amazon Prime"])
+    pr_gl_m = extract_flixpatrol_section(fp_world, ["TOP Movies on Amazon Prime", "Amazon Prime"])
     pr_gl_s = extract_flixpatrol_section(fp_world, ["TOP TV Shows on Amazon Prime"])
     live["global"]["prime"] = interleave_movies_and_shows(pr_gl_m, pr_gl_s, "Worldwide")
 
     # 3. HBO Max Global
-    mx_gl_s = extract_flixpatrol_section(fp_world, ["TOP TV Shows on HBO Max"])
+    mx_gl_s = extract_flixpatrol_section(fp_world, ["TOP TV Shows on HBO Max", "HBO Max"])
     mx_gl_m = extract_flixpatrol_section(fp_world, ["TOP Movies on HBO Max"])
     live["global"]["max"] = interleave_movies_and_shows(mx_gl_m, mx_gl_s, "Worldwide")
 
     # 4. Disney+ Global
-    ds_gl_s = extract_flixpatrol_section(fp_world, ["TOP TV Shows on Disney+"])
+    ds_gl_s = extract_flixpatrol_section(fp_world, ["TOP TV Shows on Disney+", "Disney+"])
     ds_gl_m = extract_flixpatrol_section(fp_world, ["TOP Movies on Disney+"])
     live["global"]["disney"] = interleave_movies_and_shows(ds_gl_m, ds_gl_s, "Worldwide")
 
     # 5. Apple TV+ Global
-    ap_gl_s = extract_flixpatrol_section(fp_world, ["TOP TV Shows on Apple TV"])
+    ap_gl_s = extract_flixpatrol_section(fp_world, ["TOP TV Shows on Apple TV", "Apple TV"])
     ap_gl_m = extract_flixpatrol_section(fp_world, ["TOP Movies on Apple TV"])
     live["global"]["apple"] = interleave_movies_and_shows(ap_gl_m, ap_gl_s, "Worldwide")
 
     return live
 
+def extract_json_object(text: str) -> dict:
+    cleaned = text.strip()
+    match = re.search(r"```(?:json)?\s*([\s\S]*?)\s*```", cleaned)
+    if match:
+        cleaned = match.group(1).strip()
+    start = cleaned.find("{")
+    end = cleaned.rfind("}")
+    if start != -1 and end != -1:
+        cleaned = cleaned[start:end + 1]
+    return json.loads(cleaned)
+
+def find_platform_array(data, key: str) -> list:
+    if not isinstance(data, dict):
+        return []
+    for k, v in data.items():
+        if k.lower() == key.lower() and isinstance(v, list) and len(v) > 0:
+            return v
+    for k, v in data.items():
+        if isinstance(v, dict):
+            found = find_platform_array(v, key)
+            if found:
+                return found
+    return []
+
+def fill_missing_with_grounded_gemini(api_key: str, live_charts: dict, today_str: str) -> str:
+    """
+    If any platform has fewer than 10 live items after direct HTML scraping,
+    calls Gemini WITH Google Search Grounding FIRST to fetch today's exact Top 10.
+    """
+    missing_india = [p for p in ["netflix", "prime", "jiohotstar", "sonyliv", "zee5"] if len(live_charts["india"].get(p, [])) < 10]
+    missing_global = [p for p in ["netflix", "prime", "max", "disney", "apple"] if len(live_charts["global"].get(p, [])) < 10]
+
+    if not missing_india and not missing_global:
+        return "Direct HTML Table Engine (100% Native)"
+
+    # Discover active models on the user's key (e.g. gemini-3.6-flash, gemini-3.8-flash)
+    models = ["gemini-3.6-flash", "gemini-3.8-flash", "gemini-3.5-flash", "gemini-2.5-flash"]
+    try:
+        r = requests.get(f"https://generativelanguage.googleapis.com/v1beta/models?key={api_key}", timeout=8)
+        if r.ok:
+            avail = [
+                m["name"].replace("models/", "")
+                for m in r.json().get("models", [])
+                if "generateContent" in m.get("supportedGenerationMethods", [])
+                and any(k in m["name"] for k in ["flash", "pro"])
+                and not any(b in m["name"] for b in ["1.5", "tts", "image", "audio", "vision", "robotics"])
+            ]
+            if avail:
+                models = avail[:6]
+    except Exception:
+        pass
+
+    prompt = f"""Today is {today_str}. Use Google Search to look up the exact current Top 10 trending charts TODAY ({today_str}) on FlixPatrol, Netflix Tudum, and JustWatch for:
+India platforms needed: {missing_india}
+Global platforms needed: {missing_global}
+
+Return ONLY valid JSON with "india" and "global" objects containing 10 items per requested platform:
+{{
+  "india": {{
+    "prime": [ {{"rank": 1, "title": "...", "type": "Film/Show", "year": "2026", "imdb": "8.0", "verdict": "#1 in India Today", "tag": "Prime Top 10"}} ],
+    "jiohotstar": [], "sonyliv": [], "zee5": []
+  }},
+  "global": {{
+    "netflix": [], "prime": [], "max": [], "disney": [], "apple": []
+  }}
+}}"""
+
+    for model in models:
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
+        for tool_payload in [{"tools": [{"google_search": {}}]}, {"tools": [{"googleSearch": {}}]}]:
+            try:
+                payload = {
+                    "contents": [{"parts": [{"text": prompt}]}],
+                    **tool_payload,
+                    "generationConfig": {"maxOutputTokens": 8192, "temperature": 0.1}
+                }
+                resp = requests.post(url, json=payload, timeout=55)
+                if resp.status_code == 200:
+                    parts = resp.json()["candidates"][0]["content"]["parts"]
+                    text = "".join(p.get("text", "") for p in parts if not p.get("thought"))
+                    parsed = extract_json_object(text)
+                    if parsed:
+                        in_node = parsed.get("india", parsed)
+                        gl_node = parsed.get("global", parsed)
+                        for p in missing_india:
+                            arr = find_platform_array(in_node, p)
+                            for item in arr:
+                                if isinstance(item, dict) and item.get("title"):
+                                    item["source"] = "LIVE"
+                                    live_charts["india"].setdefault(p, []).append(item)
+                        for p in missing_global:
+                            arr = find_platform_array(gl_node, p)
+                            for item in arr:
+                                if isinstance(item, dict) and item.get("title"):
+                                    item["source"] = "LIVE"
+                                    live_charts["global"].setdefault(p, []).append(item)
+                        return f"FlixPatrol + {model} (Google Search)"
+                elif resp.status_code == 429:
+                    break
+            except Exception as e:
+                print(f"[{model} search notice]: {e}")
+
+    return "Direct Chart Scraper"
+
 def resolve_single_poster_and_meta(item: dict) -> dict:
-    """
-    Queries IMDb's official suggestion CDN to attach the real poster,
-    real release year, and accurate Film/Show classification.
-    """
     title = item.get("title", "")
     media_type = item.get("type", "Film")
 
@@ -326,7 +424,6 @@ def resolve_single_poster_and_meta(item: dict) -> dict:
         or title.strip()
     )
 
-    # 1. IMDb Official Suggestion CDN
     try:
         query_slug = urllib.parse.quote(clean_title.lower())
         first_char = clean_title[0].lower() if clean_title[0].isalnum() else "x"
@@ -348,7 +445,6 @@ def resolve_single_poster_and_meta(item: dict) -> dict:
     except Exception:
         pass
 
-    # 2. iTunes Search API
     try:
         entity = "tvSeason" if str(media_type).lower() in ["show", "series"] else "movie"
         itunes_url = f"https://itunes.apple.com/search?term={urllib.parse.quote(clean_title)}&entity={entity}&limit=1"
@@ -361,13 +457,10 @@ def resolve_single_poster_and_meta(item: dict) -> dict:
                 rel_date = res.get("releaseDate", "")
                 if len(rel_date) >= 4:
                     item["year"] = rel_date[:4]
-                if res.get(" primaryGenreName"):
-                    item["tag"] = res["primaryGenreName"]
                 return item
     except Exception:
         pass
 
-    # 3. Wikipedia REST API
     try:
         wiki_url = f"https://en.wikipedia.org/api/rest_v1/page/summary/{urllib.parse.quote(clean_title.replace(' ', '_'))}"
         r = requests.get(wiki_url, headers=HEADERS, timeout=4)
@@ -381,10 +474,6 @@ def resolve_single_poster_and_meta(item: dict) -> dict:
     return item
 
 def get_verified_realtime_baseline(today_str: str) -> dict:
-    """
-    Emergency fallback mirroring the exact FlixPatrol & JustWatch charts.
-    Any item used from this table is honestly marked with source='BASELINE'.
-    """
     return {
         "syncDate": today_str,
         "india": {
@@ -524,10 +613,6 @@ def get_verified_realtime_baseline(today_str: str) -> dict:
     }
 
 def merge_with_honest_source(live_items: list, base_items: list) -> list:
-    """
-    Merges live-scraped chart items first (source='LIVE'), and only uses
-    baseline items if needed (honestly marked as source='BASELINE').
-    """
     merged = []
     seen = set()
 
@@ -570,6 +655,7 @@ def merge_with_honest_source(live_items: list, base_items: list) -> list:
     return merged
 
 def main():
+    api_key = os.environ.get("GEMINI_API_KEY", "").strip()
     ist_tz = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
     now_ist = datetime.datetime.now(ist_tz)
     today_str = now_ist.strftime("%b %d, %Y")
@@ -577,13 +663,18 @@ def main():
 
     baseline = get_verified_realtime_baseline(today_str)
 
-    print("Step 1: Scraping exact same-day Top 10 tables from FlixPatrol, JustWatch, Tudum & SonyLIV...")
+    print("Step 1: Scraping live Top 10 tables (FlixPatrol, Tudum India/Global, JustWatch + Jina Proxy)...")
     live_charts = scrape_all_live_charts()
+
+    engine_label = "FlixPatrol + Tudum + JustWatch"
+    if api_key:
+        print("Step 2: Checking if any platform needs Google Search Grounding fill...")
+        engine_label = fill_missing_with_grounded_gemini(api_key, live_charts, today_str)
 
     final_catalogue = {
         "syncDate": today_str,
         "syncTimestamp": timestamp_str,
-        "activeModel": "Direct Chart Table Engine (FlixPatrol + JustWatch + Tudum)",
+        "activeModel": engine_label,
         "liveCount": 0,
         "totalCount": 100,
         "syncMode": "",
@@ -594,12 +685,12 @@ def main():
 
     for plat in ["netflix", "prime", "jiohotstar", "sonyliv", "zee5"]:
         scraped_list = live_charts["india"].get(plat, [])
-        print(f"India {plat}: scraped {len(scraped_list)} live chart items")
+        print(f"India {plat}: {len(scraped_list)} live items ready")
         final_catalogue["india"][plat] = merge_with_honest_source(scraped_list, baseline["india"][plat])
 
     for plat in ["netflix", "prime", "max", "disney", "apple"]:
         scraped_list = live_charts["global"].get(plat, [])
-        print(f"Global {plat}: scraped {len(scraped_list)} live chart items")
+        print(f"Global {plat}: {len(scraped_list)} live items ready")
         final_catalogue["global"][plat] = merge_with_honest_source(scraped_list, baseline["global"][plat])
 
     total_live = sum(
@@ -609,9 +700,9 @@ def main():
         if item.get("source") == "LIVE"
     )
     final_catalogue["liveCount"] = total_live
-    final_catalogue["syncMode"] = f"EXACT DAILY TOP 10: {total_live}/100 LIVE • FlixPatrol + JustWatch"
+    final_catalogue["syncMode"] = f"EXACT DAILY TOP 10: {total_live}/100 LIVE • {engine_label}"
 
-    print("Step 2: Resolving official IMDb posters, release years & Film/Show types in parallel (15 threads)...")
+    print("Step 3: Resolving official IMDb posters, release years & Film/Show types in parallel (15 threads)...")
     all_items = []
     for reg in ["india", "global"]:
         for plat in final_catalogue[reg]:
